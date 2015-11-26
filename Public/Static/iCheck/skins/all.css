@@ -1,0 +1,78 @@
+/* iCheck plugin skins
+----------------------------------- */
+@import url("minimal/_all.css");
+@import url("minimal/minimal.css");
+/*
+@import url("minimal/minimal.css");
+@import url("minimal/red.css");
+@import url("minimal/green.css");
+@import url("minimal/blue.css");
+@import url("minimal/aero.css");
+@import url("minimal/grey.css");
+@import url("minimal/orange.css");
+@import url("minimal/yellow.css");
+@import url("minimal/pink.css");
+@import url("minimal/purple.css");
+*/
+
+@import url("square/_all.css");
+/*
+@import url("square/square.css");
+@import url("square/red.css");
+@import url("square/green.css");
+@import url("square/blue.css");
+@import url("square/aero.css");
+@import url("square/grey.css");
+@import url("square/orange.css");
+@import url("square/yellow.css");
+@import url("square/pink.css");
+@import url("square/purple.css");
+*/
+
+@import url("flat/_all.css");
+/*
+@import url("flat/flat.css");
+@import url("flat/red.css");
+@import url("flat/green.css");
+@import url("flat/blue.css");
+@import url("flat/aero.css");
+@import url("flat/grey.css");
+@import url("flat/orange.css");
+@import url("flat/yellow.css");
+@import url("flat/pink.css");
+@import url("flat/purple.css");
+*/
+
+@import url("line/_all.css");
+/*
+@import url("line/line.css");
+@import url("line/red.css");
+@import url("line/green.css");
+@import url("line/blue.css");
+@import url("line/aero.css");
+@import url("line/grey.css");
+@import url("line/orange.css");
+@import url("line/yellow.css");
+@import url("line/pink.css");
+@import url("line/purple.css");
+*/
+
+@import url("polaris/polaris.css");
+
+@import url("futurico/futurico.css");
+
+.icheckbox_minimal,.icheckbox_minimal-red,.icheckbox_minimal-green,.icheckbox_minimal-blue,.icheckbox_minimal-aero,.icheckbox_minimal-grey,.icheckbox_minimal-orange,.icheckbox_minimal-yellow,.icheckbox_minimal-pink,.icheckbox_minimal-purple,.iradio_minimal,.iradio_minimal-red,.iradio_minimal-green,.iradio_minimal-blue,.iradio_minimal-aero,.iradio_minimal-grey,.iradio_minimal-orange,.iradio_minimal-yellow,.iradio_minimal-pink,.iradio_minimal-purple{
+	*zoom:1 !important;
+}
+.icheckbox_square,.icheckbox_square-red,.icheckbox_square-green,.icheckbox_square-blue,.icheckbox_square-aero,.icheckbox_square-grey,.icheckbox_square-orange,.icheckbox_square-yellow,.icheckbox_square-pink,.icheckbox_square-purple,.iradio_square,.iradio_square-red,.iradio_square-green,.iradio_square-blue,.iradio_square-aero,.iradio_square-grey,.iradio_square-orange,.iradio_square-yellow,.iradio_square-pink,.iradio_square-purple{
+	*zoom:1 !important;
+}
+.icheckbox_flat,.icheckbox_flat-red,.icheckbox_flat-green,.icheckbox_flat-blue,.icheckbox_flat-aero,.icheckbox_flat-grey,.icheckbox_flat-orange,.icheckbox_flat-yellow,.icheckbox_flat-pink,.icheckbox_flat-purple,.iradio_flat,.iradio_flat-red,.iradio_flat-green,.iradio_flat-blue,.iradio_flat-aero,.iradio_flat-grey,.iradio_flat-orange,.iradio_flat-yellow,.iradio_flat-pink,.iradio_flat-purple{
+	*zoom:1 !important;
+}
+.icheckbox_polaris,.iradio_polaris{
+	*zoom:1 !important;
+}
+.icheckbox_futurico,.iradio_futurico{
+	*zoom:1 !important;
+}

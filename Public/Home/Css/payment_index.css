@@ -1,0 +1,296 @@
+.self-line{
+	margin : 20px 0;
+}
+.banklist{
+	display: block;
+	float: right;
+	width: 800px;
+	height: 230px;
+}
+.banklist ul li.active {
+    background-position: right -92px;
+    border-color: red;
+}
+.banklist ul li {
+	clear: both;
+	cursor: pointer;
+	display: block;
+    background: #fff url("../Images/x-icon.png") no-repeat right -99999px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    cursor: pointer;
+    display: inline-block;
+    height: 40px;
+    margin: 3px;
+    padding: 6px 2px;
+    position: relative;
+    vertical-align: top;
+    width: 160px;
+}
+.x-bank ul li .bank-icon {
+    cursor: pointer;
+    display: block;
+}
+.ICBC {
+    background-position: 0 -700px !important;
+}
+.ABC {
+    background-position: 0 0 !important;
+}
+.CMB {
+    background-position: 0 -308px !important;
+}
+.CIB {
+    background-position: 0 -252px !important;
+}
+.CITIC {
+    background-position: 0 -280px !important;
+}
+.CCB {
+    background-position: 0 -196px !important;
+}
+.BOC {
+    background-position: 0 -56px !important;
+}
+.COMM {
+    background-position: 0 -364px !important;
+}
+.SPDB {
+    background-position: 0 -1008px !important;
+}
+.CMBC {
+    background-position: 0 -336px !important;
+}
+.HXBANK {
+    background-position: 0 -644px !important;
+}
+.CEB {
+    background-position: 0 -224px !important;
+}
+.BJBANK {
+    background-position: 0 -28px !important;
+}
+.GDB {
+    background-position: 0 -476px !important;
+}
+.PSBC {
+    background-position: 0 -840px !important;
+}
+.SPABANK {
+    background-position: 0 -980px !important;
+}
+.bank-icon {
+    background: transparent url("../Images/x-bank.png") no-repeat scroll left bottom;
+    border-radius: 3px;
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    margin: 0;
+    padding: 0;
+    text-indent: -999em;
+    vertical-align: middle;
+    width: 126px;
+}
+.self-line ul#ways{
+	display: block;
+	float: left;
+	width: 800px;
+	height: 60px;
+	padding-left: 70px;
+	/*border: 1px solid blue;*/
+}
+.self-line ul#ways li.current{
+	border: 1px solid red;
+	color: red;
+}
+.self-line ul#ways li.current p{
+	color: red;
+}
+.self-line ul#ways li{
+	display: inline-block;
+	cursor: pointer;
+	margin-right: 20px;
+	float: left;
+	position: relative;
+	width: 320px;
+	height: 60px;
+	border-radius: 4px;
+	border: 1px solid #B0C2E1;
+}
+.self-line ul#ways li.current span{
+	color:red;
+}
+.self-line ul#ways li span{
+	font-size: 35px;
+	position: absolute;
+	top: 12px;
+	left: 10px;
+	color: #666695;
+}
+.self-line ul#ways li .into-way{
+	position: absolute;
+	top: 5px;
+	left: 80px;
+	color: #666695;
+}
+.self-line ul#ways li .online-way{
+	position: absolute;
+	top: 18px;
+	left: 80px;
+	color: #666695;
+	font-weight: 700px;
+	font-size: 26px;
+}
+.self-line ul#ways li.current i{
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 0;
+	width: 19px;
+	height: 19px;
+	background: url(../Images/x-icon.png) no-repeat -21px -300px;
+}
+
+/*账户出金*/
+#banklists{
+	display: block;
+	float: right;
+	/*border: 1px solid red;*/
+}
+#banklists dd {
+   display: block;
+   float: left;
+   width: 276px;
+   height: 100px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   position: relative;
+   margin: 5px;
+   cursor: pointer;
+}
+#banklists dd.current{
+	border: 1px solid red;
+}
+#banklists dd.current .cny{
+	background: #FE8D8B;
+}
+#banklists dd.current .bankno{
+	color:#FF5D5B;
+}
+#banklists dd .cny{
+	display: block;
+	float: left;
+	width: 100px;
+	height: 33px;
+	background: #ccc;
+	position: absolute;
+	top: 32px;
+	left: -34px;
+	color: #fff;
+	font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+    text-overflow: ellipsis;
+    transform: rotate(90deg);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+#banklists dd .curbank{
+    position: absolute;
+    top: 10px;
+    left: 50px;
+}
+#banklists dd .bankno{
+	display: block;
+	position: absolute;
+	top: 35px;
+	left: 50px;
+	color:#ccc;
+	font-size: 28px;
+}
+#banklists dd .name{
+	display: block;
+	position: absolute;
+	top: 65px;
+	left: 50px;
+}
+#banklists dd.current i {
+    background: url("../Images/x-icon.png") no-repeat scroll -21px -300px;
+    display: block;
+    height: 19px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 19px;
+}
+#panl-two dl dd{
+	margin-bottom: 20px;
+}
+#panl-two dl dd .type-current i {
+    background: url("../Images/x-icon.png") no-repeat scroll -21px -300px;
+    display: block;
+    height: 19px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 19px;
+}
+#panl-two dl dd .money-type{
+	display: block;
+	cursor: pointer;
+	float: left;
+	width: 145px;
+	height: 30px;
+	border-radius: 4px;
+	border: 1px solid #B0C2E1;
+	position: relative;
+	margin : 0 10px 0 0;
+	color: #666695;
+}
+#panl-two dl dd .type-current{
+	color: red;
+	border: 1px solid red;
+}
+#panl-two dl dd .money-type .icon{
+	display: block;
+	position: absolute;
+	top: 7px;
+	left: 40px;
+
+}
+#panl-two dl dd .money-type .type-icon{
+	display: block;
+	position: absolute;
+	top: 5px;
+	left: 55px;
+}
+#panl-two dl dd .bankcard .card-box{
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	display: block;
+	width: 320px;
+	height: 223px;
+	margin-bottom: 10px;
+}
+#panl-two dl dd .bankcard .zheng{
+	background: url('../Images/zheng.png') no-repeat center center;
+}
+#panl-two dl dd .bankcard .fan{
+	background: url('../Images/fan.png') no-repeat center center;
+}
+#panl-two dl dd .bankcard .card-box .card-type{
+	margin: 5px;
+	color:#ccc;
+}
+#panl-two dl dd .bankcard .card-box h3{
+	text-align: center;
+	color:#666;
+}
+#panl-two dl dd .bankcard .suchas{
+	padding: 2px 10px;
+	background: #ccc;
+	color: #000;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 4px;
+}

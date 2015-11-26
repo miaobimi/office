@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>跳转......</title>
+    <meta http-equiv="content-Type" content="text/html; charset=gb2312" />
+  </head>
+  <body>
+    <form action="{$form_url}" method="post" id="frm1">
+      <input type="hidden" name="MerCode" value="{$Mer_code}">
+      <input type="hidden" name="MerOrderNo" value="{$BillNo}">
+      <input type="hidden" name="Amount" value="{$Amount}" >
+      <input type="hidden" name="OrderDate" value="{$Date}">
+      <input type="hidden" name="Currency" value="{$Currency_Type}">
+      <input type="hidden" name="GatewayType" value="{$Gateway_Type}">
+      <input type="hidden" name="Language" value="{$Lang}">
+      <input type="hidden" name="ReturnUrl" value="{$Merchanturl}">
+      <input type="hidden" name="GoodsInfo" value="{$Attach}">
+      <input type="hidden" name="OrderEncodeType" value="{$OrderEncodeType}">
+      <input type="hidden" name="RetEncodeType" value="{$RetEncodeType}">
+      <input type="hidden" name="Rettype" value="{$Rettype}">
+      <input type="hidden" name="ServerUrl" value="{$ServerUrl}">
+      <input type="hidden" name="SignMD5" value="{$SignMD5}">
+      <input type="hidden" name="Bank_Code" value="00123">
+    </form>
+    <script language="javascript">
+      document.getElementById("frm1").submit();
+    </script>
+  </body>
+</html>

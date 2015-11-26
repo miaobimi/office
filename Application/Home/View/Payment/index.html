@@ -1,0 +1,85 @@
+<include file="Public:header" />
+	<link rel="stylesheet" href="__CSS__/payment_index.css">
+	<script type="text/javascript" src="__JS__/payment_index.js"></script>
+	<script>
+		$(function(){
+			Payment.init();
+			highlight_subnav("{:U('Home/Payment/index')}");
+		})
+	</script>
+</head>
+<body>
+	<include file="Public:menu" />
+	<div class="mainbody">
+		<include file="Public:leftmenu" />
+	
+		<div class="content-body">
+			<h2 class="body-title">账户入金</h2>
+			<form action="{:U('Home/Payment/pay')}" method="post">
+				<div class="container">
+					<div class="form-inline self-line">
+						<div class="form-group">
+							<ul id="ways">
+								<li class="current">
+									<span class='glyphicon glyphicon-credit-card'></span>
+									<p class="into-way">入金方式</p>
+									<p class="online-way">在线入金</p>
+									<i></i>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="form-inline self-line">
+					  <div class="form-group">
+					    <label>选择银行：</label>
+					    <div class="banklist">
+					    	<p class="bold mb5">您已选择通过 <strong id="bankTip" class="x-text-red u">中国工商银行</strong> 在线入金</p>
+					    	<ul id="bankAll">
+					    		<li class="active"><label name="中国工商银行" bankicon="ICBC" bankco="01100" class="bank-icon ICBC"></label>
+					    			<input type="hidden" name="Bank_Code" value="01100">
+					    		</li>
+					    		<li><label name="中国农业银行" bankicon="ABC" bankco="01101" class="bank-icon ABC"></label>
+					    		</li>
+					    		<li><label name="招商银行" bankicon="CMB" bankco="01102" class="bank-icon CMB"></label>
+					    		</li>
+					    		<li><label name="兴业银行" bankicon="CIB" bankco="01103" class="bank-icon CIB"></label></li>
+					    		<li><label name="中信银行" bankicon="CITIC" bankco="01104" class="bank-icon CITIC"></label>
+					    		</li>
+					    		<li><label name="建设银行" bankicon="CCB" bankco="01106" class="bank-icon CCB"></label></li>
+					    		<li><label name="中国银行" bankicon="BOC" bankco="01107" class="bank-icon BOC"></label></li>
+					    		<li><label name="交通银行" bankicon="COMM" bankco="01108" class="bank-icon COMM"></label></li>
+					    		<li><label name="上海浦东发展银行" bankicon="SPDB" bankco="01109" class="bank-icon SPDB"></label></li>
+					    		<li><label name="民生银行" bankicon="CMBC" bankco="01110" class="bank-icon CMBC"></label></li>
+					    		<li><label name="华夏银行" bankicon="HXBANK" bankco="01111" class="bank-icon HXBANK"></label></li>
+					    		<li><label name="光大银行" bankicon="CEB" bankco="01112" class="bank-icon CEB"></label></li>
+					    		<li><label name="北京银行" bankicon="BJBANK" bankco="01113" class="bank-icon BJBANK"></label></li>
+					    		<li><label name="广东发展银行" bankicon="GDB" bankco="01114" class="bank-icon GDB"></label></li>
+					    		<li><label name="中国邮政储蓄" bankicon="PSBC" bankco="01119" class="bank-icon PSBC"></label></li>
+					    		<li><label name="平安银行" bankicon="SPABANK" bankco="01121" class="bank-icon SPABANK"></label></li>
+					    	</ul>
+					    </div>
+					  </div>
+					</div>
+					<div class="form-inline self-line">
+					   <div class="form-group">
+						    <label>入金金额：</label>
+						    <div class="input-group">
+						      <input type="text" name="Amount" class="form-control" placeholder="入金金额">
+						      <div class="input-group-addon">USD</div>
+						    </div>
+						</div>
+					  <div class="form-group">
+					   <label for="">当前账户余额 $7,031.55</label>
+					  </div>
+					</div>
+					<div class="form-inline self-line" align="center">
+						<button id="submit" class="btn btn-success btn-lg radius">进入银行入金页面</button>
+					</div>
+				</div>
+			</form>
+		</div>		
+	</div>
+
+		
+</body>
+</html>

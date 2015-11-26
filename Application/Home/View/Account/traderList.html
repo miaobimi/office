@@ -1,0 +1,109 @@
+<include file="Public:header" />
+<link rel="stylesheet" type="text/css" href="__CSS__/account_info.css">
+<script src="__STATIC__/layer/laydate/laydate.js"></script>
+	<script>
+		$(function(){
+			highlight_subnav("{:U('Home/Account/traderList')}");
+		})
+	</script>	
+</head>
+<body>
+	<include file="Public:menu" />
+	<div class="mainbody">
+		<include file="Public:leftmenu" />
+		<div class="content-body">
+			<h2 class="body-title">我的账户</h2>
+			<div class="content">
+				<div class="content-in">
+					<div class="date-option">
+						<form class="form-horizontal" role="form">
+						   <div class="form-group">
+						      <label class="col-sm-2 control-label">日期：</label>
+						      <div class="col-sm-4">
+						         <input type="text" class="form-control" id="firstdate" 
+						            placeholder="请输入起始日期">
+						             
+						      </div>
+						      <label class="col-sm-1">－</label>       
+						      <div class="col-sm-4">
+						      	<input type="text" class="form-control" id="lastdate" 
+						            placeholder="请输入截至日期">
+						      </div>
+						   </div>
+						   <div class="form-group">
+						      <label class="col-sm-2 control-label"></label>
+						      <div class="col-sm-4">
+						      	<button type="button" class="btn btn-success btn-lg" >
+						      	搜索
+						      	</button>
+						      </div>
+						      
+						   </div>
+						</form>
+
+					</div><!--data-option-->
+					<div style="background: #ccc;height: 0.5px;"></div>
+					<table class="table table-hover">
+					  <thead>
+					  	<tr>
+					  		<th>日期</th>
+					  		<th>交易</th>
+					  		<th>佣金</th>
+					  		<th>利息</th>
+					  		<th>成交量</th>
+					  		<th>挂单</th>
+					  		<th>入金</th>
+					  		<th>出金</th>
+					  		<th>信用</th>
+					  		<th>净入金</th>
+					  	</tr>
+					  </thead>
+					  <tbody>
+					  	<tr>
+					  		<td>2015-11-10</td>
+					  		<td>$0.00 0 笔</td>
+					  		<td>$0.00</td>
+					  		<td>$0.00</td>
+					  		<td>0.00手</td>
+					  		<td>0手0 笔</td>
+					  		<td>0手0 笔</td>
+					  		<td>0手0 笔</td>
+					  		<td>0手0 笔</td>
+					  		<td><span style="padding:5px 10px" class="label label-success">已完成</span></td>
+					  	</tr>
+					  </tbody>
+					</table>
+				</div><!--content-in-->
+			</div><!--content-->	
+		</div>		
+	</div>
+	<script type="text/javascript">
+	// layerdata
+        laydate.skin('molv');
+
+         //日期范围限制
+        var firstdate = {
+            elem: '#firstdate',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            min: laydate.now(), //设定最小日期为当前日期
+            max: '2099-06-16 23:59:59', //最大日期
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+            }
+        };
+        var lastdate = {
+            elem: '#lastdate',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            min: laydate.now(),
+            max: '2099-06-16 23:59:59',
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+            }
+        };
+        laydate(firstdate);
+        laydate(lastdate);	
+	</script>		
+</body>
+</html>

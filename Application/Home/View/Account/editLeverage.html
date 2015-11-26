@@ -1,0 +1,58 @@
+<include file="Public:header" />
+<link rel="stylesheet" type="text/css" href="__CSS__/account_info.css">
+<script src="__STATIC__/layer/laydate/laydate.js"></script>
+	<script>
+		$(function(){
+			highlight_subnav("{:U('Home/Account/editLeverage')}");
+		})
+	</script>	
+</head>
+<body>
+	<include file="Public:menu" />
+	<div class="mainbody">
+		<include file="Public:leftmenu" />
+		<div class="content-body">
+			<h2 class="body-title">更改杠杠</h2>
+			<div class="content">	
+				<div class="alert alert-warning alert-dismissible" role="alert">
+				  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  <strong>警告:</strong> 更改杠杆有可能导致账户保证金不足而强制平仓!
+				</div>
+				<div class="content-l">
+					<div class="panel panel-default">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">当前</h3>
+					  </div>
+					  <div class="panel-body">
+					    <dl class="dl-horizontal">
+						  <dt>帐号:</dt>
+						  <dd><span class="label label-default">600777</span></dd>
+						  <dt>杠杆:</dt>
+						  <dd>
+						  	<label><input type="radio" value="200" checked="" name="oldLeverage" visibility="hidden">1：200</label>
+						  </dd>
+						</dl>
+					  </div>
+					</div>
+					<div class="panel panel-default">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">更改后</h3>
+					  </div>
+					  <div class="panel-body">
+					    <dl class="dl-horizontal">
+						  <dt>新的杠杆:</dt>
+						  <dd>
+						  <label><input type="radio" value="200" checked="" name="newLeverage" visibility="hidden">1：100</label>
+						  </dd>
+						</dl>
+					  </div>
+					</div>
+					<div style="width: 30%;margin:40px auto;">
+						<button type="button" class="btn btn-primary btn-block">确认并提交</button>
+					</div>
+				</div>
+			</div><!--content-->	
+		</div>		
+	</div>		
+</body>
+</html>

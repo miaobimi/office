@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Checkboxes and radio buttons customization (jQuery and Zepto) plugin</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width" name="viewport">
+  <link href="./css/custom.css?v=1.0.2" rel="stylesheet">
+  <link href="../skins/all.css?v=1.0.2" rel="stylesheet">
+  <script src="./js/jquery.js"></script>
+  <script src="../icheck.js?v=1.0.2"></script>
+  <script src="./js/custom.min.js?v=1.0.2"></script>
+</head>
+<style type="text/css">
+  .icheckbox_square-green{
+   
+    *zoom:1 !important;
+  }
+</style>
+<body>
+  <div style="position:relative">
+
+    <input tabindex="1" type="checkbox" class="test-1">21321131
+
+  </div>
+  <div style="position:relative">
+
+    <input tabindex="1" type="checkbox" class="test-1">21321131
+
+  </div>
+  <div style="position:relative">
+
+    <input tabindex="1" type="checkbox" class="test-1">21321131
+
+  </div>
+
+
+<script>
+$(document).ready(function(){
+  $('.test-1').iCheck({
+    checkboxClass: 'icheckbox_square-green',
+    radioClass: 'iradio_square-green'
+  });
+});
+</script>
+  
+</body>
+</html>

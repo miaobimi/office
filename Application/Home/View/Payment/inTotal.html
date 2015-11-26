@@ -1,0 +1,46 @@
+<include file="Public:header" />
+	<script type="text/javascript" src="__STATIC__/echarts/build/dist/echarts.js"></script>
+	<script type="text/javascript" src="__JS__/payment_inTotal.js"></script>
+	<script> 
+		var echartUrl = "__STATIC__/echarts/build/dist";
+		$(function(){
+			highlight_subnav("{:U('Home/Payment/inTotal')}");
+			MyEcharts.init();
+		})
+	</script>
+</head>
+<body>
+	<include file="Public:menu" />
+	<div class="mainbody">
+		<include file="Public:leftmenu" />
+	
+		<div class="content-body">
+			<h2 class="body-title">入金统计</h2>
+			<div class="col-lg-4">
+				<table class="table table-hover">
+				  <thead>
+				  	<tr>
+				  		<th>月份</th>
+				  		<th>金额</th>
+				  	</tr>
+				  </thead>
+				  <tbody>
+				  	<volist name="list" id="vo">
+					  	<tr>
+					  		<td>{$vo.month}</td>
+					  		<td><span class="m">${$vo.total|changeRate=###}</span><span style="margin-left:10px;border:1px solid #ccc;border-radius:6px;padding: 2px 10px;">{$vo.hand}笔</span></td>
+					  	</tr>
+					</volist>
+				  </tbody>
+				</table>
+			</div>
+			<div class="col-lg-2"></div>
+			<div class="col-lg-5">
+				<div id="main" style="display:block;float:left;width:600px;height:300px;"></div>
+			</div>
+		</div>		
+	</div>
+
+		
+</body>
+</html>
