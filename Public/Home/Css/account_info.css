@@ -13,7 +13,7 @@
     width: 60%;
     background-color:#c3dde0;
 } */
-.content-body .content > dl > dt{
+.content-body .content .dl-in > dl > dt{
     background-color: #c3dde0;
     width: 25%;
     border-bottom: 1px #fff solid;
@@ -21,7 +21,7 @@
     line-height: 18px;
     height: 40px;
 }
-.content-body .content > dl > dd{
+.content-body .content .dl-in > dl > dd{
     background-color: #F2F1EF;
     border-bottom: 1px #fff solid;
     padding: 10px;
