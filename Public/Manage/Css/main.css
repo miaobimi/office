@@ -28,7 +28,7 @@ span,a{
 	height: 100%;
 	text-align: center;
 	padding: 10px;
-	background: url(/resources/images/logo.png) #000 center center no-repeat;
+	background: #000;
 	background-size: 88%;
 }
 .topmenu #topright{

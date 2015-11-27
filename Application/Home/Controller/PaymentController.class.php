@@ -7,7 +7,7 @@
 namespace Home\Controller;
 use Think\Controller;
 
-class PaymentController extends Controller {
+class PaymentController extends CommonController {
 
 //入金相关=========================================================================
     /**
@@ -208,6 +208,10 @@ class PaymentController extends Controller {
      */
     Public function outTotal(){
 
+        $where = array('account'=>1);
+        $total = M('withdrawal')->where($where)->field('month,sum(money) as total,count(month) as hand')->group('month')->select();
+        // p($total);die;
+        $this->list = $total;
         $this->display();
     }
 
@@ -247,6 +251,7 @@ class PaymentController extends Controller {
             'money'=>I('money'),
             'account' => $account,
             'applyTime' => time(),
+            'month' => date('Ym'),
             'status' => 0
         );
         if(M('withdrawal')->add($data)){

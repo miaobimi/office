@@ -17,6 +17,7 @@
 	<script type="text/javascript" src="/Public/Home/Js/payment_inTotal.js"></script>
 	<script> 
 		var echartUrl = "/Public/Static/echarts/build/dist";
+		var text = '月份出金分析';
 		$(function(){
 			highlight_subnav("<?php echo U('Home/Payment/outTotal');?>");
 			MyEcharts.init();
@@ -147,7 +148,7 @@
 				  <tbody>
 				  	<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
 					  		<td><?php echo ($vo["month"]); ?></td>
-					  		<td><span class="m">$<?php echo (changeRate($vo["total"])); ?></span><span style="margin-left:10px;border:1px solid #ccc;border-radius:6px;padding: 2px 10px;"><?php echo ($vo["hand"]); ?>笔</span></td>
+					  		<td><span class="m">$<?php echo ($vo["total"]); ?></span><span style="margin-left:10px;border:1px solid #ccc;border-radius:6px;padding: 2px 10px;"><?php echo ($vo["hand"]); ?>笔</span></td>
 					  	</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 				  </tbody>
 				</table>

@@ -4,6 +4,15 @@
 	<script>
 		$(function(){
 			highlight_subnav("{:U('Home/Account/editLeverage')}");
+			$('#submit').bind('click',function(){
+				//接口
+				if(true){
+					layer.alert('修改成功',{icon:1});
+					window.location.reload();
+				}else{
+					layer.alert('修改失败',{icon:2});
+				}
+			})
 		})
 	</script>	
 </head>
@@ -48,7 +57,7 @@
 					  </div>
 					</div>
 					<div style="width: 30%;margin:40px auto;">
-						<button type="button" class="btn btn-success btn-block">确认并提交</button>
+						<button type="button" id="submit" class="btn btn-success btn-block">确认并提交</button>
 					</div>
 				</div>
 			</div><!--content-->	

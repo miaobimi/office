@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>office Login</title>
-	<script type="text/javascript" src="__STATIC__/jquery-1.10.2.min.js"></script>
-	<link rel="stylesheet" href="__STATIC__/bootstrapv3/css/bootstrap.min.css">
-	<script type="text/javascript" src="__STATIC__/bootstrapv3/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="__STATIC__/layer/layer.js"></script>
-	<script type="text/javascript" src="__JS__/common.js"></script>
+<include file="Public:header" />
 	<link rel="stylesheet" href="__CSS__/login.css">
 	<script>
 		$(function(){
@@ -20,11 +11,11 @@
 					layer.alert('账号和密码必须',{icon:2});
 					return false;
 				}
-				ajaxReturn("{:U('Home/Public/login')}",params,function(){
+				ajaxReturn("{:U('Manage/Public/login')}",params,function(){
 
 				},function(res){
 					if(res.status){
-						
+						window.location.href="{:U('Manage/Index/index')}";
 					}else{
 						layer.alert(res.info,{icon:2})
 					}
@@ -41,7 +32,7 @@
 		<div class="container main-content">
 			<div class="logo">
 				<img src="__IMG__/login.png" alt="">
-				<h1>Member Login</h1>
+				<h1>Adminstrator Login</h1>
 			</div>
 	      	<div class="form-horizontal">
 				<div class="form-group">

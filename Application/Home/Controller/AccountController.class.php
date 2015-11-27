@@ -8,7 +8,7 @@
 namespace Home\Controller;
 use Think\Controller;
 
-class AccountController extends Controller {
+class AccountController extends CommonController {
 
 
     /**
@@ -17,8 +17,31 @@ class AccountController extends Controller {
      */
     Public function index(){
 
-    	
+        $card = M('card');
+        $where = array('account'=>session('uname'));
+        $count      = $card->where($where)->count();
+        $Page       = new \Think\Page($count,25);
+        $show       = $Page->show();
+        $list = $card->where($where)->limit($Page->firstRow.','.$Page->listRows)->select();
+        foreach ($list as $k => $v) {
+            $banArr = explode('-', $v['bank']);
+            $list[$k]['bankicon'] = $banArr[0];
+        }
+        $this->assign('list',$list);
+        $this->assign('page',$show);
     	$this->display();
+    }
+
+    Public function getAccountInfo(){
+        // p($_POST);
+        //接口 api
+        // import("Org.Util.Mt");
+        // $mt = new \Mt('192.168.1.99',443);
+        $result = $mt->testCmd($account,$password,$ip,$port,$cmd);
+
+        $result = array('leveral'=>"1:10000");
+
+        $this->success($result);
     }
 
 

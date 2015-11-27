@@ -1,5 +1,20 @@
-<include file="Public:header" />
-	<link rel="stylesheet" href="__CSS__/login.css">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>manage</title>
+	<script type="text/javascript" src="/Public/Static/jquery-1.10.2.min.js"></script>
+	<link rel="stylesheet" href="/Public/Static/bootstrapv3/css/bootstrap.min.css">
+	<script type="text/javascript" src="/Public/Static/bootstrapv3/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/Public/Static/layer/layer.js"></script>
+	<script type="text/javascript" src="/Public/Static/layer/extend/layer.ext.js"></script>
+	<script type="text/javascript" src="/Public/Manage/Js/common.js"></script>
+	<link rel="stylesheet" href="/Public/Manage/Css/main.css">
+	<script>
+		var loginUrl = "<?php echo U('Manage/Public/login');?>";
+		var logoutUrl = "<?php echo U('Manage/Public/logout');?>";
+	</script>
+	<link rel="stylesheet" href="/Public/Manage/Css/login.css">
 	<script>
 		$(function(){
 			$('#submit').bind('click',function(res){
@@ -11,11 +26,11 @@
 					layer.alert('账号和密码必须',{icon:2});
 					return false;
 				}
-				ajaxReturn("{:U('Home/Public/login')}",params,function(){
+				ajaxReturn("<?php echo U('Manage/Public/login');?>",params,function(){
 
 				},function(res){
 					if(res.status){
-						window.location.href="{:U('Home/Index/index')}";
+						window.location.href="<?php echo U('Manage/Index/index');?>";
 					}else{
 						layer.alert(res.info,{icon:2})
 					}
@@ -31,8 +46,8 @@
 		
 		<div class="container main-content">
 			<div class="logo">
-				<img src="__IMG__/login.png" alt="">
-				<h1>Member Login</h1>
+				<img src="/Public/Manage/Images/login.png" alt="">
+				<h1>Adminstrator Login</h1>
 			</div>
 	      	<div class="form-horizontal">
 				<div class="form-group">

@@ -2,12 +2,19 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>office Login</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit"/>
+	<title>office</title>
 	<script type="text/javascript" src="/Public/Static/jquery-1.10.2.min.js"></script>
 	<link rel="stylesheet" href="/Public/Static/bootstrapv3/css/bootstrap.min.css">
 	<script type="text/javascript" src="/Public/Static/bootstrapv3/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/Public/Static/layer/layer.js"></script>
 	<script type="text/javascript" src="/Public/Home/Js/common.js"></script>
+	<link rel="stylesheet" href="/Public/Home/Css/main.css">
+	<script>
+		var loginUrl = "<?php echo U('Home/Public/login');?>";
+		var logoutUrl = "<?php echo U('Home/Public/logout');?>";
+	</script>
 	<link rel="stylesheet" href="/Public/Home/Css/login.css">
 	<script>
 		$(function(){
@@ -24,7 +31,7 @@
 
 				},function(res){
 					if(res.status){
-						
+						window.location.href="<?php echo U('Home/Index/index');?>";
 					}else{
 						layer.alert(res.info,{icon:2})
 					}

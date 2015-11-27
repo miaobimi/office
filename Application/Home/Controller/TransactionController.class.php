@@ -7,7 +7,7 @@
 namespace Home\Controller;
 use Think\Controller;
 
-class TransactionController extends Controller {
+class TransactionController extends CommonController {
 
 //当前持仓=========================================================
 

@@ -12,7 +12,9 @@ var MyEcharts = {
                 echarts: echartUrl
             }
         });
-		
+		if(typeof text == 'undefined'){
+			text = '月份入金分析';
+		}
 		this.buildData();
         this.require();
         this.initWindow();
@@ -49,7 +51,7 @@ var MyEcharts = {
                 
                 option = {
 				    title : {
-				        text: '月份入金分析',
+				        text: text,
 				        // subtext: '纯属虚构',
 				        x:'center'
 				    },

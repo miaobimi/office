@@ -136,6 +136,7 @@ Payment = {
 			$o.addClass('current').siblings().removeClass('current');
 			$('.panl').eq(index).show().siblings().hide();
 			if(index===1){
+				self.bindPickerHtml();
 				self.uploadCardzheng();
 				self.uploadCardfan();
 				self.bindExample();
@@ -146,6 +147,11 @@ Payment = {
 			var $o = $(this);
 			$o.addClass('type-current').siblings().removeClass('type-current');
 		})
+	},
+
+	bindPickerHtml : function(){
+		$('#picker1').empty().html('<div id="filePicker1">银行卡正面</div>');
+		$('#picker2').empty().html('<div id="filePicker2">银行卡反面</div>');
 	},
 
 	uploadCardzheng : function(){

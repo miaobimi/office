@@ -17,6 +17,7 @@
 				  <thead>
 				  	<tr>
 				  		<th>出金银行</th>
+				  		<th>出金银行:账户-账号</th>
 				  		<th>申请时间</th>
 				  		<th>出金金额</th>
 				  		<th>实付金额</th>
@@ -29,6 +30,7 @@
 				  	<volist name="list" id="vo">
 					  	<tr>
 					  		<td>{$vo.bankname}</td>
+					  		<td>{$vo.bankaccount}</td>
 					  		<td>{$vo.applytime}</td>
 					  		<td>${$vo.money}</td>
 					  		<td>￥{$vo.reminbi}</td>
@@ -39,7 +41,11 @@
 					  			{$vo.checktime|date="Y-m-d H:i:s",###}
 								</if>
 					  		</td>
-					  		<td>{$vo.reason}</td>
+					  		<td>
+					  			<if condition="$vo['status'] eq 0">
+					  			<span style="padding:5px 10px" class="label label-danger">{$vo.reason}</span>
+					  			</if>
+					  		</td>
 					  		<td>
 					  			<if condition="$vo['status'] eq 1">
 					  			<span style="padding:5px 10px" class="label label-success">已完成</span>

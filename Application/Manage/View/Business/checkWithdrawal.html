@@ -1,155 +1,99 @@
 <include file="Public:header" />
-<link rel="stylesheet" type="text/css" href="__CSS__/account_info.css">
-	<script>
+	<script> 
 		$(function(){
 			highlight_subnav("{:U('Manage/Business/checkWithdrawal')}");
+			$('.bankicon span').bind('click',function(){
+				var url = $(this).attr('url');
+				layer.open({
+				    type: 1,
+				    title : false,
+				    skin: 'layui-layer-demo', //样式类名
+				    closeBtn: 0, //不显示关闭按钮
+				    shift: 1,
+				    area: ['505px', '320px'],
+				    shadeClose: true, //开启遮罩关闭
+				    content: '<img src="'+url+'">'
+				});
+			});
+			$('.backCheck').bind('click',function(){
+				var $self = $(this).parent();
+				var cid = $self.attr('cid');
+				layer.prompt({title: '审核不过原因', formType: 2}, function(text){
+					ajaxReturn("{:U('Manage/Business/recordReason')}",
+						{reason:text,id:cid},function(){
+						layer.msg('提交中...');
+					},function(res){
+						layer.closeAll();
+						if(res.status){
+							$self.prev().empty().append('<span style="padding:5px 10px" class="label label-danger">'+text+'</span>');
+							$self.prev().prev().empty().append(res.info);
+						}else{
+							layer.alert(res.info)
+						}
+					})
+			        
+			    });
+			})
 		})
-	</script>	
+	</script>
 </head>
 <body>
 	<include file="Public:menu" />
 	<div class="mainbody">
 		<include file="Public:leftmenu" />
+	
 		<div class="content-body">
 			<h2 class="body-title">出金审核</h2>
-			<div class="container">
-				<div class="form-inline self-line">
-					<div class="form-group">
-						<ul id="ways">
-							<li class="current">
-								<span class='glyphicon glyphicon-credit-card'></span>
-								<p class="into-way">提取额度到</p>
-								<p class="online-way">现有银行卡</p>
-								<i></i>
-							</li>
-							<li>
-								<span class='glyphicon glyphicon-credit-card'></span>
-								<p class="into-way">提取额度到</p>
-								<p class="online-way">其他银行卡</p>
-								<i></i>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div>
-					<div class="panl" id="panl-one">
-						<div class="form-inline self-line">
-						  <div class="form-group">
-						    <label>收款银行卡：</label>
-						    <dl id="banklists">
-						    	<volist name="list" id="vo" key='k' empty="暂时没有添加任何银行卡">
-							    	<dd cardid="{$vo.id}" <if condition="$k eq 1">class="current"</if>>
-							    		<span class="cny">{$vo.type}</span>
-							    		<span class="bank-icon {$vo.bankicon} curbank"></span>
-							    		<span class="bankno">{$vo.bankno}</span>
-							    		<span class="name">{$vo.name}</span>
-							    		<i></i>
-							    	</dd>
-						    	</volist>
-						    </dl>
-						  </div>
-						</div>
-						<div class="form-inline self-line">
-						   <div class="form-group">
-							    <label>出金金额：</label>&nbsp;&nbsp;&nbsp;
-							    <div class="input-group">
-							      <input type="text" name="chujinmoney" class="form-control" placeholder="本次出金金额">
-							      <div class="input-group-addon">USD</div>
-							    </div>
-							</div>
-						  <div class="form-group">
-						   <label for="">当前账户余额 $7,031.55</label>
-						  </div>
-						</div>
-						<div class="form-inline self-line" align="center">
-							<button id="chujin" class="btn btn-success btn-lg radius">确认并提交</button>
-						</div>
-					</div>
-					<div class="panl" style="display:none" id="panl-two">
-						<dl class="dl-horizontal">
-						    <dt>币种：</dt>
-						    <dd id="mm-type">
-						  		<span class="money-type type-current">
-						  			<span class="glyphicon glyphicon-yen icon"></span>
-						  			<span class="type-icon ">CNY</span>
-						  			<i></i>
-						  		</span>
-						  		<span class="money-type">
-						  			<span class="glyphicon glyphicon-usd icon"></span>
-						  			<span class="type-icon ">USD</span>
-						  			<i></i>
-						  		</span>
-						    </dd>
-						    <dt>发卡银行：</dt>
-						    <dd>
-						  		<div class="form-inline">
-						  		  <div class="form-group">
-								    <select name="" id="bank" class="form-control"></select>
-								  </div>
-								  <div class="form-group">
-								    <input type="text" name="area" class="form-control" placeholder="区域/城市">
-								  </div>
-								  <div class="form-group">
-								    <input type="text" name="zhibank" style="width:300px;" class="form-control" placeholder="支行名称">
-								  </div>
-								</div>
-						    </dd>
-						    <dt>账户：</dt>
-						    <dd>
-						  		<div class="form-inline">
-								  <div class="form-group">
-								    <input name="account" type="text" class="form-control" placeholder="户名">
-								  </div>
-								  <div class="form-group">
-								    <input name="accountNo" type="text" style="width:300px;" class="form-control" placeholder="银行帐号">
-								  </div>
-								</div>
-						    </dd>
-						    <dt>上传银行卡：</dt>
-						    <dd>
-						    	<div id="uploader-demo">
-							  		<span class="bankcard">
-							  			<div class="card-box zheng" id="fileList1">
-
-										</div>
-										<div class="card-op">
-											<div id="filePicker1">银行卡正面</div>
-											<span url="__IMG__/bankCardFront.png" class="suchas">示例</span>
-										</div>
-										
-							  		</span>
-							  		<span class="bankcard">
-							  			<div class="card-box fan" id="fileList2">
-							  				
-										</div>
-										<div class="card-op">
-											<div id="filePicker2">银行卡反面</div>
-											<span url="__IMG__/bankCardNegative.png" class="suchas">示例</span>
-										</div>
-							  		</span>
-							  	</div>
-						    </dd>
-						    <dt>出金金额：</dt>
-						    <dd>
-						    	<div class="form-inline">
-								   <div class="form-group">
-									    
-									    <div class="input-group">
-									      <input name="money" type="text" class="form-control" placeholder="出金金额">
-									      <div class="input-group-addon">USD</div>
-									    </div>
-									</div>
-								  <div class="form-group">
-								   <label for="">当前账户余额 $7,031.55</label>
-								  </div>
-								</div>
-						    </dd>
-						    <dd>
-						    	<a id="drawal" class="btn btn-success radius btn-lg">确认并提交</a>
-						    </dd>
-						</dl>
-					</div>
-				</div>
+			<div class="col-lg-12">
+				<table class="table table-hover">
+				  <thead>
+				  	<tr>
+				  		<th>申请人</th>
+				  		<th>出金银行</th>
+				  		<th>币种</th>
+				  		<th>出金银行:账户-账号</th>
+				  		<th>出金银行卡</th>
+				  		<th>申请时间</th>
+				  		<th>出金金额</th>
+				  		<th>实付金额</th>
+				  		<th>审核时间</th>
+				  		<th>审核不过原因</th>
+				  		<th>操作</th>
+				  	</tr>
+				  </thead>
+				  <tbody>
+				  	<volist name="list" id="vo">
+					  	<tr>
+					  		<td>{$vo.account}</td>
+					  		<td>{$vo.bankname}</td>
+					  		<td>{$vo.type}</td>
+					  		<td>{$vo.bankaccount}</td>
+					  		<td class="bankicon"><span url="{$vo.cardpositiveurl|ltrim=###,"."}" style="cursor:pointer;" class="label label-default">正面</span>&nbsp;&nbsp;<span url="{$vo.cardnegativeurl|ltrim=###,"."}" style="cursor:pointer;" class="label label-default">反面</span></td>
+					  		<td>{$vo.applytime}</td>
+					  		<td>${$vo.money}</td>
+					  		<td>￥{$vo.reminbi}</td>
+					  		<td>
+					  			<if condition="$vo['checktime'] neq ''">
+					  			{$vo.checktime}
+					  			<else/>
+								<span style="padding:5px 10px" class="label label-danger">未审核</span>
+					  			</if>
+					  			
+					  		</td>
+					  		<td><span style="padding:5px 10px" class="label label-danger">{$vo.reason}</span></td>
+					  		<td cid="{$vo.id}">
+					  			<if condition="$vo['status'] eq 1">
+					  			<span style="padding:5px 10px" class="label label-success">已完成</span>
+					  			<else/>
+								<button class="btn btn-info btn-sm radius backCheck">批回</button>
+								<button class="btn btn-success btn-sm radius">审核并打款</button>
+					  			</if>
+					  		</td>
+					  	</tr>
+					</volist>
+				  </tbody>
+				</table>
+				{$page}
 			</div>
 		</div>		
 	</div>

@@ -3,6 +3,7 @@
 	<script type="text/javascript" src="__JS__/payment_inTotal.js"></script>
 	<script> 
 		var echartUrl = "__STATIC__/echarts/build/dist";
+		var text = '月份出金分析';
 		$(function(){
 			highlight_subnav("{:U('Home/Payment/outTotal')}");
 			MyEcharts.init();
@@ -28,7 +29,7 @@
 				  	<volist name="list" id="vo">
 					  	<tr>
 					  		<td>{$vo.month}</td>
-					  		<td><span class="m">${$vo.total|changeRate=###}</span><span style="margin-left:10px;border:1px solid #ccc;border-radius:6px;padding: 2px 10px;">{$vo.hand}笔</span></td>
+					  		<td><span class="m">${$vo.total}</span><span style="margin-left:10px;border:1px solid #ccc;border-radius:6px;padding: 2px 10px;">{$vo.hand}笔</span></td>
 					  	</tr>
 					</volist>
 				  </tbody>

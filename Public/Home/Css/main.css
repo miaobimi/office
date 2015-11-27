@@ -28,7 +28,7 @@ span,a{
 	height: 100%;
 	text-align: center;
 	padding: 10px;
-	background: url(/resources/images/logo.png) #000 center center no-repeat;
+	background: url(../Images/login.png) #000 center center no-repeat;
 	background-size: 88%;
 }
 .topmenu #topright{
@@ -188,7 +188,7 @@ span,a{
 	margin-top: 10px;
 	box-shadow: 0 0 10px #ccc;
 }
-.mainbody .content-body h2{
+.mainbody .content-body > h2{
 	display: block;
 	color: #007AFF;
 	float: left;

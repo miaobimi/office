@@ -1,7 +1,186 @@
+.ICBC {
+    background-position: 0 -700px !important;
+}
+.ABC {
+    background-position: 0 0 !important;
+}
+.CMB {
+    background-position: 0 -308px !important;
+}
+.CIB {
+    background-position: 0 -252px !important;
+}
+.CITIC {
+    background-position: 0 -280px !important;
+}
+.CCB {
+    background-position: 0 -196px !important;
+}
+.BOC {
+    background-position: 0 -56px !important;
+}
+.COMM {
+    background-position: 0 -364px !important;
+}
+.SPDB {
+    background-position: 0 -1008px !important;
+}
+.CMBC {
+    background-position: 0 -336px !important;
+}
+.HXBANK {
+    background-position: 0 -644px !important;
+}
+.CEB {
+    background-position: 0 -224px !important;
+}
+.BJBANK {
+    background-position: 0 -28px !important;
+}
+.GDB {
+    background-position: 0 -476px !important;
+}
+.PSBC {
+    background-position: 0 -840px !important;
+}
+.SPABANK {
+    background-position: 0 -980px !important;
+}
+
 .content-body .content {
     width: 100%;
     padding:0 10px;
     float: left;
+}
+/*主页*/
+.content-body .content .counter-side{
+    width: 31.6%;
+    background: #f8f8f8 none repeat scroll 0 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
+    margin: 30px 0 0 0;
+    min-height: 400px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+.content-body .content .counter-side .counter-side-header{
+    background: #494949 linear-gradient(#494949 0px, #3e3e3e 100%) repeat scroll 0 0;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    padding: 20px 0;
+}
+.content-body .content .counter-side .counter-side-header .counter-side-header-h2{
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 0 none;
+    color: #fff;
+    font-size: 30px;
+    font-weight: normal;
+    padding: 0;
+    text-shadow: 0 -2px 0 rgba(0, 0, 0, 0.25);
+}
+.content-body .content .counter-side .counter-side-header .counter-side-header-h3{
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 0 none;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 400;
+    padding: 0;
+    text-shadow: 0 -2px 0 rgba(0, 0, 0, 0.25);
+}
+.content-body .content .counter-side .counter-side-text{
+    border-bottom: 1px solid #ddd;
+    color: #888;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 10px 30px 0;
+    /*padding: 0 10px 10px;*/
+    text-align: left;
+}
+.content-body .content .counter-side .counter-side-text strong{
+    color: #3d3d3d;
+}
+.content-body .content .counter-side .counter-side-list{
+    border-bottom: 1px solid #ddd;
+    color: #888;
+    font-size: 16px;
+    /*line-height: 30px;*/
+    margin: 15px 30px 0;
+    padding: 0 10px 15px;
+    text-align: left;
+}
+.content-body .content .counter-side .counter-side-list p span{
+    min-width: 30%;
+}
+.content-body .content .counter-side .counter-side-list p strong{
+    min-width: 35%;
+    display: inline-block;
+}
+.content-body .content .counter-side:nth-child(2n){
+    width: 32%;
+    margin: 0 2%;
+    min-height: 460px;
+}
+.content-body .content .counter-side:nth-child(2n) .counter-side-header{
+    background: #5abfff linear-gradient(#5abfff 0px, #2a95d9 100%) repeat scroll 0 0;
+}
+.content-body .content .counter-bottom .counter-bottom-left{
+    width: 49%;
+    float: left;
+}
+.content-body .content .counter-bottom .counter-bottom-left h2{
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: -moz-use-text-color -moz-use-text-color #b3cfee;
+    border-image: none;
+    border-style: none none double;
+    border-width: 0 0 3px;
+}
+.content-body .content .counter-bottom .counter-bottom-left ul li{
+    /*background: rgba(0, 0, 0, 0) url("images/dotline.gif") repeat-x scroll left bottom;*/
+    border-bottom: 1px dotted #CCCCCC;
+    font-size: 12px;
+    line-height: 26px;
+    margin-bottom: 0;
+    text-indent: 14px;
+    position: relative;
+    width: 100%;
+}
+.content-body .content .counter-bottom .counter-bottom-left ul li a{
+    background: rgba(0, 0, 0, 0) url("../Images/arrow_grey.gif") no-repeat scroll left center;
+    display: block;
+    height: 26px;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 85%;
+    word-break: keep-all; 
+}
+    
+.content-body .content .counter-bottom .counter-bottom-left ul li span{
+    color: #888;
+    font-family: Tahoma,Arial;
+    font-size: 11px;
+    position: absolute;
+    right: 5px;
+    top: 0;
+}
+.content-body .content .counter-bottom .counter-bottom-right{
+    width: 49%;
+    float: right;
+}
+.content-body .content .counter-bottom .counter-bottom-right h2{
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: -moz-use-text-color -moz-use-text-color #b3cfee;
+    border-image: none;
+    border-style: none none double;
+    border-width: 0 0 3px;
 }
 .content-body .content .dl-in{
     float: left;

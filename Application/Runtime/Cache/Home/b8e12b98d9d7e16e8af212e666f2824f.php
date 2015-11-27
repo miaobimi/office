@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit"/>
 	<title>office</title>
 	<script type="text/javascript" src="/Public/Static/jquery-1.10.2.min.js"></script>
 	<link rel="stylesheet" href="/Public/Static/bootstrapv3/css/bootstrap.min.css">
@@ -18,6 +20,15 @@
 	<script>
 		$(function(){
 			highlight_subnav("<?php echo U('Home/Account/editLeverage');?>");
+			$('#submit').bind('click',function(){
+				//接口
+				if(true){
+					layer.alert('修改成功',{icon:1});
+					window.location.reload();
+				}else{
+					layer.alert('修改失败',{icon:2});
+				}
+			})
 		})
 	</script>	
 </head>
@@ -28,18 +39,18 @@
 	</div>
 	<div id="topright">
 		<div class="login-name">
-			<span class="login">600777</span><br/>
-			<span class="name">adfdfjkdsjfls</span>
+			<span class="login"><?php echo session('uname');?></span><br/>
+			<span class="name"><?php echo session('uname');?></span>
 		</div>
 		<ul class="list-menu">
 			<li onclick="logout()"><a href="javascript:void(0)"><h1 class="glyphicon glyphicon-off"></h1><span>退出系统</span></a></li>
-			<li><a href=""><h1 class="glyphicon glyphicon-headphones"></h1><span>工单服务</span></a></li>
-			<li><a href=""><h1 class="glyphicon glyphicon-list-alt"></h1><span>账户信息</span></a></li>
-			<li><a href=""><h1 class="glyphicon glyphicon-time"></h1><span>历史交易</span></a></li>
-			<li><a href=""><h1 class="glyphicon glyphicon-piggy-bank"></h1><span>持仓订单</span></a></li>
-			<li><a href=""><h1 class="glyphicon glyphicon-minus"></h1><span>账户出金</span></a></li>
-			<li><a href=""><h1 class="glyphicon glyphicon-plus"></h1><span>账户入金</span></a></li>
-			<li><a href=""><h1 class="glyphicon glyphicon-home"></h1><span>系统主页</span> </a></li>		
+			<!-- <li><a href=""><h1 class="glyphicon glyphicon-headphones"></h1><span>工单服务</span></a></li> -->
+			<li><a href="<?php echo U('Home/Account/index');?>"><h1 class="glyphicon glyphicon-list-alt"></h1><span>账户信息</span></a></li>
+			<li><a href="<?php echo U('Home/Transaction/historyOrder');?>"><h1 class="glyphicon glyphicon-time"></h1><span>历史交易</span></a></li>
+			<li><a href="<?php echo U('Home/Transaction/index');?>"><h1 class="glyphicon glyphicon-piggy-bank"></h1><span>持仓订单</span></a></li>
+			<li><a href="<?php echo U('Home/Payment/outPayment');?>"><h1 class="glyphicon glyphicon-minus"></h1><span>账户出金</span></a></li>
+			<li><a href="<?php echo U('Home/Payment/index');?>"><h1 class="glyphicon glyphicon-plus"></h1><span>账户入金</span></a></li>
+			<li><a href="<?php echo U('Home/Index/index');?>"><h1 class="glyphicon glyphicon-home"></h1><span>系统主页</span> </a></li>		
 		</ul>
 	</div>
 </div>
@@ -114,17 +125,17 @@
 				<li>
 					<h2 class="menu001-sub">当前持仓</h2>	
 					<ul class="menu001">
-						<li><a href=""><span class="glyphicon glyphicon-home"></span>全部</a></li>
-						<li><a href=""><span class="glyphicon glyphicon-home"></span>订单</a></li>
-						<li><a href=""><span class="glyphicon glyphicon-home"></span>挂单</a></li>
+						<li><a href="<?php echo U('Home/Transaction/index');?>"><span class="glyphicon glyphicon-home"></span>全部</a></li>
+						<li><a href="<?php echo U('Home/Transaction/order');?>"><span class="glyphicon glyphicon-home"></span>订单</a></li>
+						<li><a href="<?php echo U('Home/Transaction/pending');?>"><span class="glyphicon glyphicon-home"></span>挂单</a></li>
 					</ul>
 				</li>
 				<li>
 					<h2 class="menu001-sub">历史交易</h2>
 					<ul class="menu001">
-						<li><a href=""><span class="glyphicon glyphicon-home"></span>订单</a></li>
-						<li><a href=""><span class="glyphicon glyphicon-home"></span>出入金</a></li>
-						<li><a href=""><span class="glyphicon glyphicon-home"></span>挂单</a></li>
+						<li><a href="<?php echo U('Home/Transaction/historyOrder');?>"><span class="glyphicon glyphicon-home"></span>订单</a></li>
+						<li><a href="<?php echo U('Home/Transaction/outAndInRecords');?>"><span class="glyphicon glyphicon-home"></span>出入金</a></li>
+						<li><a href="<?php echo U('Home/Transaction/historyPending');?>"><span class="glyphicon glyphicon-home"></span>挂单</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -168,7 +179,7 @@
 					  </div>
 					</div>
 					<div style="width: 30%;margin:40px auto;">
-						<button type="button" class="btn btn-success btn-block">确认并提交</button>
+						<button type="button" id="submit" class="btn btn-success btn-block">确认并提交</button>
 					</div>
 				</div>
 			</div><!--content-->	
