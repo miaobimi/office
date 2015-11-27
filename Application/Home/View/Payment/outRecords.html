@@ -28,10 +28,10 @@
 				  <tbody>
 				  	<volist name="list" id="vo">
 					  	<tr>
-					  		<td>{$vo.bank}</td>
-					  		<td>{$vo.applytime|date="Y-m-d H:i:s",###}</td>
-					  		<td>${$vo.money|changeRate=###}</td>
-					  		<td>￥{$vo.money}</td>
+					  		<td>{$vo.bankname}</td>
+					  		<td>{$vo.applytime}</td>
+					  		<td>${$vo.money}</td>
+					  		<td>￥{$vo.reminbi}</td>
 					  		<td>
 								<if condition="empty($vo['checktime'])">
 									

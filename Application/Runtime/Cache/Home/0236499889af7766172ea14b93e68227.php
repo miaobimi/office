@@ -13,12 +13,15 @@
 		var loginUrl = "<?php echo U('Home/Public/login');?>";
 		var logoutUrl = "<?php echo U('Home/Public/logout');?>";
 	</script>
-<link rel="stylesheet" type="text/css" href="/Public/Home/Css/account_info.css">
-	<script>
+	<script type="text/javascript" src="/Public/Static/echarts/build/dist/echarts.js"></script>
+	<script type="text/javascript" src="/Public/Home/Js/payment_inTotal.js"></script>
+	<script> 
+		var echartUrl = "/Public/Static/echarts/build/dist";
 		$(function(){
-			highlight_subnav("<?php echo U('Home/Account/editMainPass');?>");
+			highlight_subnav("<?php echo U('Home/Payment/outTotal');?>");
+			MyEcharts.init();
 		})
-	</script>	
+	</script>
 </head>
 <body>
 	<div class="topmenu">
@@ -130,41 +133,32 @@
 		</li>
 	</ul>
 </div>
+	
 		<div class="content-body">
-			<h2 class="body-title">主密码</h2>
-			<div class="content">
-				<div class="alert alert-info alert-dismissible" role="alert">
-				  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				  <strong>提示:</strong> 主密码用于网页以及所有客户端的登陆
-				</div>	
-				<div class="content-l">
-					<form class="form-horizontal" role="form">
-						<div class="form-group">
-					    	<label class="col-sm-2 control-label">帐号：</label>
-					    	<div class="col-sm-4">
-					    		<p class="form-control-static"><span class="label label-default">600777</span></p>
-					    	</div>  
-					    </div>
-					    <div class="form-group">
-					    	<label class="col-sm-2 control-label">新的密码：</label>
-					    	<div class="col-sm-4">
-					    		<input type="text" class="form-control" placeholder="请输入密码">
-					    	</div>   
-					    </div>
-					    <div class="form-group">
-					    	<label class="col-sm-2 control-label">再输一次：</label>
-					    	<div class="col-sm-4">
-					    		<input type="text" class="form-control" placeholder="请重新输入密码">
-					    	</div>				        
-					    </div>
-					    <div class="form-group" style="width: 30%;margin:40px auto;">
-							<button type="button" class="btn btn-success btn-block">确认并提交</button>
-						</div>
-					</form>
-					
-				</div>
-			</div><!--content-->	
+			<h2 class="body-title">出金统计</h2>
+			<div class="col-lg-4">
+				<table class="table table-hover">
+				  <thead>
+				  	<tr>
+				  		<th>月份</th>
+				  		<th>金额</th>
+				  	</tr>
+				  </thead>
+				  <tbody>
+				  	<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+					  		<td><?php echo ($vo["month"]); ?></td>
+					  		<td><span class="m">$<?php echo (changeRate($vo["total"])); ?></span><span style="margin-left:10px;border:1px solid #ccc;border-radius:6px;padding: 2px 10px;"><?php echo ($vo["hand"]); ?>笔</span></td>
+					  	</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+				  </tbody>
+				</table>
+			</div>
+			<div class="col-lg-2"></div>
+			<div class="col-lg-5">
+				<div id="main" style="display:block;float:left;width:600px;height:300px;"></div>
+			</div>
 		</div>		
-	</div>		
+	</div>
+
+		
 </body>
 </html>

@@ -190,7 +190,13 @@ class PaymentController extends Controller {
         $join = "mt_card ON mt_card.id=mt_withdrawal.cid where mt_withdrawal.account={$account}";
         $field = "mt_card.id,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checkTime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount";
         $list = $withdrawal->order('applyTime')->join($join)->limit($Page->firstRow.','.$Page->listRows)->field($field)->select();
-// p($list);die;
+        $banklist = C('bank');
+        foreach ($list as $k => $v) {
+            $banArr = explode('-', $v['bank']);
+            $list[$k]['bankname'] = $banklist[$banArr[0]].'-'.$banArr[1].'-'.$banArr[2];
+            $list[$k]['reminbi'] = changeRate($v['money'],true);
+            $list[$k]['applytime'] = date('Y-m-d H:i:s',$v['applytime']);
+        }
         $this->assign('list',$list);
         $this->assign('page',$show);
         $this->display();

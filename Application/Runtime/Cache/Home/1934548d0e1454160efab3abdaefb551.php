@@ -147,10 +147,10 @@
 				  </thead>
 				  <tbody>
 				  	<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-					  		<td><?php echo ($vo["bank"]); ?></td>
-					  		<td><?php echo (date("Y-m-d H:i:s",$vo["applytime"])); ?></td>
-					  		<td>$<?php echo (changeRate($vo["money"])); ?></td>
-					  		<td>￥<?php echo ($vo["money"]); ?></td>
+					  		<td><?php echo ($vo["bankname"]); ?></td>
+					  		<td><?php echo ($vo["applytime"]); ?></td>
+					  		<td>$<?php echo ($vo["money"]); ?></td>
+					  		<td>￥<?php echo ($vo["reminbi"]); ?></td>
 					  		<td>
 								<?php if(empty($vo['checktime'])): else: ?>
 					  			<?php echo (date("Y-m-d H:i:s",$vo["checktime"])); endif; ?>

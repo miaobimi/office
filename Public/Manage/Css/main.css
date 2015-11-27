@@ -1,0 +1,205 @@
+*{
+	margin :0;
+	padding: 0;
+	font-family: Arial,trebuchet MS,Helvetica,Tahoma,Microsoft YaHei;
+}
+a:hover{
+	text-decoration: none;
+}
+ul,li{
+	border: 0 none;
+	list-style: none;
+}
+span,a{
+	display: inline-block;
+	border: 0 none;
+}
+/*顶部菜单导航条*/
+.topmenu{
+	height: 102px;
+	font-size: 0;
+	padding: 0px;
+	border-bottom: 2px #f2dd42 solid;
+	box-shadow: 0 2px 0 #fddf9e;
+}
+.topmenu #logo{
+	float: left;
+	width: 16%;
+	height: 100%;
+	text-align: center;
+	padding: 10px;
+	background: url(/resources/images/logo.png) #000 center center no-repeat;
+	background-size: 88%;
+}
+.topmenu #topright{
+	float: left;
+	width: 84%;
+	height: 100%;
+	background-color: #33373a;
+}
+.topmenu #topright .login-name{
+	float: left;
+	padding-left: 25px;
+	padding-top: 20px;
+	width: 24%;
+	height: 100%;
+	background: #000000;
+}
+.topmenu #topright .login-name .login{
+	font-size: 36px;
+	line-height: 32px;
+	color: #fafcb8;
+	font-weight: normal;
+	font-family: Georgia;
+}
+.topmenu #topright .login-name .name{
+	font-size: 22px;
+	color: #eff7ff;
+}
+.topmenu #topright .list-menu{
+	padding:0;
+	float: right;
+	width: 76%;
+	height: 100%;
+	background: #000;
+}
+.topmenu #topright .list-menu li{
+	float: right;	
+	margin-left: 3px;
+	margin-right: 2px;
+	display: inline-block;
+	width: 10%;
+	height: 100%;
+	text-align: center;
+	background: #484B4E;
+}
+.topmenu #topright .list-menu li a{
+	display: block;
+	color: #f1f1f1;
+	font-size: 13px;
+	font-weight: normal;
+	
+}
+.topmenu #topright .list-menu li a span{
+	display: block;
+}
+/*左侧边栏*/
+.mainbody{
+	width: 100%;
+
+}
+.mainbody .leftmenu{
+	display: block;
+	float: left;
+	width: 16%;
+	height: 100%;
+	height: 820px;
+	background: #33373a;
+}
+.mainbody .leftmenu .menu{
+	display: block;
+	float: left;
+	width: 100%;
+	/*border: 1px solid red;*/
+}
+.mainbody .leftmenu .menu li{
+	position: relative;
+	display: block;
+	float: left;
+	width: 100%;
+}
+.mainbody .leftmenu .menu li .menu-title-current{
+	color: #ead03d;
+}
+.mainbody .leftmenu .menu li .menu-title{
+	display: block;
+	float: left;
+	width: 100%;
+	padding: 15px 0;
+	font-size: 16px;
+	border-bottom: 1px solid #888;
+	cursor: pointer;
+}
+.mainbody .leftmenu .menu a{
+	display: block;
+	float: left;
+	color: #bbbec5;
+}
+.mainbody .leftmenu .menu h2{
+	color: #bbbec5;
+	font-size: 15px;
+	text-indent: 10px;
+}
+.mainbody .leftmenu .menu li .menu-title span{
+	display: block;
+	float: left;
+	padding: 0 10px;
+}
+.mainbody .leftmenu .menu li .menu001{
+	display: block;
+	float: left;
+	line-height: 30px;
+	text-indent: 10px;
+}
+.mainbody .leftmenu .menu li .menu001 li a{
+	display: block;
+	float: left;
+	width: 100%;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+.mainbody .leftmenu .menu li .menu001 li a span{
+	padding: 0 10px;
+}
+.mainbody .leftmenu .menu li .menu001 li a.current{
+	background: #393D40;
+	color: #ead03d;
+}
+.mainbody .leftmenu .menu li .menu001 li a:hover{
+	background: #393D40;
+	color: #fff;
+}
+
+
+.mainbody .leftmenu .menu > li > a:after {
+    content: '';
+    display: block;
+    height: 7px;
+    width: 7px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border: 0;
+    border-top: .1em solid #888;
+    border-right: .1em solid #888;
+    position: absolute;
+    top: 25px;
+    right: 15px;
+}
+
+.mainbody .content-body{
+	display: block;
+	float: left;
+	padding: 0;
+	width: 82%;
+	/*border: 1px solid red;*/
+	height: 800px;
+	margin-left: 10px;
+	margin-top: 10px;
+	box-shadow: 0 0 10px #ccc;
+}
+.mainbody .content-body h2{
+	display: block;
+	color: #007AFF;
+	float: left;
+	height: 60px;
+	line-height: 60px;
+	width: 100%;
+	font-size: 20px;
+	text-indent: 10px;
+	background: #F8F8F8;
+	margin-top: 0;
+	border-bottom: 1px solid #CCCCCC;
+}
+
+

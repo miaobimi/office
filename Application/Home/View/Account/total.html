@@ -1,9 +1,52 @@
 <include file="Public:header" />
 <link rel="stylesheet" type="text/css" href="__CSS__/account_info.css">
+	<script type="text/javascript" src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+	<script type="text/javascript" src="http://cdn.hcharts.cn/highcharts/exporting.js"></script>
 	<script>
 		$(function(){
-			highlight_subnav("{:U('Home/Account/total')}");
-		})
+			highlight_subnav("{:U('Home/Account/total')}");//导航高亮
+		$('#container').highcharts({ //图标
+		        chart: {
+		            type: 'line'
+		        },
+		        title: {
+		            text: '余额走势'
+		        },
+		        subtitle: {
+		            text: 'The Last Month Balance Changes'
+		        },
+		        xAxis: {
+		            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+		        },
+		        yAxis: {
+		            title: {
+		                text: '余额 (k)'
+		            }
+		        },
+		        tooltip: {
+		            enabled: false,
+		            formatter: function() {
+		                return '<b>'+ this.series.name +'</b><br/>'+this.x +': '+ this.y +'°C';
+		            }
+		        },
+		        plotOptions: {
+		            line: {
+		                dataLabels: {
+		                    enabled: true
+		                },
+		                enableMouseTracking: true
+		            }
+		        },
+		        series: [{
+		            name: 'Tokyo',
+		            data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+		        }]
+		    });
+		});
+		
+    
+				
 	</script>	
 </head>
 <body>
@@ -53,6 +96,7 @@
 						<span>可用保证金</span><strong field="memberMarginfree">$8,286.44</strong>
 					</div>
 				</div>
+				<div id="container" style="min-width:700px;height:400px"></div>
 			</div>
 			
 			
