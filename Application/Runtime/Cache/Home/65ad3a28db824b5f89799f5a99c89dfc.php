@@ -15,15 +15,14 @@
 		var loginUrl = "<?php echo U('Home/Public/login');?>";
 		var logoutUrl = "<?php echo U('Home/Public/logout');?>";
 	</script>
-	<script type="text/javascript" src="/Public/Static/echarts/build/dist/echarts.js"></script>
-	<script type="text/javascript" src="/Public/Home/Js/payment_inTotal.js"></script>
-	<script> 
-		var echartUrl = "/Public/Static/echarts/build/dist";
+<link rel="stylesheet" type="text/css" href="/Public/Home/Css/account_info.css">
+<link rel="stylesheet" type="text/css" href="/Public/Home/Css/common.css">
+<script src="/Public/Static/layer/laydate/laydate.js"></script>
+	<script>
 		$(function(){
-			highlight_subnav("<?php echo U('Home/Payment/inTotal');?>");
-			MyEcharts.init();
+			highlight_subnav("<?php echo U('Home/Transaction/order');?>");
 		})
-	</script>
+	</script>	
 </head>
 <body>
 	<div class="topmenu">
@@ -135,32 +134,135 @@
 		</li>
 	</ul>
 </div>
-	
 		<div class="content-body">
-			<h2 class="body-title">入金统计</h2>
-			<div class="col-lg-4">
-				<table class="table table-hover">
-				  <thead>
-				  	<tr>
-				  		<th>月份</th>
-				  		<th>金额</th>
-				  	</tr>
-				  </thead>
-				  <tbody>
-				  	<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-					  		<td><?php echo ($vo["month"]); ?></td>
-					  		<td><span class="m">$<?php echo (changeRate($vo["total"])); ?></span><span style="margin-left:10px;border:1px solid #ccc;border-radius:6px;padding: 2px 10px;"><?php echo ($vo["hand"]); ?>笔</span></td>
-					  	</tr><?php endforeach; endif; else: echo "" ;endif; ?>
-				  </tbody>
-				</table>
-			</div>
-			<div class="col-lg-2"></div>
-			<div class="col-lg-5">
-				<div id="main" style="display:block;float:left;width:600px;height:300px;"></div>
-			</div>
+			<h2 class="body-title">持仓订单</h2>
+			<div class="content">
+				<div class="content-in">
+					<div class="x-search-panel">
+						<form onsubmit="return false;" method="post" name="search" class="x-form">
+							<fieldset>
+								<input type="hidden" value="histTrades" name="cmd">
+								<input type="hidden" value="order" name="menu">
+								<div class="column">
+									<dl><dt>产品：</dt><dd><input type="text" placeholder="" class="w30" value="" name="product" vtype=""></dd></dl>
+								</div>
+								<div class="column">
+									<dl><dt>盈亏范围：</dt><dd><input type="text" placeholder="大于等于" class="w30" value="" name="startNumber" vtype="number"><span class="space">-</span><input type="text" placeholder="小余等于" class="w30" value="" name="endNumber" vtype="number"></dd></dl>
+								</div>
+								<div class="column">
+									<dl><dt>开仓日期：</dt><dd><input type="text" placeholder="从" class="w30 hasDatepicker" value="" name="openStartDate" vtype="date" id="dp1448674094663"><span class="space">-</span><input type="text" placeholder="到" class="w30 hasDatepicker" value="" name="openEndDate" vtype="date" id="dp1448674094664"></dd></dl>
+								</div>
+								<div class="column">
+									<dl><dt>平仓日期：</dt><dd><input type="text" placeholder="从" class="w30 hasDatepicker" value="" name="closeStartDate" vtype="date" id="dp1448674094665"><span class="space">-</span><input type="text" placeholder="到" class="w30 hasDatepicker" value="" name="closeEndDate" vtype="date" id="dp1448674094666"></dd></dl>
+								</div>
+								<div class="column">
+									<div class="x-submit-panel"><button class="btn btn-success" type="submit">搜 索</button>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+					<div style="background: #ccc;height: 0.5px;"></div>
+					<table class="table table-bordered table-hover">
+					  <thead>
+					  	<tr class="info">
+					  		<th>订单</th>
+					  		<th>交易类型</th>
+					  		<th class="x-text-right">成交量</th>
+					  		<th>开仓</th>
+					  		<th>平仓</th>
+					  		<th class="x-text-right">止损/止盈</th>
+					  		<th class="x-text-right">盈亏</th>
+					
+					  	</tr>
+					  </thead>
+					  <tbody>
+					  	<tr>
+					  		<td>#389190</td>
+					  		<td>
+					  			<span class="label label-primary">买入</span><span class="x-box-label" style="float:right">XAUUSD.stp</span>
+					  		</td>
+					  		<td class="x-text-right x-text-bold x-font-14">2.00 手</td>
+					  		<td>
+					  			<strong>2015-11-25</strong><br><span class="x-text-ccc">01:47:38</span><span class="x-box-label" style="float:right;margin-top:-20px;">1,078.39</span>
+					  		</td>
+					  		<td>
+					  			<strong>2015-11-25</strong><br><span class="x-text-ccc">01:47:38</span><span class="x-box-label" style="float:right;margin-top:-20px;">1,078.39</span>
+					  		</td>
+					  		<td class="x-text-right">
+					  			<span class="x-text-ccc">0.00</span><span class="y"></span><span>1,082.32</span>
+					  		</td>
+					  		<td class="x-text-right">
+					  			<span class="x-box-label x-text-bold x-text-red x-font-16">$-3,421.84</span>
+					  		</td>
+					  	</tr>
+					  </tbody>
+					  <tbody>
+					  	<tr>
+					  		<td>#389190</td>
+					  		<td>
+					  			<span class="label label-warning">卖出</span><span class="x-box-label" style="float:right">XAUUSD.stp</span>
+					  		</td>
+					  		<td class="x-text-right x-text-bold x-font-14">2.00 手</td>
+					  		<td>
+					  			<strong >2015-11-25</strong><br><span class="x-text-ccc">01:47:38</span><span class="x-box-label" style="float:right;margin-top:-20px;">1,078.39</span>
+					  		</td>
+					  		<td>
+					  			<strong>2015-11-25</strong><br><span class="x-text-ccc">01:47:38</span><span class="x-box-label" style="float:right;margin-top:-20px;">1,078.39</span>
+					  		</td>
+					  		<td class="x-text-right">
+					  			<span class="x-text-ccc">0.00</span><span class="y"></span><span>0.00</span>
+					  		</td>
+					  		<td class="x-text-right">
+					  			<span class="x-box-label x-text-bold x-text-green x-font-16">$1,42</span>
+					  		</td>
+					  	</tr>
+					  </tbody>
+					  <tbody>
+					  	<tr class="warning">
+					  		<td style="border-width:0"></td>
+					  		<td style="border-width:0"></td>
+					  		<td style="border-width:0" class="x-text-right x-text-bold x-font-14">4.00</td>
+					  		<td style="border-width:0"></td>
+					  		<td style="border-width:0"></td>
+					  		<td style="border-width:0"></td>
+					  		<td class="x-text-right" style="border-width:0">
+					  			<span class="x-text-bold x-font-14">$-3279.40</span>
+					  		</td>
+					  	</tr>
+					  </tbody>
+					</table>
+				</div><!--content-in-->
+			</div><!--content-->	
 		</div>		
 	</div>
+	<script type="text/javascript">
+	// layerdata
+        laydate.skin('molv');
 
-		
+         //日期范围限制
+        var firstdate = {
+            elem: '#firstdate',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            min: laydate.now(), //设定最小日期为当前日期
+            max: '2099-06-16 23:59:59', //最大日期
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+            }
+        };
+        var lastdate = {
+            elem: '#lastdate',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            min: laydate.now(),
+            max: '2099-06-16 23:59:59',
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+            }
+        };
+        laydate(firstdate);
+        laydate(lastdate);	
+	</script>		
 </body>
 </html>

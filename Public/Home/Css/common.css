@@ -1,0 +1,174 @@
+.x-box-label {
+    background-color: #fff;
+    border: 1px solid #999;
+    border-radius: 20px;
+    color: #999;
+    cursor: default;
+    display: inline;
+    line-height: 14px;
+    padding: 3px 10px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.58);
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+.x-right {
+    float: none;
+    margin-top: -10px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+.x-text-red {
+    color: #ff5d5b !important;
+    border-color: #ff5d5b;
+}
+.x-text-green {
+    color: #3aae01 !important;
+    border-color: #3aae01;
+}
+.x-text-ccc {
+    color: #999 !important;
+}
+.x-text-bold {
+    font-weight: bold;
+}
+.x-font-16 {
+    font-size: 16px !important;
+}
+.x-font-14 {
+    font-size: 14px !important;
+}
+.x-text-right {
+    text-align: right;
+}
+.x-text-center{
+    text-align: center;
+}
+.y {
+    border-right: 1px solid #ccc;
+    display: inline-block;
+    font-size: 10px;
+    height: 10px;
+    margin: -15px 10px 0;
+    overflow: hidden;
+}
+.x-search-panel {
+    background-color: #fbfdff;
+    border-bottom: 1px solid #cbdaea;
+    font-size: 0;
+    padding: 20px;
+}
+.x-form {
+    margin: auto;
+    padding: 0;
+    position: relative;
+}
+.x-search-panel .x-form .column {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+}
+.x-form dl::after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.x-search-panel .x-form dl {
+    background-image: none;
+    font-size: 0;
+    padding: 5px;
+    width: 100%;
+}
+.x-form dl {
+    display: block;
+    padding: 10px 30px 0 0;
+    position: relative;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.x-search-panel .x-form dl dt {
+    color: #4d4d4d;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: right;
+    vertical-align: middle;
+    width: 20%;
+}
+.x-form dl dt {
+    color: #172b5a;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 18px;
+    padding: 9px 5px 7px 0;
+    text-align: right;
+    vertical-align: top;
+    width: 16%;
+}
+.x-search-panel .x-form dl dd {
+    display: inline-block;
+    font-size: 0;
+    padding: 0;
+    vertical-align: middle;
+    width: 80%;
+}
+.x-form dl dd {
+    clear: both;
+    display: inline-block;
+    line-height: 22px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: left;
+    vertical-align: top;
+    width: 84%;
+}
+
+.x-search-panel .x-form dl dd input, .x-search-panel .x-form dl dd select {
+    border-radius: 0;
+    display: inline-block;
+    height: 30px;
+    line-height: 20px;
+    padding: 5px;
+}
+.x-form input[type="text"], .x-form input[type="date"], .x-form input[type="number"], .x-form input[type="email"], .x-form input[type="url"], .x-form input[type="password"], .x-form select, .x-form textarea {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555;
+    font: 14px/14px Verdana,Microsoft YaHei,Arial,Helvetica,Tahoma;
+    margin: 0 0 3px;
+    padding: 8px;
+    position: relative;
+    vertical-align: middle;
+    width: 100%;
+}
+.w30 {
+    width: 30% !important;
+}
+.x-search-panel .x-form dl dd .space {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    width: 3%;
+}
+.x-search-panel .x-form .x-submit-panel {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.x-search-panel .x-form .x-submit-panel button {
+    font-size: 18px;
+    height: 40px;
+    line-height: 18px;
+    margin: 0 0 0 20.4%;
+    padding: 10px;
+    width: 120px;
+}

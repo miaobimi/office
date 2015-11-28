@@ -1,0 +1,110 @@
+<include file="Public:header" />
+<link rel="stylesheet" type="text/css" href="__CSS__/account_info.css">
+<link rel="stylesheet" type="text/css" href="__CSS__/common.css">
+<script src="__STATIC__/layer/laydate/laydate.js"></script>
+	<script>
+		$(function(){
+			highlight_subnav("{:U('Home/Transaction/outAndInRecords')}");
+		})
+	</script>	
+</head>
+<body>
+	<include file="Public:menu" />
+	<div class="mainbody">
+		<include file="Public:leftmenu" />
+		<div class="content-body">
+			<h2 class="body-title">出入金历史</h2>
+			<div class="content">
+				<div class="content-in">
+					<div class="x-search-panel"><form onsubmit="return false;" method="post" name="search" class="x-form"><fieldset><input type="hidden" value="histTrades" name="cmd"><input type="hidden" value="finance" name="menu"><div class="column"><dl><dt>交易日期：</dt><dd><input type="text" placeholder="从" class="w30 hasDatepicker" value="" name="closeStartDate" vtype="date" id="dp1448674094667"><span class="space">-</span><input type="text" placeholder="到" class="w30 hasDatepicker" value="" name="closeEndDate" vtype="date" id="dp1448674094668"></dd></dl></div><div class="column"><dl><dt>金额范围：</dt><dd><input type="text" placeholder="大于等于" class="w30" value="" name="startNumber" vtype="number"><span class="space">-</span><input type="text" placeholder="小余等于" class="w30" value="" name="endNumber" vtype="number"></dd></dl></div><div class="column"><div class="x-submit-panel"><button class="btn btn-success" type="submit">搜 索</button></div></div></fieldset></form></div><!--data-option-->
+					<div style="background: #ccc;height: 0.5px;"></div>
+					<table class="table table-bordered table-hover">
+					  <thead>
+					  	<tr class="info">
+					  		<th class="x-text-center">#</th>
+					  		<th>订单</th>
+					  		<th class="x-text-center">交易类型</th>
+					  		<th>时间</th>
+					  		<th class="x-text-center">金额</th>
+					  		<th>注释</th>
+					  	</tr>
+					  </thead>
+					  <tbody>
+					  	<tr>
+					  		<td class="x-text-center">1</td>
+					  		<td>#389190</td>
+					  		<td class="x-text-center">
+					  			<span class="label label-success">入金</span>
+					  		</td>
+					  		<td>
+					  			<strong>2015-11-25</strong>&nbsp;&nbsp;<span class="x-text-ccc">01:47:38</span>
+					  		</td>
+					  		<td class="x-text-center">
+					  			<span class="x-box-label x-text-bold x-text-red x-font-16">$3,421.84</span>
+					  		</td>
+					  		<td></td>
+					  	</tr>
+					  </tbody>
+					  <tbody>
+					  	<tr>
+					  		<td class="x-text-center">2</td>
+					  		<td>#389190</td>
+					  		<td class="x-text-center">
+					  			<span class="label label-danger">出金</span>
+					  		</td>
+					  		<td>
+					  			<strong >2015-11-25</strong>&nbsp;&nbsp;<span class="x-text-ccc">01:47:38</span>
+					  		</td>
+					  		<td class="x-text-center">
+					  			<span class="x-box-label x-text-bold x-text-green x-font-16">$-125.04</span>
+					  		</td>
+					  		<td></td>
+					  	</tr>
+					  </tbody>
+					  <tbody>
+					  	<tr class="warning">
+					  		<td style="border-width:0"></td>
+					  		<td style="border-width:0"></td>
+					  		<td style="border-width:0"></td>
+					  		<td style="border-width:0"></td>
+					  		<td class="x-text-center" style="border-width:0">
+					  			<span class="x-text-bold x-font-14">$3296.80</span>
+					  		</td>
+					  		<td style="border-width:0"></td>
+					  	</tr>
+					  </tbody>
+					</table>
+				</div><!--content-in-->
+			</div><!--content-->	
+		</div>		
+	</div>
+	<script type="text/javascript">
+	// layerdata
+        laydate.skin('molv');
+
+         //日期范围限制
+        var firstdate = {
+            elem: '#firstdate',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            min: laydate.now(), //设定最小日期为当前日期
+            max: '2099-06-16 23:59:59', //最大日期
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+            }
+        };
+        var lastdate = {
+            elem: '#lastdate',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            min: laydate.now(),
+            max: '2099-06-16 23:59:59',
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+            }
+        };
+        laydate(firstdate);
+        laydate(lastdate);	
+	</script>		
+</body>
+</html>

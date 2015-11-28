@@ -202,6 +202,16 @@
 					</div>
 					<div class="counter-bottom-right">
 						<h2>盈亏监控</h2>
+						<div class="counter-money">
+							<span>
+								<strong>持仓订单</strong><br>
+								交易笔数：2 笔　4.00 手<br>
+								更新时间：aN:aN:aN
+							</span>
+							<label>
+								盈亏：$-5,235.06
+							</label>
+						</div>
 					</div>
 				</div>
 			</div><!--content-->

@@ -46,11 +46,83 @@
 .SPABANK {
     background-position: 0 -980px !important;
 }
+#panl-two dl dd{
+    margin-bottom: 20px;
+}
+#panl-two dl dd .type-current i {
+    background: url("../Images/x-icon.png") no-repeat scroll -21px -300px;
+    display: block;
+    height: 19px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 19px;
+}
+#panl-two dl dd .money-type{
+    display: block;
+    cursor: pointer;
+    float: left;
+    width: 145px;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid #B0C2E1;
+    position: relative;
+    margin : 0 10px 0 0;
+    color: #666695;
+}
+#panl-two dl dd .type-current{
+    color: red;
+    border: 1px solid red;
+}
+#panl-two dl dd .money-type .icon{
+    display: block;
+    position: absolute;
+    top: 7px;
+    left: 40px;
+
+}
+#panl-two dl dd .money-type .type-icon{
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 55px;
+}
+#panl-two dl dd .bankcard .card-box{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+    width: 320px;
+    height: 223px;
+    margin-bottom: 10px;
+}
+#panl-two dl dd .bankcard .zheng{
+    background: url('../Images/zheng.png') no-repeat center center;
+}
+#panl-two dl dd .bankcard .fan{
+    background: url('../Images/fan.png') no-repeat center center;
+}
+#panl-two dl dd .bankcard .card-box .card-type{
+    margin: 5px;
+    color:#ccc;
+}
+#panl-two dl dd .bankcard .card-box h3{
+    text-align: center;
+    color:#666;
+}
+#panl-two dl dd .bankcard .suchas{
+    padding: 2px 10px;
+    background: #ccc;
+    color: #000;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+}
 
 .content-body .content {
     width: 100%;
     padding:0 10px;
     float: left;
+    overflow-y:auto;
 }
 /*主页*/
 .content-body .content .counter-side{
@@ -182,6 +254,38 @@
     border-style: none none double;
     border-width: 0 0 3px;
 }
+.content-body .content .counter-bottom .counter-bottom-right .counter-money{
+    width: 100%;
+    background: #F8F8F8;
+    position: relative;
+}
+.content-body .content .counter-bottom .counter-bottom-right .counter-money span{
+    
+}
+.content-body .content .counter-bottom .counter-bottom-right .counter-money span strong{
+    background: #fff;
+    border-radius: 20px;
+    border: 1px solid #999;
+    padding: 3px 10px;
+    text-align: center;
+    border-color: #ff5d5b;
+    color: #ff5d5b;
+    display: inline-block;
+}
+.content-body .content .counter-bottom .counter-bottom-right .counter-money label{
+    background: #feed6f;
+    border-radius: 3px;
+    box-shadow: 3px 3px 1px #c7c7c7;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 130%;
+    padding: 6px 15px;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}
+
 .content-body .content .dl-in{
     float: left;
     width: 60%;

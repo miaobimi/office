@@ -20,7 +20,7 @@
 <script src="/Public/Static/layer/laydate/laydate.js"></script>
 	<script>
 		$(function(){
-			highlight_subnav("<?php echo U('Home/Account/traderList');?>");
+			highlight_subnav("<?php echo U('Home/Transaction/historyOrder');?>");
 		})
 	</script>	
 </head>
@@ -135,64 +135,100 @@
 	</ul>
 </div>
 		<div class="content-body">
-			<h2 class="body-title">我的账户</h2>
+			<h2 class="body-title">历史交易</h2>
 			<div class="content">
 				<div class="content-in">
-					<div class="date-option">
-						<form class="form-horizontal" role="form">
-						   <div class="form-group">
-						      <label class="col-sm-2 control-label">日期：</label>
-						      <div class="col-sm-4">
-						         <input type="text" class="form-control" id="firstdate" 
-						            placeholder="请输入起始日期">
-						             
-						      </div>
-						      <label class="col-sm-1">－</label>       
-						      <div class="col-sm-4">
-						      	<input type="text" class="form-control" id="lastdate" 
-						            placeholder="请输入截至日期">
-						      </div>
-						   </div>
-						   <div class="form-group">
-						      <label class="col-sm-2 control-label"></label>
-						      <div class="col-sm-4">
-						      	<button type="button" class="btn btn-success btn-lg" >
-						      	搜索
-						      	</button>
-						      </div>
-						      
-						   </div>
+					<div class="x-search-panel">
+						<form onsubmit="return false;" method="post" name="search" class="x-form">
+							<fieldset>
+								<input type="hidden" value="histTrades" name="cmd">
+								<input type="hidden" value="order" name="menu">
+								<div class="column">
+									<dl><dt>产品：</dt><dd><input type="text" placeholder="" class="w30" value="" name="product" vtype=""></dd></dl>
+								</div>
+								<div class="column">
+									<dl><dt>盈亏范围：</dt><dd><input type="text" placeholder="大于等于" class="w30" value="" name="startNumber" vtype="number"><span class="space">-</span><input type="text" placeholder="小余等于" class="w30" value="" name="endNumber" vtype="number"></dd></dl>
+								</div>
+								<div class="column">
+									<dl><dt>开仓日期：</dt><dd><input type="text" placeholder="从" class="w30 hasDatepicker" value="" name="openStartDate" vtype="date" id="openStartDate"><span class="space">-</span><input type="text" placeholder="到" class="w30 hasDatepicker" value="" name="openEndDate" vtype="date" id="openEndDate"></dd></dl>
+								</div>
+								<div class="column">
+									<dl><dt>平仓日期：</dt><dd><input type="text" placeholder="从" class="w30 hasDatepicker" value="" name="closeStartDate" vtype="date" id="closeStartDate"><span class="space">-</span><input type="text" placeholder="到" class="w30 hasDatepicker" value="" name="closeEndDate" vtype="date" id="closeEndDate"></dd></dl>
+								</div>
+								<div class="column">
+									<div class="x-submit-panel"><button class="btn btn-success" type="submit">搜 索</button>
+									</div>
+								</div>
+							</fieldset>
 						</form>
-
-					</div><!--data-option-->
+					</div>
 					<div style="background: #ccc;height: 0.5px;"></div>
-					<table class="table table-hover">
+					<table class="table table-bordered table-hover">
 					  <thead>
 					  	<tr class="info">
-					  		<th>日期</th>
-					  		<th>交易</th>
-					  		<th>佣金</th>
-					  		<th>利息</th>
-					  		<th>成交量</th>
-					  		<th>挂单</th>
-					  		<th>入金</th>
-					  		<th>出金</th>
-					  		<th>信用</th>
-					  		<th>净入金</th>
+					  		<th>订单</th>
+					  		<th>交易类型</th>
+					  		<th class="x-text-right">成交量</th>
+					  		<th>开仓</th>
+					  		<th>平仓</th>
+					  		<th class="x-text-right">止损/止盈</th>
+					  		<th class="x-text-right">盈亏</th>
+					
 					  	</tr>
 					  </thead>
 					  <tbody>
 					  	<tr>
-					  		<td>2015-11-10</td>
-					  		<td>$0.00 0 笔</td>
-					  		<td>$0.00</td>
-					  		<td>$0.00</td>
-					  		<td>0.00手</td>
-					  		<td>0手0 笔</td>
-					  		<td>0手0 笔</td>
-					  		<td>0手0 笔</td>
-					  		<td>0手0 笔</td>
-					  		<td><span class="x-box-label">$0.00</span></td>
+					  		<td>#389190</td>
+					  		<td>
+					  			<span class="label label-primary">买入</span><span class="x-box-label" style="float:right">XAUUSD.stp</span>
+					  		</td>
+					  		<td class="x-text-right x-text-bold x-font-14">2.00 手</td>
+					  		<td>
+					  			<strong>2015-11-25</strong><br><span class="x-text-ccc">01:47:38</span><span class="x-box-label" style="float:right;margin-top:-20px;">1,078.39</span>
+					  		</td>
+					  		<td>
+					  			<strong>2015-11-25</strong><br><span class="x-text-ccc">01:47:38</span><span class="x-box-label" style="float:right;margin-top:-20px;">1,078.39</span>
+					  		</td>
+					  		<td class="x-text-right">
+					  			<span class="x-text-ccc">0.00</span><span class="y"></span><span>1,082.32</span>
+					  		</td>
+					  		<td class="x-text-right">
+					  			<span class="x-box-label x-text-bold x-text-red x-font-16">$-3,421.84</span>
+					  		</td>
+					  	</tr>
+					  </tbody>
+					  <tbody>
+					  	<tr>
+					  		<td>#389190</td>
+					  		<td>
+					  			<span class="label label-warning">卖出</span><span class="x-box-label" style="float:right">XAUUSD.stp</span>
+					  		</td>
+					  		<td class="x-text-right x-text-bold x-font-14">2.00 手</td>
+					  		<td>
+					  			<strong >2015-11-25</strong><br><span class="x-text-ccc">01:47:38</span><span class="x-box-label" style="float:right;margin-top:-20px;">1,078.39</span>
+					  		</td>
+					  		<td>
+					  			<strong>2015-11-25</strong><br><span class="x-text-ccc">01:47:38</span><span class="x-box-label" style="float:right;margin-top:-20px;">1,078.39</span>
+					  		</td>
+					  		<td class="x-text-right">
+					  			<span class="x-text-ccc">0.00</span><span class="y"></span><span>0.00</span>
+					  		</td>
+					  		<td class="x-text-right">
+					  			<span class="x-box-label x-text-bold x-text-green x-font-16">$1,42</span>
+					  		</td>
+					  	</tr>
+					  </tbody>
+					  <tbody>
+					  	<tr class="warning">
+					  		<td style="border-width:0"></td>
+					  		<td style="border-width:0"></td>
+					  		<td style="border-width:0" class="x-text-right x-text-bold x-font-14">4.00</td>
+					  		<td style="border-width:0"></td>
+					  		<td style="border-width:0"></td>
+					  		<td style="border-width:0"></td>
+					  		<td class="x-text-right" style="border-width:0">
+					  			<span class="x-text-bold x-font-14">$-3279.40</span>
+					  		</td>
 					  	</tr>
 					  </tbody>
 					</table>
@@ -205,28 +241,50 @@
         laydate.skin('molv');
 
          //日期范围限制
-        var firstdate = {
-            elem: '#firstdate',
+        var openStartDate = {
+            elem: '#openStartDate',
             format: 'YYYY/MM/DD hh:mm:ss',
-            min: laydate.now(), //设定最小日期为当前日期
+            //min: laydate.now(),
             max: '2099-06-16 23:59:59', //最大日期
             istime: true,
             istoday: false,
             choose: function (datas) {
             }
         };
-        var lastdate = {
-            elem: '#lastdate',
+        var openEndDate = {
+            elem: '#openEndDate',
             format: 'YYYY/MM/DD hh:mm:ss',
-            min: laydate.now(),
+            //min: laydate.now(),
             max: '2099-06-16 23:59:59',
             istime: true,
             istoday: false,
             choose: function (datas) {
             }
         };
-        laydate(firstdate);
-        laydate(lastdate);	
+        var closeStartDate = {
+	        elem: '#closeStartDate',
+	        format: 'YYYY/MM/DD hh:mm:ss',
+	        //min: laydate.now(),
+	        max: '2099-06-16 23:59:59',
+	        istime: true,
+	        istoday: false,
+	        choose: function (datas) {
+	        }
+	    };
+	    var closeEndDate = {
+	        elem: '#closeEndDate',
+	        format: 'YYYY/MM/DD hh:mm:ss',
+	       //min: laydate.now(),
+	        max: '2099-06-16 23:59:59',
+	        istime: true,
+	        istoday: false,
+	        choose: function (datas) {
+	        }
+	    };
+        laydate(openStartDate);
+        laydate(openEndDate);	
+        laydate(closeStartDate);	
+        laydate(closeEndDate);	
 	</script>		
 </body>
 </html>
