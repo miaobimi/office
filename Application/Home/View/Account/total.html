@@ -1,5 +1,6 @@
 <include file="Public:header" />
 <link rel="stylesheet" type="text/css" href="__CSS__/account_info.css">
+<link rel="stylesheet" type="text/css" href="__CSS__/common.css">
 	<script type="text/javascript" src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
 	<script type="text/javascript" src="http://cdn.hcharts.cn/highcharts/exporting.js"></script>
 	<script>
@@ -56,28 +57,52 @@
 			<h2 class="body-title">账户统计</h2>
 			<div class="content">
 				<div class="dl-in">
-					<dl class="dl-horizontal">
-					  <dt>入金:</dt>
-					  <dd>$10,010.002 笔</dd>
-					  <dt>信用:</dt>
-					  <dd>$0.000 笔</dd>
-					  <dt>出金:</dt>
-					  <dd>$0.000 笔</dd>
-					  <dt></dt>
-					  <dd>$10,010.00</dd>
-					</dl>
-					<dl class="dl-horizontal">
-					  <dt>交易:</dt>
-					  <dd>$-2,830.492   5 笔 | 24.10 手</dd>
-					  <dt>佣金:</dt>
-					  <dd>$-53.00</dd>
-					  <dt>税金:</dt>
-					  <dd>$0.00</dd>
-					  <dt>利息:</dt>
-					  <dd>$-94.96</dd>
-					  <dt></dt>
-					  <dd>$-2,978.45</dd>
-					</dl>
+					<table class="table table-striped table-condensed ">
+					   <tbody>
+					      <tr>
+					         <td class="x-text-right info">入金:</td>
+					         <td>$10,010.00<span class="x-text-ccc" style="float:right">2 笔</span></td>
+					      </tr>
+					      <tr>
+					         <td class="x-text-right info">信用:</td>
+					         <td>$0.00<span class="x-text-ccc" style="float:right">0 笔</span></td>
+					      </tr>
+					      <tr>
+					         <td class="x-text-right info">出金:</td>
+					         <td>
+								$0.00<span class="x-text-ccc" style="float:right">0 笔</span>
+					         </td>
+					      </tr>
+					      <tr>
+					         <td class="x-text-right info"></td>
+					         <td class="x-text-bold">$10,010.00</td>
+					      </tr>
+					   </tbody>
+					</table>
+					<table class="table table-striped table-condensed ">
+					   <tbody>
+					      <tr>
+					         <td class="x-text-right info">交易:</td>
+					         <td>$-2,830.492<span class="x-text-ccc" style="float:right">5 笔 | 24.10 手</span></td>
+					      </tr>
+					      <tr>
+					         <td class="x-text-right info">佣金:</td>
+					         <td>$-53.00</td>
+					      </tr>
+					      <tr>
+					         <td class="x-text-right info">税金:</td>
+					         <td>$0.00</td>
+					      </tr>
+					      <tr>
+					         <td class="x-text-right info">利息:</td>
+					         <td>$-94.96</td>
+					      </tr>
+					      <tr>
+					         <td class="x-text-right info"></td>
+					         <td class="x-text-bold">$-2,978.45</td>
+					      </tr>
+					   </tbody>
+					</table>
 				</div>
 				
 				<div class="x-color-panel x-balance-panel">

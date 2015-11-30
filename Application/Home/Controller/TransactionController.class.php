@@ -16,9 +16,12 @@ class TransactionController extends CommonController {
 	 * @return [type] [description]
 	 */
     Public function index(){
-
-    	
-    	$this->display();
+        $this->display();
+    }
+    Public function getTradeInfo(){
+        $str = '{"msg_type":31,"orders":[{"cmd":"buy","commission":"-50.00","openprice":"1.47863","opentime":"2015-11-24 11:53:19","order":4509318,"profit":"-436.57","sl":"0.00000","swap":"63.72","symbol":"EURAUD","tp":"0.00000","volume":"1.00"},{"cmd":"buy","commission":"-50.00","openprice":"0.72747","opentime":"2015-11-25 14:03:49","order":4509319,"profit":"-825.00","sl":"0.00000","swap":"5.88","symbol":"AUDUSD","tp":"0.00000","volume":"1.00"}],"result_code":0}';
+        $str = json_decode($str,true);
+        $this->success($str[orders]);
     }
 
     /**

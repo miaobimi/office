@@ -67,11 +67,24 @@ function highlight_subnav(url){
     $now.addClass('current');
 }
 
-function ajaxReturn(url,data,before,callback){
+function jsonpReturn(url,data,callback){
+	$.ajax({
+		url:url,
+		dataType : 'jsonp',
+		data:data,
+		success:function(res){
+			if(typeof callback === 'function'){
+				callback(res);
+			}
+		}
+	});	
+}
+
+function ajaxReturn(url,data,before,callback,errBack){
 	$.ajax({
 		url : url,
 		data : data,
-		dataType : 'Json',
+		dataType : 'json',
 		type : 'POST',
 		cache : false,
 		beforeSend : function(){
@@ -82,6 +95,11 @@ function ajaxReturn(url,data,before,callback){
 		success : function(res){
 			if(typeof callback === 'function'){
 				callback(res)
+			}
+		},
+		error : function(){
+			if(typeof errBack === 'function'){
+				errBack();
 			}
 		}
 	})

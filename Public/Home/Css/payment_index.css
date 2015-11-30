@@ -171,13 +171,29 @@
 #banklists dd.current{
 	border: 1px solid red;
 }
-#banklists dd.current .cny{
-	background: #FE8D8B;
-}
+
 #banklists dd.current .bankno{
 	color:#FF5D5B;
 }
 #banklists dd .cny{
+	display: block;
+	width: 33px;
+	height: 98px;
+	background: url(../Images/gj_05.png) no-repeat 0 0;
+}
+#banklists dd.current .cny{
+	background: url(../Images/gj_03.png) no-repeat 0 0;
+}
+#banklists dd .usd{
+	display: block;
+	width: 33px;
+	height: 98px;
+	background: url(../Images/gj_09.png) no-repeat 0 0;
+}
+#banklists dd.current .usd{
+	background: url(../Images/gj_07.png) no-repeat 0 0;
+}
+/*#banklists dd .cny{
 	display: block;
 	float: left;
 	width: 98px;
@@ -195,7 +211,7 @@
     filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',M11=0.7660444431189777, M12=-0.6427876096865394, M21=0.6427876096865398,M22=0.7660444431189779);
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
-}
+}*/
 
 #banklists dd .curbank{
     position: absolute;

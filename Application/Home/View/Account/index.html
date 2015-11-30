@@ -1,5 +1,6 @@
 <include file="Public:header" />
 <link rel="stylesheet" type="text/css" href="__CSS__/account_info.css">
+<link rel="stylesheet" type="text/css" href="__CSS__/common.css">
 <!--引入webuploader-->
 <link rel="stylesheet" type="text/css" href="__STATIC__/webuploader/webuploader.css">
 <script type="text/javascript" src="__STATIC__/webuploader/webuploader.js"></script>
@@ -27,9 +28,56 @@
 			<h2 class="body-title">我的账户</h2>
 			<div class="content">
 				<div class="dl-in">
-					<dl class="dl-horizontal">
+					<table class="table table-striped table-condensed ">
+					   <tbody>
+					      <tr>
+					         <td class="x-text-right info" style="height: 35px;line-height: 35px;">帐号:</td>
+					         <td style="color: #3aae01;font-size: 20px;height: 35px;line-height: 35px;">{:session('uname')}</td>
+					      </tr>
+					      <tr>
+					         <td class="x-text-right info" style="height: 35px;line-height: 35px;">杠杆:</td>
+					         <td id="leverage" style="color: #ff5d5b;font-size: 20px;height: 35px;line-height: 35px;">1:100</td>
+					      </tr>
+					      <tr>
+					         <td class="x-text-right info">资产:</td>
+					         <td>
+					         余额：<span style="color: #3aae01" id="balance">$8,286.44</span><span class="y"></span> 净值：<span style="color: #ff5d5b" id="equity">$8,286.44</span><span class="y"></span>保证金：<span style="color: #ff5d5b" id="margin">$0.00</span><span class="y"></span>可用保证金：<span style="color: #3aae01" id="margin_free">$8,286.44</span>
+					         </td>
+					      </tr>
+					      <tr>
+					         <td class="x-text-right info">开户日期:</td>
+					         <td id="regdate">2015-10-23</td>
+					      </tr>
+					      <!-- <tr>
+					         <td class="x-text-right info">推广链接:</td>
+					         <td>http://manage.briskliquidity.nz/apply/real.html?agent=600777</td>
+					      </tr> -->
+					   </tbody>
+					</table>
+					<table class="table table-striped table-condensed ">
+					   <tbody>
+					      <tr>
+					         <td class="x-text-right info">姓名:</td>
+					         <td>sfdasdfa asdfasdf</td>
+					      </tr>
+					      <tr>
+					         <td class="x-text-right info">同名账户:</td>
+					         <td>1 个</td>
+					      </tr>
+					      <tr>
+					         <td class="x-text-right info">手机:</td>
+					         <td id="phone">2342423</td>
+					      </tr>
+					      <tr>
+					         <td class="x-text-right info">电邮:</td>
+					         <td id="email">sdfasdf@qq.com</td>
+					      </tr>
+					   </tbody>
+					</table>
+
+					<!-- <dl class="dl-horizontal">
 					  <dt>帐号:</dt>
-					  <dd>{:session('uname')}</dd>
+					  <dd>{:session('uname1：100')}</dd>
 					  <dt>杠杆:</dt>
 					  <dd id="ganggan">1：100</dd>
 					  <dt>资产:</dt>
@@ -48,22 +96,22 @@
 					  <dd>2342423</dd>
 					  <dt>电邮:</dt>
 					  <dd>asdfasdf@qq.com</dd>
-					</dl>
+					</dl> -->
 				</div>
 				
 				<div class="x-color-panel x-balance-panel">
 					<label>资产</label>
 					<div>
-						<span>余额</span><strong field="memberBalance">$8,286.44</strong>
+						<span>余额</span><strong id="memberBalance">$8,286.44</strong>
 					</div>
 					<div>
-						<span>净值</span><strong field="memberEquity">$8,286.44</strong>
+						<span>净值</span><strong id="memberEquity">$8,286.44</strong>
 					</div>
 					<div>
-						<span>保证金</span><strong field="memberMargin">$0.00</strong>
+						<span>保证金</span><strong id="memberMargin">$0.00</strong>
 					</div>
 					<div>
-						<span>可用保证金</span><strong field="memberMarginfree">$8,286.44</strong>
+						<span>可用保证金</span><strong id="memberMarginfree">$8,286.44</strong>
 					</div>
 				</div>
 				<div style="clear: both;"></div>

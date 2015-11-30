@@ -173,7 +173,7 @@
 						    <label>收款银行卡：</label>
 						    <dl id="banklists">
 						    	<?php if(is_array($list)): $k = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "暂时没有添加任何银行卡" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($k % 2 );++$k;?><dd cardid="<?php echo ($vo["id"]); ?>" <?php if($k == 1): ?>class="current"<?php endif; ?>>
-							    		<span class="cny"><?php echo ($vo["type"]); ?></span>
+							    		<span class="<?php echo (strtolower($vo["type"])); ?>"></span>
 							    		<span class="bank-icon <?php echo ($vo["bankicon"]); ?> curbank"></span>
 							    		<span class="bankno"><?php echo ($vo["bankno"]); ?></span>
 							    		<span class="name"><?php echo ($vo["name"]); ?></span>

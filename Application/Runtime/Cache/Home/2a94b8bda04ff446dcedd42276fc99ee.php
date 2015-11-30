@@ -17,6 +17,13 @@
 	</script>
 	<link rel="stylesheet" href="/Public/Home/Css/main.css">
 	<link rel="stylesheet" type="text/css" href="/Public/Home/Css/account_info.css">
+	<script src="/Public/Home/Js/index_index.js"></script>
+	<script>
+		var getAccountInfoUrl = "<?php echo U('Home/Account/getAccountInfo');?>";
+		$(function(){
+			Index.init();
+		})
+	</script>	
 </head>
 <body>
 	<div class="topmenu">
@@ -144,10 +151,10 @@
 						</p>
 					</div>
 					<div class="counter-side-list">
-						<p><span>余额</span><strong class="text-success">$7,709.82</strong></p>
-						<p><span>净值</span><strong class="text-danger">$2,326.76</strong></p>
-						<p><span>保证金</span><strong>$2,161.67</strong></p>
-						<p><span>可用保证金</span><strong class="text-primary">$165.09</strong></p>
+						<p><span>余额</span><strong class="text-success" id="balance">$7,709.82</strong></p>
+						<p><span>净值</span><strong class="text-danger" id="equity">$2,326.76</strong></p>
+						<p><span>保证金</span><strong id="margin">$2,161.67</strong></p>
+						<p><span>可用保证金</span><strong class="text-primary" id="margin_free">$165.09</strong></p>
 					</div>
 				</div>
 				<div class="counter-side">
@@ -170,7 +177,7 @@
 					<div class="counter-side-text">
 						<p data-qtip="">
 							Last Update<br>
-							2015-11-27 12:03:24
+							<?php echo (date('Y-m-d g:i a',time())); ?>
 						</p>
 					</div>
 				</div>
@@ -194,11 +201,7 @@
 				<div class="counter-bottom">
 					<div class="counter-bottom-left">
 						<h2>TC 技术分析</h2>
-						<ul>
-							<li><a href="">新西兰元/美元 当日内: 看涨。</a><span>2015-11-27 16:26:29</span></li>
-							<li><a href="">新西兰元/美元 当日内: 看涨。</a><span>2015-11-27 16:26:29</span></li>
-							<li><a href="">新西兰元/美元 当日内: 看涨。</a><span>2015-11-27 16:26:29</span></li>
-						</ul>
+						<ul id="tcHomeList"></ul>
 					</div>
 					<div class="counter-bottom-right">
 						<h2>盈亏监控</h2>

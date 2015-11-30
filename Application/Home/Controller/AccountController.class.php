@@ -63,15 +63,15 @@ class AccountController extends CommonController {
      * @return [type] [description]
      */
     Public function getAccountInfo(){
-        // p($_POST);
-        //接口 api
-        // import("Org.Util.Mt");
-        // $mt = new \Mt('192.168.1.99',443);
-        $result = $mt->testCmd($account,$password,$ip,$port,$cmd);
 
-        $result = array('leveral'=>"1:10000");
-
-        $this->success($result);
+        $str = '{"balance":"7277.12","email":"","equity":"6152.10","leverage":100,"margin":"3418.32","margin_free":"2733.78","msg_type":21,"name":"test","phone":"","regdate":"2015-11-24","result_code":0,"volume":"1003.90"}';
+        // if($result['result_code']<0){
+        //     $this->error();
+        // }else{
+            $str = json_decode($str,true);
+            $this->success($str);
+        // }
+        
     }
 
     Public function saveCard(){

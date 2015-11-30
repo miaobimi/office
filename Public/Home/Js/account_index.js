@@ -10,8 +10,8 @@ Account = {
 		this.bindAddCard();
 		this.bindSingleExample();
 		//接口
-		// this.getAccountInfo();
-		// interval = setInterval(Account.getAccountInfo,300000)
+		this.getAccountInfo();
+		interval = setInterval(Account.getAccountInfo,300000)
 	},
 
 	initCardList : function(pageurl){
@@ -437,17 +437,19 @@ Account = {
 	},
 
 	getAccountInfo : function(){
-		var self = this;
 		ajaxReturn(getAccountInfoUrl,{},null,function(res){
 			if(res.status){
-				self.fillPage(res.info);
+				var params = res.info;
+				$('#leverage').empty().html('1:'+params.leverage);
+				$('#balance,#memberBalance').empty().html('$'+params.balance);
+				$('#equity,#memberEquity').empty().html('$'+params.equity);
+				$('#margin,#memberMargin').empty().html('$'+params.margin);
+				$('#margin_free,#memberMarginfree').empty().html('$'+params.margin_free);
+				$('#phone').empty().html(params.phone);
+				$('#email').empty().html(params.email);
 			}else{
 				layer.alert(res.info,{icon:2})
 			}
 		})
-	},
-
-	fillPage : function(params){
-		$('#ganggan').empty().html(params.leveral);
 	}
 }

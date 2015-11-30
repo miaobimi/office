@@ -52,7 +52,7 @@
 						    <dl id="banklists">
 						    	<volist name="list" id="vo" key='k' empty="暂时没有添加任何银行卡">
 							    	<dd cardid="{$vo.id}" <if condition="$k eq 1">class="current"</if>>
-							    		<span class="cny">{$vo.type}</span>
+							    		<span class="{$vo.type|strtolower=###}"></span>
 							    		<span class="bank-icon {$vo.bankicon} curbank"></span>
 							    		<span class="bankno">{$vo.bankno}</span>
 							    		<span class="name">{$vo.name}</span>

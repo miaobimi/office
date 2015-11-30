@@ -16,7 +16,7 @@
 			<h2 class="body-title">出入金历史</h2>
 			<div class="content">
 				<div class="content-in">
-					<div class="x-search-panel"><form onsubmit="return false;" method="post" name="search" class="x-form"><fieldset><input type="hidden" value="histTrades" name="cmd"><input type="hidden" value="finance" name="menu"><div class="column"><dl><dt>交易日期：</dt><dd><input type="text" placeholder="从" class="w30 hasDatepicker" value="" name="closeStartDate" vtype="date" id="dp1448674094667"><span class="space">-</span><input type="text" placeholder="到" class="w30 hasDatepicker" value="" name="closeEndDate" vtype="date" id="dp1448674094668"></dd></dl></div><div class="column"><dl><dt>金额范围：</dt><dd><input type="text" placeholder="大于等于" class="w30" value="" name="startNumber" vtype="number"><span class="space">-</span><input type="text" placeholder="小余等于" class="w30" value="" name="endNumber" vtype="number"></dd></dl></div><div class="column"><div class="x-submit-panel"><button class="btn btn-success" type="submit">搜 索</button></div></div></fieldset></form></div><!--data-option-->
+					<div class="x-search-panel"><form onsubmit="return false;" method="post" name="search" class="x-form"><fieldset><input type="hidden" value="histTrades" name="cmd"><input type="hidden" value="finance" name="menu"><div class="column"><dl><dt>交易日期：</dt><dd><input type="text" placeholder="从" class="w30 hasDatepicker" value="" name="closeStartDate" vtype="date" id="closeStartDate"><span class="space">-</span><input type="text" placeholder="到" class="w30 hasDatepicker" value="" name="closeEndDate" vtype="date" id="closeEndDate"></dd></dl></div><div class="column"><dl><dt>金额范围：</dt><dd><input type="text" placeholder="大于等于" class="w30" value="" name="startNumber" vtype="number"><span class="space">-</span><input type="text" placeholder="小余等于" class="w30" value="" name="endNumber" vtype="number"></dd></dl></div><div class="column"><div class="x-submit-panel"><button class="btn btn-success" type="submit">搜 索</button></div></div></fieldset></form></div><!--data-option-->
 					<div style="background: #ccc;height: 0.5px;"></div>
 					<table class="table table-bordered table-hover">
 					  <thead>
@@ -83,28 +83,28 @@
         laydate.skin('molv');
 
          //日期范围限制
-        var firstdate = {
-            elem: '#firstdate',
-            format: 'YYYY/MM/DD hh:mm:ss',
-            min: laydate.now(), //设定最小日期为当前日期
-            max: '2099-06-16 23:59:59', //最大日期
-            istime: true,
-            istoday: false,
-            choose: function (datas) {
-            }
-        };
-        var lastdate = {
-            elem: '#lastdate',
-            format: 'YYYY/MM/DD hh:mm:ss',
-            min: laydate.now(),
-            max: '2099-06-16 23:59:59',
-            istime: true,
-            istoday: false,
-            choose: function (datas) {
-            }
-        };
-        laydate(firstdate);
-        laydate(lastdate);	
+        var closeStartDate = {
+	        elem: '#closeStartDate',
+	        format: 'YYYY/MM/DD hh:mm:ss',
+	        //min: laydate.now(),
+	        max: '2099-06-16 23:59:59',
+	        istime: true,
+	        istoday: false,
+	        choose: function (datas) {
+	        }
+	    };
+	    var closeEndDate = {
+	        elem: '#closeEndDate',
+	        format: 'YYYY/MM/DD hh:mm:ss',
+	       //min: laydate.now(),
+	        max: '2099-06-16 23:59:59',
+	        istime: true,
+	        istoday: false,
+	        choose: function (datas) {
+	        }
+	    };
+        laydate(closeStartDate);	
+        laydate(closeEndDate);		
 	</script>		
 </body>
 </html>

@@ -138,57 +138,40 @@
 			<h2 class="body-title">挂单交易</h2>
 			<div class="content">
 				<div class="content-in">
-					<div class="x-search-panel">
-						<form onsubmit="return false;" method="post" name="search" class="x-form">
-							<fieldset>
-								<input type="hidden" value="histTrades" name="cmd">
-								<input type="hidden" value="order" name="menu">
-								<div class="column">
-									<dl><dt>产品：</dt><dd><input type="text" placeholder="" class="w30" value="" name="product" vtype=""></dd></dl>
-								</div>
-								<div class="column">
-									<dl><dt>盈亏范围：</dt><dd><input type="text" placeholder="大于等于" class="w30" value="" name="startNumber" vtype="number"><span class="space">-</span><input type="text" placeholder="小余等于" class="w30" value="" name="endNumber" vtype="number"></dd></dl>
-								</div>
-								<div class="column">
-									<dl><dt>开仓日期：</dt><dd><input type="text" placeholder="从" class="w30 hasDatepicker" value="" name="openStartDate" vtype="date" id="dp1448674094663"><span class="space">-</span><input type="text" placeholder="到" class="w30 hasDatepicker" value="" name="openEndDate" vtype="date" id="dp1448674094664"></dd></dl>
-								</div>
-								<div class="column">
-									<dl><dt>平仓日期：</dt><dd><input type="text" placeholder="从" class="w30 hasDatepicker" value="" name="closeStartDate" vtype="date" id="dp1448674094665"><span class="space">-</span><input type="text" placeholder="到" class="w30 hasDatepicker" value="" name="closeEndDate" vtype="date" id="dp1448674094666"></dd></dl>
-								</div>
-								<div class="column">
-									<div class="x-submit-panel"><button class="btn btn-success" type="submit">搜 索</button>
-									</div>
-								</div>
-							</fieldset>
-						</form>
-					</div>
 					<div style="background: #ccc;height: 0.5px;"></div>
 					<table class="table table-bordered table-hover">
 					  <thead>
 					  	<tr class="info">
-					  		<th>订单</th>
+					  		<th>NO.</th>
 					  		<th>交易类型</th>
+					  		<th>交易品种</th>
 					  		<th class="x-text-right">成交量</th>
-					  		<th>开仓</th>
-					  		<th>平仓</th>
+					  		<th>预设开仓价</th>
+					  		<th class="x-text-right">现价</th>
 					  		<th class="x-text-right">止损/止盈</th>
+					  		<th class="x-text-center">操作时间</th>
+					
 					  	</tr>
 					  </thead>
 					  <tbody>
 					  	<tr>
 					  		<td>#389190</td>
 					  		<td>
-					  			<span class="label label-primary">买入</span><span class="x-box-label" style="float:right">XAUUSD.stp</span>
+					  			<span class="label label-primary">买入</span>
 					  		</td>
+					  		<td><span class="x-box-label">XAUUSD.stp</span></td>
 					  		<td class="x-text-right x-text-bold x-font-14">2.00 手</td>
 					  		<td>
-					  			<strong>2015-11-25</strong><br><span class="x-text-ccc">01:47:38</span><span class="x-box-label" style="float:right;margin-top:-20px;">1,078.39</span>
+					  			<span class="x-box-label">1,078.39</span>
 					  		</td>
 					  		<td>
-					  			<strong>2015-11-25</strong><br><span class="x-text-ccc">01:47:38</span><span class="x-box-label" style="float:right;margin-top:-20px;">1,078.39</span>
+					  			<span class="x-box-label" style="float:right;">1,078.39</span>
 					  		</td>
 					  		<td class="x-text-right">
 					  			<span class="x-text-ccc">0.00</span><span class="y"></span><span>1,082.32</span>
+					  		</td>
+					  		<td class="x-text-center">
+					  			<strong>2015-11-25</strong>&nbsp;&nbsp;<span class="x-text-ccc">01:47:38</span>
 					  		</td>
 					  	</tr>
 					  </tbody>
@@ -196,17 +179,21 @@
 					  	<tr>
 					  		<td>#389190</td>
 					  		<td>
-					  			<span class="label label-warning">卖出</span><span class="x-box-label" style="float:right">XAUUSD.stp</span>
+					  			<span class="label label-warning">卖出</span>
 					  		</td>
+					  		<td><span class="x-box-label">XAUUSD.stp</span></td>
 					  		<td class="x-text-right x-text-bold x-font-14">2.00 手</td>
 					  		<td>
-					  			<strong >2015-11-25</strong><br><span class="x-text-ccc">01:47:38</span><span class="x-box-label" style="float:right;margin-top:-20px;">1,078.39</span>
+					  			<span class="x-box-label">1,078.39</span>
 					  		</td>
 					  		<td>
-					  			<strong>2015-11-25</strong><br><span class="x-text-ccc">01:47:38</span><span class="x-box-label" style="float:right;margin-top:-20px;">1,078.39</span>
+					  			<span class="x-box-label" style="float:right;">1,078.39</span>
 					  		</td>
 					  		<td class="x-text-right">
 					  			<span class="x-text-ccc">0.00</span><span class="y"></span><span>0.00</span>
+					  		</td>
+					  		<td class="x-text-center">
+					  			<strong>2015-11-25</strong>&nbsp;&nbsp;<span class="x-text-ccc">01:47:38</span>
 					  		</td>
 					  	</tr>
 					  </tbody>
