@@ -2,9 +2,12 @@
 <link rel="stylesheet" type="text/css" href="__CSS__/account_info.css">
 <link rel="stylesheet" type="text/css" href="__CSS__/common.css">
 <script src="__STATIC__/layer/laydate/laydate.js"></script>
+<script src="__JS__/trade_index.js"></script>
 	<script>
+		var historyOrderInfoUrl = "{:U('Home/Transaction/historyOrderInfo')}"
 		$(function(){
 			highlight_subnav("{:U('Home/Transaction/historyOrder')}");
+			Trade.historyOrderInfo();
 		})
 	</script>	
 </head>
@@ -50,64 +53,12 @@
 					  		<th>开仓</th>
 					  		<th>平仓</th>
 					  		<th class="x-text-right">止损/止盈</th>
-					  		<th class="x-text-right">盈亏</th>
-					
+					  		<th class="x-text-right">盈亏</th>					
 					  	</tr>
 					  </thead>
-					  <tbody>
-					  	<tr>
-					  		<td>#389190</td>
-					  		<td>
-					  			<span class="label label-primary">买入</span><span class="x-box-label" style="float:right">XAUUSD.stp</span>
-					  		</td>
-					  		<td class="x-text-right x-text-bold x-font-14">2.00 手</td>
-					  		<td>
-					  			<strong>2015-11-25</strong><br><span class="x-text-ccc">01:47:38</span><span class="x-box-label" style="float:right;margin-top:-20px;">1,078.39</span>
-					  		</td>
-					  		<td>
-					  			<strong>2015-11-25</strong><br><span class="x-text-ccc">01:47:38</span><span class="x-box-label" style="float:right;margin-top:-20px;">1,078.39</span>
-					  		</td>
-					  		<td class="x-text-right">
-					  			<span class="x-text-ccc">0.00</span><span class="y"></span><span>1,082.32</span>
-					  		</td>
-					  		<td class="x-text-right">
-					  			<span class="x-box-label x-text-bold x-text-red x-font-16">$-3,421.84</span>
-					  		</td>
-					  	</tr>
+					  <tbody id="orderlist">
 					  </tbody>
-					  <tbody>
-					  	<tr>
-					  		<td>#389190</td>
-					  		<td>
-					  			<span class="label label-warning">卖出</span><span class="x-box-label" style="float:right">XAUUSD.stp</span>
-					  		</td>
-					  		<td class="x-text-right x-text-bold x-font-14">2.00 手</td>
-					  		<td>
-					  			<strong >2015-11-25</strong><br><span class="x-text-ccc">01:47:38</span><span class="x-box-label" style="float:right;margin-top:-20px;">1,078.39</span>
-					  		</td>
-					  		<td>
-					  			<strong>2015-11-25</strong><br><span class="x-text-ccc">01:47:38</span><span class="x-box-label" style="float:right;margin-top:-20px;">1,078.39</span>
-					  		</td>
-					  		<td class="x-text-right">
-					  			<span class="x-text-ccc">0.00</span><span class="y"></span><span>0.00</span>
-					  		</td>
-					  		<td class="x-text-right">
-					  			<span class="x-box-label x-text-bold x-text-green x-font-16">$1,42</span>
-					  		</td>
-					  	</tr>
-					  </tbody>
-					  <tbody>
-					  	<tr class="warning">
-					  		<td style="border-width:0"></td>
-					  		<td style="border-width:0"></td>
-					  		<td style="border-width:0" class="x-text-right x-text-bold x-font-14">4.00</td>
-					  		<td style="border-width:0"></td>
-					  		<td style="border-width:0"></td>
-					  		<td style="border-width:0"></td>
-					  		<td class="x-text-right" style="border-width:0">
-					  			<span class="x-text-bold x-font-14">$-3279.40</span>
-					  		</td>
-					  	</tr>
+					  <tbody id="totalCount">
 					  </tbody>
 					</table>
 				</div><!--content-in-->

@@ -17,9 +17,12 @@
 	</script>
 	<link rel="stylesheet" href="/Public/Home/Css/main.css">
 	<link rel="stylesheet" type="text/css" href="/Public/Home/Css/account_info.css">
+	<script type="text/javascript" src="/Public/Static/echarts/build/dist/echarts.js"></script>
 	<script src="/Public/Home/Js/index_index.js"></script>
 	<script>
 		var getAccountInfoUrl = "<?php echo U('Home/Account/getAccountInfo');?>";
+		var getTradeInfoUrl = "<?php echo U('Home/Transaction/getTradeInfo');?>";
+		var echartUrl = "/Public/Static/echarts/build/dist"
 		$(function(){
 			Index.init();
 		})
@@ -52,31 +55,31 @@
 	<ul class="menu">
 		<li>
 			<a class="menu-title menu-title-current">
-				<span class="glyphicon glyphicon-home"></span>
+				<span class="glyphicon glyphicon-user"></span>
 				<span>账户管理</span>
 			</a>	 
 			<ul class="menu01">
 				<li>	
 					<h2 class="menu001-sub">常用</h2>
 					<ul class="menu001">
-						<li><a href="<?php echo U('Home/Account/index');?>"><span class="glyphicon glyphicon-home"></span>账户信息</a></li>
-						<li><a href="<?php echo U('Home/Account/total');?>"><span class="glyphicon glyphicon-home"></span>账户统计</a></li>
-						<li><a href="<?php echo U('Home/Account/traderList');?>"><span class="glyphicon glyphicon-home"></span>交易报表</a></li>
+						<li><a href="<?php echo U('Home/Account/index');?>"><span class="glyphicon glyphicon-modal-window"></span>账户信息</a></li>
+						<li><a href="<?php echo U('Home/Account/total');?>"><span class="glyphicon glyphicon-object-align-horizontal"></span>账户统计</a></li>
+						<li><a href="<?php echo U('Home/Account/traderList');?>"><span class="glyphicon glyphicon-calendar"></span>交易报表</a></li>
 					</ul>
 				</li>
 				<li>
 					<h2 class="menu001-sub">资料更改</h2>
 					<ul class="menu001">
-						<li><a href="<?php echo U('Home/Account/editLeverage');?>"><span class="glyphicon glyphicon-home"></span>更改杠杠</a></li>
-						<li><a href="<?php echo U('Home/Account/editMobile');?>"><span class="glyphicon glyphicon-home"></span>更换手机</a></li>
-						<li><a href="<?php echo U('Home/Account/editMail');?>"><span class="glyphicon glyphicon-home"></span>更换电邮</a></li>
+						<li><a href="<?php echo U('Home/Account/editLeverage');?>"><span class="glyphicon glyphicon-edit"></span>更改杠杠</a></li>
+						<li><a href="<?php echo U('Home/Account/editMobile');?>"><span class="glyphicon glyphicon-phone"></span>更换手机</a></li>
+						<li><a href="<?php echo U('Home/Account/editMail');?>"><span class="glyphicon glyphicon-envelope"></span>更换电邮</a></li>
 					</ul>
 				</li>
 				<li>
 					<h2 class="menu001-sub">安全设置</h2>
 					<ul class="menu001">
-						<li><a href="<?php echo U('Home/Account/editMainPass');?>"><span class="glyphicon glyphicon-home"></span>主密码</a></li>
-						<li><a href="<?php echo U('Home/Account/editInvestorPass');?>"><span class="glyphicon glyphicon-home"></span>投资人密码</a></li>
+						<li><a href="<?php echo U('Home/Account/editMainPass');?>"><span class="glyphicon glyphicon-lock"></span>主密码</a></li>
+						<li><a href="<?php echo U('Home/Account/editInvestorPass');?>"><span class="glyphicon glyphicon-lock"></span>投资人密码</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -85,24 +88,24 @@
 	<ul class="menu">
 		<li>
 			<a class="menu-title">
-				<span class="glyphicon glyphicon-home"></span>
+				<span class="glyphicon glyphicon-sort"></span>
 				<span class="menu1-info">出入金管理</span>
 			</a>	 
 			<ul class="menu01" style="display:none">
 				<li>	
 					<h2 class="menu001-sub">入金相关</h2>
 					<ul class="menu001">
-						<li><a href="<?php echo U('Home/Payment/index');?>"><span class="glyphicon glyphicon-home"></span>账户入金</a></li>
-						<li><a href="<?php echo U('Home/Payment/inRecords');?>"><span class="glyphicon glyphicon-home"></span>入金记录</a></li>
-						<li><a href="<?php echo U('Home/Payment/inTotal');?>"><span class="glyphicon glyphicon-home"></span>入金统计</a></li>
+						<li><a href="<?php echo U('Home/Payment/index');?>"><span class="glyphicon glyphicon-log-in"></span>账户入金</a></li>
+						<li><a href="<?php echo U('Home/Payment/inRecords');?>"><span class="glyphicon glyphicon-th"></span>入金记录</a></li>
+						<li><a href="<?php echo U('Home/Payment/inTotal');?>"><span class="glyphicon glyphicon-list-alt"></span>入金统计</a></li>
 					</ul>
 				</li>
 				<li>
 					<h2 class="menu001-sub">出金相关</h2>
 					<ul class="menu001">
-						<li><a href="<?php echo U('Home/Payment/outPayment');?>"><span class="glyphicon glyphicon-home"></span>账户出金</a></li>
-						<li><a href="<?php echo U('Home/Payment/outRecords');?>"><span class="glyphicon glyphicon-home"></span>出金记录</a></li>
-						<li><a href="<?php echo U('Home/Payment/outTotal');?>"><span class="glyphicon glyphicon-home"></span>出金统计</a></li>
+						<li><a href="<?php echo U('Home/Payment/outPayment');?>"><span class="glyphicon glyphicon-log-out"></span>账户出金</a></li>
+						<li><a href="<?php echo U('Home/Payment/outRecords');?>"><span class="glyphicon glyphicon-th"></span>出金记录</a></li>
+						<li><a href="<?php echo U('Home/Payment/outTotal');?>"><span class="glyphicon glyphicon-list-alt"></span>出金统计</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -111,24 +114,24 @@
 	<ul class="menu">
 		<li>
 			<a class="menu-title">
-				<span class="glyphicon glyphicon-home"></span>
+				<span class="glyphicon glyphicon-time"></span>
 				<span class="menu1-info">交易管理</span>
 			</a>	 
 			<ul class="menu01" style="display:none">
 				<li>
 					<h2 class="menu001-sub">当前持仓</h2>	
 					<ul class="menu001">
-						<li><a href="<?php echo U('Home/Transaction/index');?>"><span class="glyphicon glyphicon-home"></span>全部</a></li>
-						<li><a href="<?php echo U('Home/Transaction/order');?>"><span class="glyphicon glyphicon-home"></span>订单</a></li>
-						<li><a href="<?php echo U('Home/Transaction/pending');?>"><span class="glyphicon glyphicon-home"></span>挂单</a></li>
+						<li><a href="<?php echo U('Home/Transaction/index');?>"><span class="glyphicon glyphicon-plus-sign"></span>全部</a></li>
+						<li><a href="<?php echo U('Home/Transaction/order');?>"><span class="glyphicon glyphicon-th-list"></span>订单</a></li>
+						<li><a href="<?php echo U('Home/Transaction/pending');?>"><span class="glyphicon glyphicon-arrow-down"></span>挂单</a></li>
 					</ul>
 				</li>
 				<li>
 					<h2 class="menu001-sub">历史交易</h2>
 					<ul class="menu001">
-						<li><a href="<?php echo U('Home/Transaction/historyOrder');?>"><span class="glyphicon glyphicon-home"></span>订单</a></li>
-						<li><a href="<?php echo U('Home/Transaction/outAndInRecords');?>"><span class="glyphicon glyphicon-home"></span>出入金</a></li>
-						<li><a href="<?php echo U('Home/Transaction/historyPending');?>"><span class="glyphicon glyphicon-home"></span>挂单</a></li>
+						<li><a href="<?php echo U('Home/Transaction/historyOrder');?>"><span class="glyphicon glyphicon-minus-sign"></span>订单</a></li>
+						<li><a href="<?php echo U('Home/Transaction/outAndInRecords');?>"><span class="glyphicon glyphicon-th-list"></span>出入金</a></li>
+						<li><a href="<?php echo U('Home/Transaction/historyPending');?>"><span class="glyphicon glyphicon-arrow-up"></span>挂单</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -136,7 +139,7 @@
 	</ul>
 </div>
 	
-		<div class="content-body">
+		<div class="content-body" style="height:980px;">
 			<h2 class="body-title">首页</h2>
 			<div class="content">
 				<div class="counter-side">
@@ -146,26 +149,26 @@
 					</div>
 					<div class="counter-side-text">
 						<p>
-							<strong>ID:900020</strong><br>
-							<span style="color: #3aae01 !important;">韦传统 Wei Chuantong</span>
+							<strong>ID:<?php echo session('uid');?></strong><br>
+							<span style="color: #3aae01 !important;"><?php echo session('uname');?></span>
 						</p>
 					</div>
 					<div class="counter-side-list">
-						<p><span>余额</span><strong class="text-success" id="balance">$7,709.82</strong></p>
-						<p><span>净值</span><strong class="text-danger" id="equity">$2,326.76</strong></p>
-						<p><span>保证金</span><strong id="margin">$2,161.67</strong></p>
-						<p><span>可用保证金</span><strong class="text-primary" id="margin_free">$165.09</strong></p>
+						<p><span>余额</span><strong class="text-success" id="balance"></strong></p>
+						<p><span>净值</span><strong class="text-danger" id="equity"></strong></p>
+						<p><span>保证金</span><strong id="margin"></strong></p>
+						<p><span>可用保证金</span><strong class="text-primary" id="margin_free"></strong></p>
 					</div>
 				</div>
 				<div class="counter-side">
 					<div class="counter-side-header">
-						<div class="counter-side-header-h2">账户信息</div>
-						<div class="counter-side-header-h3">Account Information</div>		
+						<div class="counter-side-header-h2">历史交易</div>
+						<div class="counter-side-header-h3">Historical Trading</div>		
 					</div>
 					<div class="counter-side-text">
 						<p data-qtip="">
-							交易 <strong>27</strong> 笔　<strong>25.60</strong> 手　挂单 <strong>0</strong> 笔<br>
-							交易盈亏 <strong style="color: #ff5d5b !important;">$-2,300.18</strong>
+							交易 <strong><?php echo ($arr['orderCount']); ?></strong> 笔　<strong><?php echo ($arr['hand']); ?></strong> 手　挂单 <strong>0</strong> 笔<br>
+							交易盈亏 <strong style="color: #ff5d5b !important;">$<?php echo ($arr['profit']); ?></strong>
 						</p>
 					</div>
 					<div class="counter-side-list">
@@ -188,15 +191,11 @@
 					</div>
 					<div class="counter-side-text">
 						<p data-qtip="交易：$0.00<br>佣金：$0.00<br/>税金：$0.00<br/>利息：$0.00">
-							交易中 <strong>0</strong> 笔　<strong>0.00</strong> 手　盈亏 <strong style="color:#ff5d5b !important;">$0.00</strong><br>
+							交易中 <strong class="nowCount"></strong> 笔　<strong class="nowHand"></strong> 手　盈亏 <strong class="nowProfit" style="color:#ff5d5b !important;"></strong><br>
 							全部持仓订单请点击按钮后查看
 						</p>
 					</div>
-					<div class="counter-side-list">
-						<p><span>XAUUSD.stp</span><strong style="color: #ff5d5b !important;">$7,709.82</strong><em>1068.46000</em></p>
-						<p><span>XAUUSD.stp</span><strong style="color: #ff5d5b !important;">$2,326.76</strong><em>1068.46000</em></p>
-						
-					</div>
+					<div class="counter-side-list" id="nowOrder"></div>
 				</div><!--counter-side-->
 				<div class="counter-bottom">
 					<div class="counter-bottom-left">
@@ -208,13 +207,14 @@
 						<div class="counter-money">
 							<span>
 								<strong>持仓订单</strong><br>
-								交易笔数：2 笔　4.00 手<br>
-								更新时间：aN:aN:aN
+								交易笔数：<span class="nowCount"></span> 笔　<span class="nowHand"></span>手<br>
+								更新时间：<span id="updateTime"></span>
 							</span>
 							<label>
-								盈亏：$-5,235.06
+								盈亏：<span class="nowProfit"></span>
 							</label>
 						</div>
+						<div id="main" style="height:300px;"></div>
 					</div>
 				</div>
 			</div><!--content-->

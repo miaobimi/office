@@ -1,10 +1,12 @@
 <include file="Public:header" />
 <link rel="stylesheet" type="text/css" href="__CSS__/account_info.css">
 <link rel="stylesheet" type="text/css" href="__CSS__/common.css">
-<script src="__STATIC__/layer/laydate/laydate.js"></script>
+<script src="__JS__/trade_index.js"></script>
 	<script>
+		var getPendingInfoUrl = "{:U('Home/Transaction/pendingTradeInfo')}";
 		$(function(){
 			highlight_subnav("{:U('Home/Transaction/pending')}");
+			Trade.getPendingInfo();
 		})
 	</script>	
 </head>
@@ -31,82 +33,12 @@
 					
 					  	</tr>
 					  </thead>
-					  <tbody>
-					  	<tr>
-					  		<td>#389190</td>
-					  		<td>
-					  			<span class="label label-primary">买入</span>
-					  		</td>
-					  		<td><span class="x-box-label">XAUUSD.stp</span></td>
-					  		<td class="x-text-right x-text-bold x-font-14">2.00 手</td>
-					  		<td>
-					  			<span class="x-box-label">1,078.39</span>
-					  		</td>
-					  		<td>
-					  			<span class="x-box-label" style="float:right;">1,078.39</span>
-					  		</td>
-					  		<td class="x-text-right">
-					  			<span class="x-text-ccc">0.00</span><span class="y"></span><span>1,082.32</span>
-					  		</td>
-					  		<td class="x-text-center">
-					  			<strong>2015-11-25</strong>&nbsp;&nbsp;<span class="x-text-ccc">01:47:38</span>
-					  		</td>
-					  	</tr>
-					  </tbody>
-					  <tbody>
-					  	<tr>
-					  		<td>#389190</td>
-					  		<td>
-					  			<span class="label label-warning">卖出</span>
-					  		</td>
-					  		<td><span class="x-box-label">XAUUSD.stp</span></td>
-					  		<td class="x-text-right x-text-bold x-font-14">2.00 手</td>
-					  		<td>
-					  			<span class="x-box-label">1,078.39</span>
-					  		</td>
-					  		<td>
-					  			<span class="x-box-label" style="float:right;">1,078.39</span>
-					  		</td>
-					  		<td class="x-text-right">
-					  			<span class="x-text-ccc">0.00</span><span class="y"></span><span>0.00</span>
-					  		</td>
-					  		<td class="x-text-center">
-					  			<strong>2015-11-25</strong>&nbsp;&nbsp;<span class="x-text-ccc">01:47:38</span>
-					  		</td>
-					  	</tr>
+					  <tbody id="orderlist">
 					  </tbody>
 					</table>
 				</div><!--content-in-->
 			</div><!--content-->	
 		</div>		
 	</div>
-	<script type="text/javascript">
-	// layerdata
-        laydate.skin('molv');
-
-         //日期范围限制
-        var firstdate = {
-            elem: '#firstdate',
-            format: 'YYYY/MM/DD hh:mm:ss',
-            min: laydate.now(), //设定最小日期为当前日期
-            max: '2099-06-16 23:59:59', //最大日期
-            istime: true,
-            istoday: false,
-            choose: function (datas) {
-            }
-        };
-        var lastdate = {
-            elem: '#lastdate',
-            format: 'YYYY/MM/DD hh:mm:ss',
-            min: laydate.now(),
-            max: '2099-06-16 23:59:59',
-            istime: true,
-            istoday: false,
-            choose: function (datas) {
-            }
-        };
-        laydate(firstdate);
-        laydate(lastdate);	
-	</script>		
 </body>
 </html>

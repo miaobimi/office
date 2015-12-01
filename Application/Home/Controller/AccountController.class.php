@@ -64,13 +64,9 @@ class AccountController extends CommonController {
      */
     Public function getAccountInfo(){
 
-        $str = '{"balance":"7277.12","email":"","equity":"6152.10","leverage":100,"margin":"3418.32","margin_free":"2733.78","msg_type":21,"name":"test","phone":"","regdate":"2015-11-24","result_code":0,"volume":"1003.90"}';
-        // if($result['result_code']<0){
-        //     $this->error();
-        // }else{
-            $str = json_decode($str,true);
-            $this->success($str);
-        // }
+       import('Org.Util.Mt');
+       $res = \Mt::getAccountInfo();
+       $this->success($res);
         
     }
 

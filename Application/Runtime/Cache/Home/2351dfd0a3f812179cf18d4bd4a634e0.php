@@ -18,13 +18,12 @@
 <link rel="stylesheet" type="text/css" href="/Public/Home/Css/account_info.css">
 <link rel="stylesheet" type="text/css" href="/Public/Home/Css/common.css">
 <link rel="stylesheet" type="text/css" href="/Public/Home/Css/trade_type.css">
-<script src="/Public/Static/layer/laydate/laydate.js"></script>
 <script src="/Public/Home/Js/trade_index.js"></script>
 	<script>
-		var getOrderInfoUrl = "<?php echo U('Home/Transaction/getTradeInfo');?>";
+		var getTotalInfoUrl = "<?php echo U('Home/Transaction/getTotalInfo');?>";
 		$(function(){
 			highlight_subnav("<?php echo U('Home/Transaction/index');?>");
-			Trade.init();
+			Trade.getTotalInfo();
 		})
 	</script>	
 </head>
@@ -55,31 +54,31 @@
 	<ul class="menu">
 		<li>
 			<a class="menu-title menu-title-current">
-				<span class="glyphicon glyphicon-home"></span>
+				<span class="glyphicon glyphicon-user"></span>
 				<span>账户管理</span>
 			</a>	 
 			<ul class="menu01">
 				<li>	
 					<h2 class="menu001-sub">常用</h2>
 					<ul class="menu001">
-						<li><a href="<?php echo U('Home/Account/index');?>"><span class="glyphicon glyphicon-home"></span>账户信息</a></li>
-						<li><a href="<?php echo U('Home/Account/total');?>"><span class="glyphicon glyphicon-home"></span>账户统计</a></li>
-						<li><a href="<?php echo U('Home/Account/traderList');?>"><span class="glyphicon glyphicon-home"></span>交易报表</a></li>
+						<li><a href="<?php echo U('Home/Account/index');?>"><span class="glyphicon glyphicon-modal-window"></span>账户信息</a></li>
+						<li><a href="<?php echo U('Home/Account/total');?>"><span class="glyphicon glyphicon-object-align-horizontal"></span>账户统计</a></li>
+						<li><a href="<?php echo U('Home/Account/traderList');?>"><span class="glyphicon glyphicon-calendar"></span>交易报表</a></li>
 					</ul>
 				</li>
 				<li>
 					<h2 class="menu001-sub">资料更改</h2>
 					<ul class="menu001">
-						<li><a href="<?php echo U('Home/Account/editLeverage');?>"><span class="glyphicon glyphicon-home"></span>更改杠杠</a></li>
-						<li><a href="<?php echo U('Home/Account/editMobile');?>"><span class="glyphicon glyphicon-home"></span>更换手机</a></li>
-						<li><a href="<?php echo U('Home/Account/editMail');?>"><span class="glyphicon glyphicon-home"></span>更换电邮</a></li>
+						<li><a href="<?php echo U('Home/Account/editLeverage');?>"><span class="glyphicon glyphicon-edit"></span>更改杠杠</a></li>
+						<li><a href="<?php echo U('Home/Account/editMobile');?>"><span class="glyphicon glyphicon-phone"></span>更换手机</a></li>
+						<li><a href="<?php echo U('Home/Account/editMail');?>"><span class="glyphicon glyphicon-envelope"></span>更换电邮</a></li>
 					</ul>
 				</li>
 				<li>
 					<h2 class="menu001-sub">安全设置</h2>
 					<ul class="menu001">
-						<li><a href="<?php echo U('Home/Account/editMainPass');?>"><span class="glyphicon glyphicon-home"></span>主密码</a></li>
-						<li><a href="<?php echo U('Home/Account/editInvestorPass');?>"><span class="glyphicon glyphicon-home"></span>投资人密码</a></li>
+						<li><a href="<?php echo U('Home/Account/editMainPass');?>"><span class="glyphicon glyphicon-lock"></span>主密码</a></li>
+						<li><a href="<?php echo U('Home/Account/editInvestorPass');?>"><span class="glyphicon glyphicon-lock"></span>投资人密码</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -88,24 +87,24 @@
 	<ul class="menu">
 		<li>
 			<a class="menu-title">
-				<span class="glyphicon glyphicon-home"></span>
+				<span class="glyphicon glyphicon-sort"></span>
 				<span class="menu1-info">出入金管理</span>
 			</a>	 
 			<ul class="menu01" style="display:none">
 				<li>	
 					<h2 class="menu001-sub">入金相关</h2>
 					<ul class="menu001">
-						<li><a href="<?php echo U('Home/Payment/index');?>"><span class="glyphicon glyphicon-home"></span>账户入金</a></li>
-						<li><a href="<?php echo U('Home/Payment/inRecords');?>"><span class="glyphicon glyphicon-home"></span>入金记录</a></li>
-						<li><a href="<?php echo U('Home/Payment/inTotal');?>"><span class="glyphicon glyphicon-home"></span>入金统计</a></li>
+						<li><a href="<?php echo U('Home/Payment/index');?>"><span class="glyphicon glyphicon-log-in"></span>账户入金</a></li>
+						<li><a href="<?php echo U('Home/Payment/inRecords');?>"><span class="glyphicon glyphicon-th"></span>入金记录</a></li>
+						<li><a href="<?php echo U('Home/Payment/inTotal');?>"><span class="glyphicon glyphicon-list-alt"></span>入金统计</a></li>
 					</ul>
 				</li>
 				<li>
 					<h2 class="menu001-sub">出金相关</h2>
 					<ul class="menu001">
-						<li><a href="<?php echo U('Home/Payment/outPayment');?>"><span class="glyphicon glyphicon-home"></span>账户出金</a></li>
-						<li><a href="<?php echo U('Home/Payment/outRecords');?>"><span class="glyphicon glyphicon-home"></span>出金记录</a></li>
-						<li><a href="<?php echo U('Home/Payment/outTotal');?>"><span class="glyphicon glyphicon-home"></span>出金统计</a></li>
+						<li><a href="<?php echo U('Home/Payment/outPayment');?>"><span class="glyphicon glyphicon-log-out"></span>账户出金</a></li>
+						<li><a href="<?php echo U('Home/Payment/outRecords');?>"><span class="glyphicon glyphicon-th"></span>出金记录</a></li>
+						<li><a href="<?php echo U('Home/Payment/outTotal');?>"><span class="glyphicon glyphicon-list-alt"></span>出金统计</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -114,24 +113,24 @@
 	<ul class="menu">
 		<li>
 			<a class="menu-title">
-				<span class="glyphicon glyphicon-home"></span>
+				<span class="glyphicon glyphicon-time"></span>
 				<span class="menu1-info">交易管理</span>
 			</a>	 
 			<ul class="menu01" style="display:none">
 				<li>
 					<h2 class="menu001-sub">当前持仓</h2>	
 					<ul class="menu001">
-						<li><a href="<?php echo U('Home/Transaction/index');?>"><span class="glyphicon glyphicon-home"></span>全部</a></li>
-						<li><a href="<?php echo U('Home/Transaction/order');?>"><span class="glyphicon glyphicon-home"></span>订单</a></li>
-						<li><a href="<?php echo U('Home/Transaction/pending');?>"><span class="glyphicon glyphicon-home"></span>挂单</a></li>
+						<li><a href="<?php echo U('Home/Transaction/index');?>"><span class="glyphicon glyphicon-plus-sign"></span>全部</a></li>
+						<li><a href="<?php echo U('Home/Transaction/order');?>"><span class="glyphicon glyphicon-th-list"></span>订单</a></li>
+						<li><a href="<?php echo U('Home/Transaction/pending');?>"><span class="glyphicon glyphicon-arrow-down"></span>挂单</a></li>
 					</ul>
 				</li>
 				<li>
 					<h2 class="menu001-sub">历史交易</h2>
 					<ul class="menu001">
-						<li><a href="<?php echo U('Home/Transaction/historyOrder');?>"><span class="glyphicon glyphicon-home"></span>订单</a></li>
-						<li><a href="<?php echo U('Home/Transaction/outAndInRecords');?>"><span class="glyphicon glyphicon-home"></span>出入金</a></li>
-						<li><a href="<?php echo U('Home/Transaction/historyPending');?>"><span class="glyphicon glyphicon-home"></span>挂单</a></li>
+						<li><a href="<?php echo U('Home/Transaction/historyOrder');?>"><span class="glyphicon glyphicon-minus-sign"></span>订单</a></li>
+						<li><a href="<?php echo U('Home/Transaction/outAndInRecords');?>"><span class="glyphicon glyphicon-th-list"></span>出入金</a></li>
+						<li><a href="<?php echo U('Home/Transaction/historyPending');?>"><span class="glyphicon glyphicon-arrow-up"></span>挂单</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -142,7 +141,7 @@
 			<h2 class="body-title">全部持仓</h2>
 			<div class="content">
 				<div class="content-in" style="padding:0;">
-					<p>交易中 <strong>1</strong> 笔 <strong>0.50</strong> 手　交易盈亏 $47.50 <strong style="color:#000;">=</strong> <strong class="x-text-red">$47.50</strong></p>
+					<p id="tradetitle"></p>
 					<div style="background: #ccc;height: 0.5px;"></div>
 					<table class="table table-bordered table-hover">
 					  <thead>
@@ -155,42 +154,14 @@
 					  		<th class="x-text-right">现价</th>
 					  		<th class="x-text-right">止损/止盈</th>
 					  		<th class="x-text-right">盈亏</th>
-					
 					  	</tr>
 					  </thead>
-					  <tbody id="orderlist"></tbody>
+					  <tbody id="orderlist">
+					  </tbody>
 					</table>
 				</div><!--content-in-->
 			</div><!--content-->	
 		</div>		
-	</div>
-	<script type="text/javascript">
-	// layerdata
-        laydate.skin('molv');
-
-         //日期范围限制
-        var firstdate = {
-            elem: '#firstdate',
-            format: 'YYYY/MM/DD hh:mm:ss',
-            min: laydate.now(), //设定最小日期为当前日期
-            max: '2099-06-16 23:59:59', //最大日期
-            istime: true,
-            istoday: false,
-            choose: function (datas) {
-            }
-        };
-        var lastdate = {
-            elem: '#lastdate',
-            format: 'YYYY/MM/DD hh:mm:ss',
-            min: laydate.now(),
-            max: '2099-06-16 23:59:59',
-            istime: true,
-            istoday: false,
-            choose: function (datas) {
-            }
-        };
-        laydate(firstdate);
-        laydate(lastdate);	
-	</script>		
+	</div>	
 </body>
 </html>

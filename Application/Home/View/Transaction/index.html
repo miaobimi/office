@@ -2,13 +2,12 @@
 <link rel="stylesheet" type="text/css" href="__CSS__/account_info.css">
 <link rel="stylesheet" type="text/css" href="__CSS__/common.css">
 <link rel="stylesheet" type="text/css" href="__CSS__/trade_type.css">
-<script src="__STATIC__/layer/laydate/laydate.js"></script>
 <script src="__JS__/trade_index.js"></script>
 	<script>
-		var getOrderInfoUrl = "{:U('Home/Transaction/getTradeInfo')}";
+		var getTotalInfoUrl = "{:U('Home/Transaction/getTotalInfo')}";
 		$(function(){
 			highlight_subnav("{:U('Home/Transaction/index')}");
-			Trade.init();
+			Trade.getTotalInfo();
 		})
 	</script>	
 </head>
@@ -20,7 +19,7 @@
 			<h2 class="body-title">全部持仓</h2>
 			<div class="content">
 				<div class="content-in" style="padding:0;">
-					<p>交易中 <strong>1</strong> 笔 <strong>0.50</strong> 手　交易盈亏 $47.50 <strong style="color:#000;">=</strong> <strong class="x-text-red">$47.50</strong></p>
+					<p id="tradetitle"></p>
 					<div style="background: #ccc;height: 0.5px;"></div>
 					<table class="table table-bordered table-hover">
 					  <thead>
@@ -33,42 +32,14 @@
 					  		<th class="x-text-right">现价</th>
 					  		<th class="x-text-right">止损/止盈</th>
 					  		<th class="x-text-right">盈亏</th>
-					
 					  	</tr>
 					  </thead>
-					  <tbody id="orderlist"></tbody>
+					  <tbody id="orderlist">
+					  </tbody>
 					</table>
 				</div><!--content-in-->
 			</div><!--content-->	
 		</div>		
-	</div>
-	<script type="text/javascript">
-	// layerdata
-        laydate.skin('molv');
-
-         //日期范围限制
-        var firstdate = {
-            elem: '#firstdate',
-            format: 'YYYY/MM/DD hh:mm:ss',
-            min: laydate.now(), //设定最小日期为当前日期
-            max: '2099-06-16 23:59:59', //最大日期
-            istime: true,
-            istoday: false,
-            choose: function (datas) {
-            }
-        };
-        var lastdate = {
-            elem: '#lastdate',
-            format: 'YYYY/MM/DD hh:mm:ss',
-            min: laydate.now(),
-            max: '2099-06-16 23:59:59',
-            istime: true,
-            istoday: false,
-            choose: function (datas) {
-            }
-        };
-        laydate(firstdate);
-        laydate(lastdate);	
-	</script>		
+	</div>	
 </body>
 </html>

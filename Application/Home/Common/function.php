@@ -1,5 +1,23 @@
 <?php 
 
+	function socketApi($query){
+
+		$ptr=fsockopen(C('ip'),C('port'),$errno,$errstr,5); 
+	    $ret = '';
+	    if($ptr){
+         	if(fputs($ptr,$query)!=FALSE)
+             	while(!feof($ptr)){
+                	$line=fgets($ptr,128);
+       				$ret .= $line;
+             	} 
+
+        	fclose($ptr);
+        	return $ret;
+	    }else{
+	    	return "$errstr ($errno)";
+	    }
+	}
+
 	function p($str){
 		echo '<pre>'.print_r($str,true).'</pre>';
 	}

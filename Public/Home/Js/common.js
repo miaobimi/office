@@ -104,3 +104,231 @@ function ajaxReturn(url,data,before,callback,errBack){
 		}
 	})
 }
+
+/* 
+* 时间格式化 
+* strDateTime:需要格式化的字符串时间 
+* intType：格式化类型 
+*/
+function formatDateTime(strDateTime, intType) {
+	var years, month, days, hours, minutes, seconds;
+      var newDate, arrDate = new Array(), arrTime = new Array();
+
+      try {
+            if (strDateTime != undefined && strDateTime != null && strDateTime != "") {
+                  //获取日期和时间数组  
+                  if (strDateTime.toString().indexOf("-") != -1) {
+                        var item = strDateTime.split(" ");
+                        arrDate = item[0].toString().split("-");
+                        arrTime = item[1].toString().split(":");
+                  } else if (strDateTime.toString().indexOf("/") != -1) {
+                        var item = strDateTime.split(" ");
+                        arrDate = item[0].toString().split("/");
+                        arrTime = item[1].toString().split(":");
+                  } else if (!isNaN(Number(strDateTime))) {
+                        //unix 时间戳
+                        newDate = new Date(Number(strDateTime) * 1000);
+                  }
+
+                //处理数据  
+                if (arrDate != undefined && arrTime != undefined && arrDate.length == 3 && arrTime.length == 3 && (newDate == undefined || newDate == null)) {
+                        newDate = new Date(
+                        parseInt(arrDate[0]),
+                        parseInt(Number(arrDate[1]) - 1),
+                        parseInt(arrDate[2]),
+                        parseInt(arrTime[0]),
+                        parseInt(arrTime[1]),
+                        parseInt(arrTime[2])
+                    );
+                  }
+
+                  switch (Number(intType)) {
+                        case 1:     //格式:yyyy-MM-dd  
+                              years = newDate.getFullYear();
+                              month = (newDate.getMonth() + 1);
+                              if (Number(month) < 10) month = "0" + month;
+                              days = newDate.getDate();
+                              if (Number(days) < 10) days = "0" + days;
+
+                              newDate = years + "-" + month + "-" + days;
+                              break;
+                        case 2:     //格式:MM-dd HH:mm  
+                              month = (newDate.getMonth() + 1);
+                              if (Number(month) < 10) month = "0" + month;
+
+                              days = newDate.getDate();
+                              if (Number(days) < 10) days = "0" + days;
+
+                              hours = newDate.getHours();
+                              if (Number(hours) < 10) hours = "0" + hours;
+
+                              minutes = newDate.getMinutes();
+                              if (Number(minutes) < 10) minutes = "0" + minutes;
+
+                              newDate = month + "-" + days +
+                              " " + hours + ":" + minutes;
+                              break;
+                        case 3:     //格式:HH:mm:ss  
+                              hours = newDate.getHours();
+                              if (Number(hours) < 10) hours = "0" + hours;
+
+                              minutes = newDate.getMinutes();
+                              if (Number(minutes) < 10) minutes = "0" + minutes;
+
+                              seconds = newDate.getSeconds();
+                              if (Number(seconds) < 10) seconds = "0" + seconds;
+
+                              newDate = hours + ":" + minutes + ":" + seconds;
+                              break;
+                        case 4:     //格式:HH:mm  
+                              hours = newDate.getHours();
+                              if (Number(hours) < 10) hours = "0" + hours;
+
+                              minutes = newDate.getMinutes();
+                              if (Number(minutes) < 10) minutes = "0" + minutes;
+
+                              newDate = hours + ":" + minutes;
+                              break;
+                        case 5:     //格式:yyyy-MM-dd HH:mm  
+                              years = newDate.getFullYear();
+
+                              month = (newDate.getMonth() + 1);
+                              if (Number(month) < 10) month = "0" + month;
+
+                              days = newDate.getDate();
+                              if (Number(days) < 10) days = "0" + days;
+
+                              hours = newDate.getHours();
+                              if (Number(hours) < 10) hours = "0" + hours;
+
+                              minutes = newDate.getMinutes();
+                              if (Number(minutes) < 10) minutes = "0" + minutes;
+
+                              newDate = years + "-" + month + "-" + days +
+                              " " + hours + ":" + minutes;
+                              break;
+                        case 6:     //格式:yyyy/MM/dd  
+                              years = newDate.getFullYear();
+
+                              month = (newDate.getMonth() + 1);
+                              if (Number(month) < 10) month = "0" + month;
+
+                              days = newDate.getDate();
+                              if (Number(days) < 10) days = "0" + days;
+
+                              newDate = years + "/" + month + "/" + days;
+                              break;
+                        case 7:     //格式:MM/dd HH:mm  
+                              month = (newDate.getMonth() + 1);
+                              if (Number(month) < 10) month = "0" + month;
+
+                              days = newDate.getDate();
+                              if (Number(days) < 10) days = "0" + days;
+
+                              hours = newDate.getHours();
+                              if (Number(hours) < 10) hours = "0" + hours;
+
+                              minutes = newDate.getMinutes();
+                              if (Number(minutes) < 10) minutes = "0" + minutes;
+
+                              newDate = month + "/" + days +
+                              " " + hours + ":" + minutes;
+                              break;
+                        case 8:     //格式:yyyy/MM/dd HH:mm  
+                              years = newDate.getFullYear();
+
+                              month = (newDate.getMonth() + 1);
+                              if (Number(month) < 10) month = "0" + month;
+
+                              days = newDate.getDate();
+                              if (Number(days) < 10) days = "0" + days;
+
+                              hours = newDate.getHours();
+                              if (Number(hours) < 10) hours = "0" + hours;
+
+                              minutes = newDate.getMinutes();
+                              if (Number(minutes) < 10) minutes = "0" + minutes;
+
+                              newDate = years + "/" + month + "/" + days +
+                              " " + hours + ":" + minutes;
+                              break;
+                        case 9:     //格式:yy-MM-dd  
+                              years = newDate.getFullYear();
+                              years = years.toString().substr(2, 2);
+
+                              month = (newDate.getMonth() + 1);
+                              if (Number(month) < 10) month = "0" + month;
+
+                              days = newDate.getDate();
+                              if (Number(days) < 10) days = "0" + days;
+
+                              newDate = years + "-" + month + "-" + days;
+                              break;
+                        case 10:     //格式:yy/MM/dd  
+                              years = newDate.getFullYear();
+                              years = years.toString().substr(2, 2);
+
+                              month = (newDate.getMonth() + 1);
+                              if (Number(month) < 10) month = "0" + month;
+
+                              days = newDate.getDate();
+                              if (Number(days) < 10) days = "0" + days;
+
+                              newDate = years + "/" + month + "/" + days;
+                              break;
+                        case 11:     //格式:yyyy年MM月dd hh:mm:ss  
+                              years = newDate.getFullYear();
+
+                              month = (newDate.getMonth() + 1);
+                              if (Number(month) < 10) month = "0" + month;
+
+                              days = newDate.getDate();
+                              if (Number(days) < 10) days = "0" + days;
+
+                              hours = newDate.getHours();
+                              if (Number(hours) < 10) hours = "0" + hours;
+
+                              minutes = newDate.getMinutes();
+                              if (Number(minutes) < 10) minutes = "0" + minutes;
+
+                              seconds = newDate.getSeconds();
+                              if (Number(seconds) < 10) seconds = "0" + seconds;
+
+                              newDate = years + "年" + month + "月" + days +
+                              " " + hours + ":" + minutes + ":" + seconds;
+                              break;
+                        case 12:     //格式:yyyyMMdd 
+                              years = newDate.getFullYear();
+
+                              month = (newDate.getMonth() + 1);
+                              if (Number(month) < 10) month = "0" + month;
+
+                              days = newDate.getDate();
+                              if (Number(days) < 10) days = "0" + days;
+
+                              newDate = years.toString() + month.toString() + days.toString();
+                              break;
+                  }
+            }else{
+            	newDate = new Date();
+
+		          return newDate.getFullYear() + "-" +
+		         (newDate.getMonth() + 1) + "-" +
+		         newDate.getDate() + " " +
+		         newDate.getHours() + ":" +
+		         newDate.getMinutes() + ":" +
+		         newDate.getSeconds();
+            }
+      } catch (e) {
+          newDate = new Date();
+
+          return newDate.getFullYear() + "-" +
+         (newDate.getMonth() + 1) + "-" +
+         newDate.getDate() + " " +
+         newDate.getHours() + ":" +
+         newDate.getMinutes() + ":" +
+         newDate.getSeconds();
+      }
+
+      return newDate;
+}  
