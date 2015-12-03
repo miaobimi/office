@@ -141,14 +141,18 @@
 					    <h3 class="panel-title">当前</h3>
 					  </div>
 					  <div class="panel-body">
-						  <div class="form-group form-inline">
-						      <label >帐号：</label>
-						      <span class="label label-default">600777</span>
-					      </div>
-					  	  <div class="form-group form-inline">
-						      <label >电邮：</label>
-						      <input type="text" class="form-control" value="1567688398@qq.com">
-					      </div>
+					  		<dl class="dl-horizontal">
+								  <dt>帐号:</dt>
+								  <dd><span class="label label-info" style="font-size:18px;">600777</span></dd>
+								  <dt>
+								  	 电邮：	
+								  </dt>
+								  <dd>
+								  	 <div class="form-inline">
+									     <input type="text" class="form-control" disabled="disabled" value="1567688398@qq.com">
+								     </div>
+								  </dd>
+							</dl>
 					  </div>
 					</div>
 					<div class="panel panel-default">
@@ -156,10 +160,16 @@
 					    <h3 class="panel-title">更改后</h3>
 					  </div>
 					  <div class="panel-body">
-					  	<div class="form-group form-inline">
-					      <label >新的电邮：</label>
-					      <input type="text" class="form-control"  placeholder="请输入新的电邮">
-				        </div>
+					  	<dl class="dl-horizontal">
+							  <dt>
+							  	 新的电邮:	
+							  </dt>
+							  <dd>
+							  	 <div class="form-inline">
+								     <input type="text" class="form-control" placeholder='输入新的电邮'>
+							     </div>
+							  </dd>
+						</dl>
 					  </div>
 					</div>
 					<div style="width: 30%;margin:40px auto;">

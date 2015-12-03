@@ -80,13 +80,17 @@ function jsonpReturn(url,data,callback){
 	});	
 }
 
-function ajaxReturn(url,data,before,callback,errBack){
+function ajaxReturn(url,data,before,callback,errBack,async){
+      if(typeof async == 'undefined'){
+            var async = true;
+      }
 	$.ajax({
 		url : url,
 		data : data,
 		dataType : 'json',
 		type : 'POST',
 		cache : false,
+            async: async,
 		beforeSend : function(){
 			if(typeof before === 'function'){
 				before();

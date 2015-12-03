@@ -144,7 +144,7 @@
 						<div class="form-group">
 					    	<label class="col-sm-2 control-label">帐号：</label>
 					    	<div class="col-sm-4">
-					    		<p class="form-control-static"><span class="label label-default">600777</span></p>
+					    		<p class="form-control-static"><span class="label label-info" style="font-size:18px;">600777</span></p>
 					    	</div>  
 					    </div>
 					    <div class="form-group">

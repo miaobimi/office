@@ -1,5 +1,86 @@
 Trade = {
+	mybalance:0,
+	interval: 0 ,
 	init: function(){
+		this.loadChart();
+	},
+
+	loadChart :function(){
+		Highcharts.setOptions({                                                     
+            global: {                                                               
+                useUTC: false                                                       
+            }                                                                       
+        });                                                                         
+        var self = this;                                                                            
+        var chart;                                                                  
+        $('#container').highcharts({                                                
+            chart: {                                                                
+                type: 'spline',                                                     
+                animation: Highcharts.svg, // don't animate in old IE               
+                marginRight: 10,                                                    
+                events: {                                                           
+                    load: function() { 
+                        // set up the updating of the chart each second             
+                        var series = this.series[0]; 
+                        series.addPoint(self.getTotalAccountInfo(), true, true);                               
+                        setInterval(function() {                                    
+                                                          
+                            series.addPoint(self.getTotalAccountInfo(), true, true);                    
+                        }, 5000);                                                   
+                    }                                                               
+                }                                                                   
+            },                                                                      
+            title: {                                                                
+                text: '余额走势'                                            
+            }, 
+            subtitle: {
+		        text: 'The Last Month Balance Changes'
+		    },                                                                     
+            xAxis: {                                                                
+                type: 'datetime',                                                   
+                tickPixelInterval: 150                                              
+            },                                                                      
+            yAxis: {                                                                
+                title: {                                                            
+                    text: '余额'                                                   
+                },                                                                  
+                plotLines: [{                                                       
+                    value: 0,                                                       
+                    width: 1,                                                       
+                    color: '#808080'                                                
+                }]                                                                  
+            },                                                                      
+            tooltip: {                                                              
+                formatter: function() {                                             
+                        return '<b>'+ this.series.name +'</b><br/>'+                
+                        Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) +'<br/>'+
+                        Highcharts.numberFormat(this.y, 2);                         
+                }                                                                   
+            },                                                                      
+            legend: {                                                               
+                enabled: false                                                      
+            },                                                                      
+            exporting: {                                                            
+                enabled: false                                                      
+            },                                                                      
+            series: [{                                                              
+                name: '余额',                                                
+                data: (function() {                                                 
+                    // generate an array of random data                             
+                    var data = [],                                                  
+                        time = (new Date()).getTime(),                              
+                        i;                                                          
+                                                                                    
+                    for (i = -19; i <= 0; i++) {                                    
+                        data.push({                                                 
+                            x: time + i * 1000,                                     
+                            y: Trade.mybalance                                        
+                        });                                                         
+                    }                                                               
+                    return data;                                                    
+                })()                                                                
+            }]                                                                      
+        });                                                                         
 	},
 
 	getTotalInfo: function(){
@@ -37,11 +118,25 @@ Trade = {
 								  		'</td>'+
 								  	'</tr>';
 					};
+					var nowtime = new Date().getTime();
+					nowtime = nowtime+8*3600*1000;
 					v_total = v_total.toFixed(2);
 					p_total = p_total.toFixed(2);
+					kp_total = p_total/1000;
+					var vdata = [nowtime,Number(kp_total.toFixed(5))];
 					html_p = '交易中 <strong>'+params.length+'</strong> 笔 <strong>'+v_total+'</strong> 手　交易盈亏<strong class="x-text-red">$'+p_total+'</strong>';
 					$("#tradetitle").empty().html(html_p);
-					$("#orderlist").empty().html(html);
+					$("#orderlist").empty().html(html);		
+					totaldata.push(vdata);
+						console.log(totaldata);	
+					if(totaldata.length==10){
+						totaldata.splice(0,totaldata.length);
+					}
+
+					clearInterval(Trade.interval);
+					Trade.interval = setInterval(Trade.getTotalInfo,10000);
+					
+					//var vdata = pushDataToHgchart(nowtime,p_total);
 				}else{
 					$("#tradetitle").empty();
 					$("#orderlist").empty();
@@ -163,8 +258,13 @@ Trade = {
 						params[i].closetime = params[i].closetime.split(" ")[1];
 						html += '<tr>'+
 							  		'<td>'+params[i].order+'</td>'+
-							  		'<td>'+
-							  			'<span class="label label-primary">'+params[i].cmd+'</span><span class="x-box-label" style="float:right">'+params[i].symbol+'</span>'+
+							  		'<td>';
+							  		if(params[i].cmd=='buy'){
+							  			html+='<span class="label label-primary">'+params[i].cmd+'</span>'
+							  		}else{
+							  			html+='<span class="label label-warning">'+params[i].cmd+'</span>'
+							  		}
+							  		html+='<span class="x-box-label" style="float:right">'+params[i].symbol+'</span>'+
 							  		'</td>'+
 							  		'<td class="x-text-right x-text-bold x-font-14">'+params[i].volume+' 手</td>'+
 							  		'<td>'+
@@ -176,9 +276,13 @@ Trade = {
 							  		'<td class="x-text-right">'+
 							  			'<span class="x-text-ccc">'+params[i].sl+'</span><span class="y"></span><span>'+params[i].tp+'</span>'+
 							  		'</td>'+
-							  		'<td class="x-text-right">'+
-							  			'<span class="x-box-label x-text-bold x-text-red x-font-16">$'+params[i].profit+'</span>'+
-							  		'</td>'+
+							  		'<td class="x-text-right">'
+							  		if(Number(params[i].profit)<0){
+							  			html+='<span class="x-box-label x-text-bold x-text-red x-font-16">$'+params[i].profit+'</span>'
+							  		}else{
+							  			html+='<span class="x-box-label x-text-bold x-text-green x-font-16">$'+params[i].profit+'</span>'
+							  		}
+							  	html+='</td>'+
 							  	'</tr>';
 					};				
 					v_total = v_total.toFixed(2);
@@ -204,5 +308,33 @@ Trade = {
 				layer.alert(res.info,{icon:2})
 			}
 		})
+	},
+	getTotalAccountInfo: function(){
+	
+		var arr = [];
+		ajaxReturn(getTotalAccountInfoUrl,{},null,function(res){
+			if(res.status){
+				var params = res.info;
+				//console.log(params);
+				
+				var html = '';
+				if(typeof(params) != "undefined"){
+					$('#memberBalance').empty().html('$'+params.balance);
+					$('#memberEquity').empty().html('$'+params.equity);
+					$('#memberMargin').empty().html('$'+params.margin);
+					$('#memberMarginfree').empty().html('$'+params.margin_free);	
+					Trade.mybalance	= Number(params.balance);
+					 var x = (new Date()).getTime(), // current time         
+                        y = Trade.mybalance; 
+					arr = [x,y];
+					//var vdata = pushDataToHgchart(nowtime,p_total);
+				}else{
+					//
+				}
+			}else{
+				layer.alert(res.info,{icon:2})
+			}
+		},null,false);
+		return arr;
 	},
 }
