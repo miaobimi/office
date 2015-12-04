@@ -22,7 +22,7 @@ class TransactionController extends CommonController {
         import('Org.Util.Mt');
         $res1 = \Mt::activeOrder();
         $res2 = \Mt::pendingOrder();
-        $res=array_merge($res1['orders'],$res2['orders']);
+        $res=array_merge($res1['info']['orders'],$res2['info']['orders']);
         $this -> success($res);
 
     }
@@ -30,7 +30,7 @@ class TransactionController extends CommonController {
         import('Org.Util.Mt');
         $res = \Mt::activeOrder();
         
-        $this->success($res[orders]);
+        $this->success($res['info']['orders']);
     }
 
     /**
@@ -53,7 +53,7 @@ class TransactionController extends CommonController {
     Public function pendingTradeInfo(){
         import('Org.Util.Mt');
         $res = \Mt::pendingOrder();
-        $this->success($res[orders]);
+        $this->success($res['info']['orders']);
     }
 
 //历史交易======================================================================
@@ -68,7 +68,7 @@ class TransactionController extends CommonController {
     Public function historyOrderInfo(){
         import('Org.Util.Mt');
         $res = \Mt::historyOrder();
-        $this->success($res[orders]);
+        $this->success($res['info']['orders']);
     }
     /**
      * 出入金历史

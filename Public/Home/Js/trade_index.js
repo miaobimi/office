@@ -127,11 +127,6 @@ Trade = {
 					html_p = '交易中 <strong>'+params.length+'</strong> 笔 <strong>'+v_total+'</strong> 手　交易盈亏<strong class="x-text-red">$'+p_total+'</strong>';
 					$("#tradetitle").empty().html(html_p);
 					$("#orderlist").empty().html(html);		
-					totaldata.push(vdata);
-						console.log(totaldata);	
-					if(totaldata.length==10){
-						totaldata.splice(0,totaldata.length);
-					}
 
 					clearInterval(Trade.interval);
 					Trade.interval = setInterval(Trade.getTotalInfo,10000);

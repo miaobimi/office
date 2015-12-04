@@ -19,7 +19,8 @@
       <input type="hidden" name="Rettype" value="<?php echo ($Rettype); ?>">
       <input type="hidden" name="ServerUrl" value="<?php echo ($ServerUrl); ?>">
       <input type="hidden" name="SignMD5" value="<?php echo ($SignMD5); ?>">
-      <input type="hidden" name="Bank_Code" value="00123">
+      <input type="hidden" name="DoCredit" value="<?php echo ($DoCredit); ?>">
+      <input type="hidden" name="BankCode" value="<?php echo ($BankCode); ?>">
     </form>
     <script language="javascript">
       document.getElementById("frm1").submit();

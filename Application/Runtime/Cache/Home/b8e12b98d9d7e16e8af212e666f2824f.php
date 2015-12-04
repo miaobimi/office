@@ -16,19 +16,24 @@
 		var logoutUrl = "<?php echo U('Home/Public/logout');?>";
 	</script>
 <link rel="stylesheet" type="text/css" href="/Public/Home/Css/account_info.css">
-<script src="/Public/Static/layer/laydate/laydate.js"></script>
 	<script>
 		$(function(){
 			highlight_subnav("<?php echo U('Home/Account/editLeverage');?>");
 			$('#submit').bind('click',function(){
 				//接口
-				if(true){
-					layer.alert('修改成功',{icon:1});
-					window.location.reload();
-				}else{
-					layer.alert('修改失败',{icon:2});
-				}
-			})
+				layer.confirm('确认更改杠杆？',function(){
+					var editLeverageUrl = "<?php echo U('Home/Account/editLeverage');?>";
+					var getleverage = $('#newleverage').text();
+					ajaxReturn(editLeverageUrl,{getleverage:getleverage},function(){},function(res){
+						if(res.status){
+							layer.alert('修改成功',{icon:1});
+							window.location.reload();
+						}else{
+							layer.alert('修改失败',{icon:2});
+						}
+					});
+				});			
+			});
 		})
 	</script>	
 </head>
@@ -160,7 +165,7 @@
 						  <dd><span class="label label-info" style="font-size:18px;">600777</span></dd>
 						  <dt>杠杆:</dt>
 						  <dd>
-						  	<label style="font-size:18px;color:#ff5d5b">1：200</label>
+						  	<label style="font-size:18px;color:#ff5d5b">1：<?php echo ($nowleverage); ?></label>
 						  </dd>
 						</dl>
 					  </div>
@@ -173,7 +178,7 @@
 					    <dl class="dl-horizontal">
 						  <dt>新的杠杆:</dt>
 						  <dd>
-						  <label style="font-size:18px;color:#ff5d5b">1：100</label>
+						  <label id="newleverage" style="font-size:18px;color:#ff5d5b">1：<?php echo ($newleverage); ?></label>
 						  </dd>
 						</dl>
 					  </div>

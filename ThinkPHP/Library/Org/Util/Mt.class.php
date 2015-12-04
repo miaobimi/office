@@ -6,8 +6,10 @@
 		 * 获取账户信息
 		 * @return [type] [description]
 		 */
-		Static function getAccountInfo(){
-
+		Static function getAccountInfo($leverage){
+			$arr = array(
+				"leverage" => $leverage
+				);
 			// $arr = array(
 			// 	"msg_type"=>20,
 			// 	"login"=>session('uid')
@@ -15,13 +17,14 @@
 
 			// $res = socketApi(json_encode($arr));
 
-			 $str = '{"balance":"7277.12","email":"","equity":"6152.10","leverage":100,"margin":"3418.32","margin_free":"2733.78","msg_type":21,"name":"test","phone":"","regdate":"2015-11-24","result_code":0,"volume":"1003.90"}';
-	        // if($result['result_code']<0){
-	        //     $this->error();
-	        // }else{
-	            $str = json_decode($str,true);
-	           	return $str;
-	        // }
+			$str = '{"balance":"7277.12","email":"13275056507@qq.com","equity":"6152.10","leverage":100,"margin":"3418.32","margin_free":"2733.78","msg_type":21,"name":"test","phone":"13275056507","regdate":"2015-11-24","result_code":0,"volume":"1003.90"}';
+	        $res = json_decode($str,true);
+	        if($res['result_code']<0){
+				$result = array('status'=>0,'info'=>$res['result_code']);
+			}else{
+				$result = array('status'=>1,'info'=>$res);
+			}
+			return $result;
 		}
 
 		/**
@@ -35,9 +38,14 @@
 				"password"=>"123456a"
 			);
 
-			$res = socketApi(json_encode($arr));
-
-			return $res;
+			//$res = socketApi(json_encode($arr));
+			$res = json_decode('{"msg_type":11,"result_code":0}',true);
+			if($res['result_code']<0){
+				$result = array('status'=>0,'info'=>$res['result_code']);
+			}else{
+				$result = array('status'=>1);
+			}
+			return $result;
 		}
 
 		/**
@@ -55,7 +63,13 @@
 
 			$str = '{"msg_type":31,"orders":[{"cmd":"buy","commission":"-50.00","openprice":"1.47863","closeprice":"1.47863","opentime":"2015-11-24 11:53:19","order":4509318,"profit":"-436.57","sl":"0.00000","swap":"63.72","symbol":"EURAUD","tp":"0.00000","volume":"1.00"},{"cmd":"buy","commission":"-50.00","openprice":"0.72747","closeprice":"0.72747","opentime":"2015-11-25 14:03:49","order":4509319,"profit":"-825.00","sl":"0.00000","swap":"5.88","symbol":"AUDUSD","tp":"0.00000","volume":"1.00"}],"result_code":0}
 ';
-			return json_decode($str,true);
+			$res = json_decode($str,true);
+			if($res['result_code']<0){
+				$result = array('status'=>0,'info'=>$res['result_code']);
+			}else{
+				$result = array('status'=>1,'info'=>$res);
+			}
+			return $result;
 		}
 
 		/**
@@ -72,7 +86,13 @@
 			
 			$str = '{"msg_type":41,"ordercount":1,"orders":[{"cmd":"buy stop","commission":"0.00","openprice":"1.06930","opentime":"2015-11-29 16:01:38","order":4509327,"profit":"0.00","sl":"0.00000","swap":"0.00","symbol":"EURUSD","tp":"0.00000","volume":"1.00"}],"result_code":0}  
 ';
-			return json_decode($str,true);
+			$res = json_decode($str,true);
+			if($res['result_code']<0){
+				$result = array('status'=>0,'info'=>$res['result_code']);
+			}else{
+				$result = array('status'=>1,'info'=>$res);
+			}
+			return $result;
 		}
 
 		/**
@@ -96,7 +116,63 @@
 			// $res = socketApi(json_encode($params));
 
 			$str = '{"msg_type":51,"ordercount":3,"orders":[{"closeprice":"92.132","closetime":"2015-11-25 14:06:27","cmd":"sell","commission":"-50.00","openprice":"92.097","opentime":"2015-11-25 14:06:00","order":4509321,"profit":"-28.60","sl":"0.0","swap":"0.0","symbol":"CADJPY","tp":"0.0","volume":"1.00"},{"closeprice":"0.96675","closetime":"2015-11-25 15:58:31","cmd":"buy","commission":"-50.00","openprice":"1.00000","opentime":"2015-11-25 15:57:26","order":4509322,"profit":"-2501.28","sl":"0.0","swap":"0.0","symbol":"AUDCAD","tp":"0.0","volume":"1.00"},{"closeprice":"0.72757","closetime":"2015-11-25 15:59:38","cmd":"buy","commission":"-50.00","openprice":"0.72800","opentime":"2015-11-25 15:59:14","order":4509323,"profit":"-43.00","sl":"0.72800","swap":"0.0","symbol":"AUDUSD","tp":"0.72900","volume":"1.00"}],"result_code":0}';
-			return json_decode($str,true);
+			$res = json_decode($str,true);
+			if($res['result_code']<0){
+				$result = array('status'=>0,'info'=>$res['result_code']);
+			}else{
+				$result = array('status'=>1,'info'=>$res);
+			}
+			return $result;
+		}
+
+		/**
+		 * 出入金
+		 * @return [type] [description]
+		 */
+		Static function changeBalance($money){
+
+			$params = array(
+				'msg_type' => 70,
+				'login' => 1998,
+				'balance' => $money || 1
+			);
+
+			// $res = socketApi(json_encode($params));
+
+			$res = json_decode('{"msg_type":71,"result_code":0}',true);
+			if($res['result_code']<0){
+				$result = array('status'=>0,'info'=>$res['result_code']);
+			}else{
+				$result = array('status'=>1);
+			}
+
+			return $result;
+		}
+
+		/**
+		 * 修改密码
+		 * @param  [type] $params [description]
+		 * @return [type]         [description]
+		 */
+		Static function changePass($params){
+
+			$params = array(
+				'msg_type' => 60,
+				'login' => 1998,
+				'password' => 'fvhgfhgfh',
+				'change_investor' => 1
+			);
+
+
+			// $res = socketApi(json_encode($params));
+
+			$res = json_decode('{"msg_type":61,"result_code":0}',true);
+			if($res['result_code']<0){
+				$result = array('status'=>0,'info'=>$res['result_code']);
+			}else{
+				$result = array('status'=>1);
+			}
+			return $result;
 		}
 
 		function __call($name, $args){

@@ -19,6 +19,8 @@ class PaymentController extends CommonController {
     	if(IS_POST){
 
         }else{
+            
+
             $this->display();
         }
     	
@@ -85,6 +87,8 @@ class PaymentController extends CommonController {
         $this->assign('OrderEncodeType', $caiyifu['OrderEncodeType']);
         $this->assign('RetEncodeType', $caiyifu['RetEncodeType']);
         $this->assign('Rettype', $caiyifu['Rettype']);
+        $this->assign('DoCredit', $caiyifu['Rettype']);
+        $this->assign('BankCode', $_POST['Bank_Code']);
 
         //订单支付接口的Md5摘要，原文=订单号+金额+日期+支付币种+商户证书 
         $SignMD5 = md5($Billno . $Amount . $Date . $caiyifu['Currency_Type'] . $caiyifu['Mer_key']);
@@ -107,7 +111,6 @@ class PaymentController extends CommonController {
         $retEncodeType = $_GET['RetencodeType'];
         $currency_type = $_GET['Currency'];
         $signature = $_GET['Signature'];
-
         //Md5摘要认证
         $content = $billno . $amount . $mydate . $succ . $ipsbillno . $currency_type;
         $payment = C('payment');
@@ -117,23 +120,30 @@ class PaymentController extends CommonController {
         if ($signature_1ocal == $signature){
             //  判断交易是否成功
             if ($succ == 'Y'){
-                $attachArr = explode('-', $attach);
-                $data = array(
-                    'Currency_Type' => $currency_type,
-                    'Amount' => $amount,
-                    'account' => session('account') || 'test',
-                    'inDate' => $mydate,
-                    'successTime' => time(),
-                    'Billno' => $billno,
-                    'SysOrderNo' => $ipsbillno,//交易凭证
-                    'bank' => $attachArr[0],
-                    'month' => $attachArr[1]
-                ); 
-                if(M('deposits')->add($data)){
-                    $this->redirect('Home/Payment/inRecords');
+                import('Org.Util.Mt');
+                $mt = \Mt::changeBalance($amount);
+                if($mt['status']){
+                    $attachArr = explode('-', $attach);
+                    $data = array(
+                        'Currency_Type' => $currency_type,
+                        'Amount' => $amount,
+                        'account' => session('uid') || 'test',
+                        'inDate' => $mydate,
+                        'successTime' => time(),
+                        'Billno' => $billno,
+                        'SysOrderNo' => $ipsbillno,//交易凭证
+                        'bank' => $attachArr[0],
+                        'month' => $attachArr[1]
+                    ); 
+                    if(M('deposits')->add($data)){
+                        $this->redirect('Home/Payment/inRecords');
+                    }else{
+                        $this->error('写入数据库失败');
+                    }
                 }else{
-                    $this->error('写入数据库失败');
+                    $this->error($mt['info'],U('Home/Payment/index'));
                 }
+                
             }else{
                 $this->error('交易失败');
             }

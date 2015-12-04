@@ -19,6 +19,29 @@
 	<script>
 		$(function(){
 			highlight_subnav("<?php echo U('Home/Account/editMainPass');?>");
+		      $("#pas1").blur(function(){
+		      	var temp = $(this).val().match(/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/);
+		        if(!$(this).val() || !temp)
+		        {
+		            $("#pas1Tip").html("密码不能为空且只能为英文或者数字");
+		        }
+		        else
+		        {
+		            $("#pas1Tip").html("输入正确");
+		        }
+
+		     });
+		     /*$("#pas2").blur(function(){
+		        if(!$(this).val() || $(this).val() != $("#pas1").val())
+		        {
+		            $("#pas1Tip").html("密码为空或者和上面的密码不致");
+		        }
+		        else
+		        {
+		            $("#pas2Tip").html("输入正确");
+		        }
+
+		     });*/
 		})
 	</script>	
 </head>
@@ -150,17 +173,17 @@
 					    <div class="form-group">
 					    	<label class="col-sm-2 control-label">新的密码：</label>
 					    	<div class="col-sm-4">
-					    		<input type="text" class="form-control" placeholder="请输入密码">
+					    		<input type="text" class="form-control" id="pas1" placeholder="新密码必须包含数字和字母"><label class="label label-warning" id="pas1Tip"></label>
 					    	</div>   
 					    </div>
 					    <div class="form-group">
 					    	<label class="col-sm-2 control-label">再输一次：</label>
 					    	<div class="col-sm-4">
-					    		<input type="text" class="form-control" placeholder="请重新输入密码">
+					    		<input type="text" class="form-control" id="pas2" placeholder="请重新输入密码"><label class="label label-warning" id="pas2Tip"></label>
 					    	</div>				        
 					    </div>
 					    <div class="form-group" style="width: 30%;margin:40px auto;">
-							<button type="button" class="btn btn-success btn-block">确认并提交</button>
+							<button type="button" id="submit" class="btn btn-success btn-block">确认并提交</button>
 						</div>
 					</form>
 					

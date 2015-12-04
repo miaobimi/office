@@ -105,8 +105,9 @@ return array(
             // 'form_url' => 'https://payment.cai1pay.com/gateway.aspx'//正式环境
             
             'Merchanturl' => 'http://office.chntz.cn/Home/Payment/Merchanturl.html',//支付成功返回URL
-            'ServerUrl' => 'http://office.chntz.cn/Home/Payment/ServerUrl.html'//Server to Server返回页面
-
+            'ServerUrl' => 'http://office.chntz.cn/Home/Payment/ServerUrl.html',//Server to Server返回页面
+            'DoCredit' => 1//当DoCredit=1，表示用直连方式
+            // 'BankCode' => 当用直连方式时，这个银行编码不能为空，详细的银行编码参考
             // 'Attach' => '',//商户附加数据包
             //'Date' => ''//日期
             //'Amount' => '' //金额

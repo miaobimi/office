@@ -19,6 +19,32 @@
 	<script>
 		$(function(){
 			highlight_subnav("<?php echo U('Home/Account/editMail');?>");
+			$('#submit').bind('click',function(){
+				//接口
+				$("#error").hide();
+				var error = "<label id=\"error\" class=\"validate_input_error\">邮箱格式不正确</label>";
+				var editMailUrl = "<?php echo U('Home/Account/editMail');?>";
+				var getemail = $.trim($("input[name='newemail']").val());
+				if(!valid_email(getemail)){
+					$("input[name='newemail']").after(error);  
+		            $("input[name='newemail']").focus();
+		            $("input[name='newemail']").val('');  
+		            return false;
+				}
+				ajaxReturn(editMailUrl,{getemail:getemail},function(){},function(res){
+					if(res.status){
+						layer.alert('修改成功',{icon:1});
+						window.location.reload();
+					}else{
+						layer.alert('修改失败',{icon:2});
+					}
+				});
+			});
+			function valid_email(getemail) {
+ // var patten = new RegExp(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]+$/);
+				var patten = new RegExp(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+(com|cn)$/);
+			  	return patten.test(getemail);
+			 }
 		})
 	</script>	
 </head>
@@ -149,7 +175,7 @@
 								  </dt>
 								  <dd>
 								  	 <div class="form-inline">
-									     <input type="text" class="form-control" disabled="disabled" value="1567688398@qq.com">
+									     <input type="text" class="form-control" disabled="disabled" value="<?php echo ($nowemail); ?>">
 								     </div>
 								  </dd>
 							</dl>
@@ -166,14 +192,14 @@
 							  </dt>
 							  <dd>
 							  	 <div class="form-inline">
-								     <input type="text" class="form-control" placeholder='输入新的电邮'>
+								     <input type="text" class="form-control" name="newemail" placeholder='输入新的电邮'>
 							     </div>
 							  </dd>
 						</dl>
 					  </div>
 					</div>
 					<div style="width: 30%;margin:40px auto;">
-						<button type="button" class="btn btn-success btn-block">确认并提交</button>
+						<button type="button" id="submit" class="btn btn-success btn-block">确认并提交</button>
 					</div>
 				</div>
 			</div><!--content-->	

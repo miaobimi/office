@@ -16,10 +16,56 @@
 		var logoutUrl = "<?php echo U('Home/Public/logout');?>";
 	</script>
 <link rel="stylesheet" type="text/css" href="/Public/Home/Css/account_info.css">
-<script src="/Public/Static/layer/laydate/laydate.js"></script>
 	<script>
 		$(function(){
 			highlight_subnav("<?php echo U('Home/Account/editMobile');?>");
+			$('#submit').bind('click',function(){
+				//接口
+				if(checkContactNumber()){
+					var editMobileUrl = "<?php echo U('Home/Account/editMobile');?>";
+					var getphone = $.trim($("input[name='newphone']").val());
+					ajaxReturn(editMobileUrl,{getphone:getphone},function(){},function(res){
+						if(res.status){
+							layer.alert('修改成功',{icon:1});
+							window.location.reload();
+						}else{
+							layer.alert('修改失败',{icon:2});
+						}
+					});
+				}
+				
+			});
+			//验证手机号码或者电话号码  
+		    function checkContactNumber() {  
+		        $("#error").css("display", "none");  
+		        var mobile = $.trim($("input[name='newphone']").val());  
+		        var isMobile = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1})|(14[0-9]{1}))+\d{8})$/;  
+		        var isPhone = /^(?:(?:0\d{2,3})-)?(?:\d{7,8})(-(?:\d{3,}))?$/;;  
+		        var error = "<label id=\"error\" class=\"validate_input_error\">请正确填写电话号码，例如:13511111111或010-11111111</label>";  
+		        //如果为1开头则验证手机号码  
+		        if (mobile.substring(0, 1) == 1) {  
+		            if (!isMobile.exec(mobile) && mobile.length != 11) {  
+		                $("input[name='newphone']").after(error);  
+		                $("input[name='newphone']").focus();  
+		                return false;  
+		            }  
+		        }  
+		        //如果为0开头则验证固定电话号码  
+		        else if (mobile.substring(0, 1) == 0) {  
+		            if (!isPhone.test(mobile)) {  
+		                $("input[name='newphone']").after(error);  
+		                $("input[name='newphone']").focus();  
+		                return false;  
+		            }  
+		        }  
+		        //否则全部不通过  
+		        else {  
+		            $("input[name='newphone']").after(error);  
+		            $("input[name='newphone']").focus();  
+		            return false;  
+		        }  
+		        return true;  
+		    }
 		})
 	</script>	
 </head>
@@ -150,7 +196,7 @@
 								  </dt>
 								  <dd>
 								  	 <div class="form-inline">
-									     <input type="text" class="form-control" disabled="disabled" value="1567688398">
+									     <input type="text" class="form-control" disabled="disabled" value="<?php echo ($nowphone); ?>">
 								     </div>
 								  </dd>
 								</dl>
@@ -167,13 +213,13 @@
 								  </dt>
 								  <dd>
 								  	 <div class="form-inline">
-									     <input type="text" class="form-control" value="1567688398">
+									     <input type="text" class="form-control" name="newphone" placeholder="输入新手机号">
 								     </div>
 								  </dd>
 							</dl>
 					</div>
 					<div style="width: 30%;margin:40px auto;">
-						<button type="button" class="btn btn-success btn-block">确认并提交</button>
+						<button type="button" id="submit" class="btn btn-success btn-block">确认并提交</button>
 					</div>
 				</div>
 			</div><!--content-->	

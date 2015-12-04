@@ -66,7 +66,7 @@ class AccountController extends CommonController {
 
        import('Org.Util.Mt');
        $res = \Mt::getAccountInfo();
-       $this->success($res);
+       $this->ajaxReturn($res);
         
     }
 
@@ -118,10 +118,21 @@ class AccountController extends CommonController {
      * @return [type] [description]
      */
     Public function editLeverage(){
-
-        if(IS_POST){
-
+        import('Org.Util.Mt');
+        $res = \Mt::getAccountInfo();
+        // $res['leverage']
+        if(IS_AJAX){   
+            $leverage = I('getleverage','');
+            $leverage = substr($leverage,-3);
+            \Mt::getAccountInfo($leverage);
+            $this->success();
         }else{
+            if($res['leverage'] == '100'){     
+                $this->assign('newleverage','200'); 
+            }else{
+                $this->assign('newleverage','100');
+            }
+             $this->assign('nowleverage',$res['leverage']); 
              $this->display();
         }
     }
@@ -131,11 +142,15 @@ class AccountController extends CommonController {
      * @return [type] [description]
      */
     Public function editMobile(){
-
-        if(IS_POST){
-
+        import('Org.Util.Mt');
+        $res = \Mt::getAccountInfo();
+        if(IS_AJAX){
+            $phone = I('getphone','');
+            \Mt::getAccountInfo($phone);
+            $this->success();
         }else{
-             $this->display();
+            $this->assign('nowphone',$res['phone']);
+            $this->display();
         }
     }
 
@@ -144,11 +159,16 @@ class AccountController extends CommonController {
      * @return [type] [description]
      */
     Public function editMail(){
-
-        if(IS_POST){
-
+        import('Org.Util.Mt');
+        $res = \Mt::getAccountInfo();
+        if(IS_AJAX){
+            $email = I('getemail','');
+            \Mt::getAccountInfo($email);
+            p($email);die;
+            $this->success();
         }else{
-             $this->display();
+            $this->assign('nowemail',$res['email']);
+            $this->display();
         }
     }
 
