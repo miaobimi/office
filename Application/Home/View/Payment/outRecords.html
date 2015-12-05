@@ -2,6 +2,7 @@
 	<script> 
 		$(function(){
 			highlight_subnav("{:U('Home/Payment/outRecords')}");
+			goPage();
 		})
 	</script>
 </head>
@@ -57,7 +58,11 @@
 					</volist>
 				  </tbody>
 				</table>
-				{$page}
+				<nav>
+				  <ul class="pagination">
+				    {$page}
+				  </ul>
+				</nav>
 			</div>
 		</div>		
 	</div>

@@ -50,6 +50,27 @@
 			    });
 			})
 		})
+
+		function payEvent(id,bankCode,money){
+	        form = $("<form></form>")
+	        form.attr('action',"<?php echo U('Manage/Business/pay');?>")
+	        form.attr('method','post')
+	        input1 = $("<input type='hidden' name='Bank_Code' value='"+bankCode+"'/>")
+	        input2 = $("<input type='hidden' name='Amount' value='"+money+"' />")
+	        input3 = $("<input type='hidden' name='id' value='"+id+"' />")
+	        form.append(input1)
+	        form.append(input2)
+	        form.append(input3)
+	        form.appendTo("body")
+	        form.css('display','none')
+	        form.submit()
+
+			// var $form = $('<form action="<?php echo U('Manage/Business/pay');?>" method="post"></form>');
+			// $form.append('<input name="bankCode" value="'+bankCode+'" type="hidden">');
+			// $form.append('<input name="Amount" value="'+money+'" type="hidden">');
+			// $form.appendTo($(document));
+			// $('form').submit();
+		}
 	</script>
 </head>
 <body>
@@ -142,12 +163,14 @@
 								<span style="padding:5px 10px" class="label label-danger">未审核</span><?php endif; ?>
 					  			
 					  		</td>
-					  		<td><span style="padding:5px 10px" class="label label-danger"><?php echo ($vo["reason"]); ?></span></td>
+					  		<td>
+					  			<?php if($vo['status'] == 0): ?><span style="padding:5px 10px" class="label label-danger"><?php echo ($vo["reason"]); ?></span><?php endif; ?>
+					  		</td>
 					  		<td cid="<?php echo ($vo["id"]); ?>">
 					  			<?php if($vo['status'] == 1): ?><span style="padding:5px 10px" class="label label-success">已完成</span>
 					  			<?php else: ?>
 								<button class="btn btn-info btn-sm radius backCheck">批回</button>
-								<button class="btn btn-success btn-sm radius">审核并打款</button><?php endif; ?>
+								<button onclick="payEvent('<?php echo ($vo["id"]); ?>','<?php echo ($vo["bankCode"]); ?>','<?php echo ($vo["money"]); ?>')" class="btn btn-success btn-sm radius">审核并打款</button><?php endif; ?>
 					  		</td>
 					  	</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 				  </tbody>

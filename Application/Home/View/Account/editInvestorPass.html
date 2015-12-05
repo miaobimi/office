@@ -3,6 +3,51 @@
 	<script>
 		$(function(){
 			highlight_subnav("{:U('Home/Account/editInvestorPass')}");
+			$("#pas1").blur(function(){
+		      	var temp = $(this).val().match(/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/);
+		        if(!$(this).val() || !temp)
+		        {
+		            $("#pas1Tip").html("密码不能为空且只能为英文或者数字");
+		            $("#pas1Tip").removeClass('label label-success');
+		            $("#pas1Tip").addClass('label label-warning');
+		        }
+		        else
+		        {
+		            $("#pas1Tip").html("输入正确");
+		            $("#pas1Tip").removeClass('label label-warning');
+		            $("#pas1Tip").addClass('label label-success');
+		        }
+
+		     });
+		     $("#pas2").blur(function(){
+		        if(!$(this).val() || $(this).val() != $("#pas1").val())
+		        {
+		            $("#pas2Tip").html("密码为空或者和上面的密码不致");
+		            $("#pas2Tip").removeClass('label label-success');
+		            $("#pas2Tip").addClass('label label-warning');
+		        }
+		        else
+		        {
+		            $("#pas2Tip").html("输入正确");
+		            $("#pas2Tip").removeClass('label label-warning');
+		            $("#pas2Tip").addClass('label label-success');
+		            //验证通过后提交
+		            $('#submit').bind('click',function(){
+		            	layer.confirm('确定修改密码？',function(){
+		            		var editInvestorPassUrl = "{:U('Home/Account/editInvestorPass')}";
+							var getpwd = $("#pas2").val();
+				    		ajaxReturn(editInvestorPassUrl,{getpwd:getpwd},function(){},function(res){
+								if(res.status){
+									layer.alert('修改成功',{icon:1});
+									window.location.reload();
+								}else{
+									layer.alert('修改失败',{icon:2});
+								}
+							});
+		            	});	
+			    	});
+		        }
+		    });
 		})
 	</script>	
 </head>
@@ -28,17 +73,17 @@
 					    <div class="form-group">
 					    	<label class="col-sm-2 control-label">新的密码：</label>
 					    	<div class="col-sm-4">
-					    		<input type="text" class="form-control" placeholder="请输入密码">
+					    		<input type="password" class="form-control" id="pas1" placeholder="新密码必须包含数字和字母"><label id="pas1Tip"></label>
 					    	</div>   
 					    </div>
 					    <div class="form-group">
 					    	<label class="col-sm-2 control-label">再输一次：</label>
 					    	<div class="col-sm-4">
-					    		<input type="text" class="form-control" placeholder="请重新输入密码">
+					    		<input type="password" class="form-control" id="pas2" placeholder="请重新输入密码"><label id="pas2Tip"></label>
 					    	</div>				        
 					    </div>
 					    <div class="form-group" style="width: 30%;margin:40px auto;">
-							<button type="button" class="btn btn-success btn-block">确认并提交</button>
+							<button type="button" id="submit" class="btn btn-success btn-block">确认并提交</button>
 						</div>
 					</form>
 					

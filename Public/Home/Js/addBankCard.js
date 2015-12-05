@@ -108,7 +108,7 @@ Card = {
 				  		'<span class="bankcard">'+
 				  			'<div class="card-box zheng" id="fileList1">';
 				  			if(img){
-			  			html += '<img width="308" src="'+img.cardpositiveurl.substr(1)+'">';
+			  			html += '<img style="width:308;height:222px;" src="'+img.cardpositiveurl.substr(1)+'">';
 			  				}
 					html += '</div>'+
 							'<div class="card-op">';
@@ -124,7 +124,7 @@ Card = {
 				  		'<span class="bankcard">'+
 				  			'<div class="card-box fan" id="fileList2">';
 				  		if(img){
-			  			html += '<img width="308" src="'+img.cardnegativeurl.substr(1)+'">';
+			  			html += '<img style="width:308;height:222px;" src="'+img.cardnegativeurl.substr(1)+'">';
 			  			}
 					html += '</div>'+
 							'<div class="card-op">';

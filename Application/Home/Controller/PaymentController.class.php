@@ -34,11 +34,11 @@ class PaymentController extends CommonController {
     Public function inRecords(){
 
         $deposits = M('deposits');
-        $where = array('account'=>1);
+        $where = array('account'=>session('uid'));
         $count      = $deposits->where($where)->count();
-        $Page       = new \Think\Page($count,25);
+        $Page       = new \Think\Page($count,20);
         $show       = $Page->show();
-        $list = $deposits->where($where)->order('successTime')->limit($Page->firstRow.','.$Page->listRows)->select();
+        $list = $deposits->where($where)->order('successTime desc')->limit($Page->firstRow.','.$Page->listRows)->select();
         $this->assign('list',$list);
         $this->assign('page',$show);
         $this->display();
@@ -49,7 +49,7 @@ class PaymentController extends CommonController {
      * @return [type] [description]
      */
     Public function inTotal(){
-        $where = array('account'=>1);
+        $where = array('account'=>session('uid'));
         $total = M('deposits')->where($where)->field('month,sum(amount) as total,count(month) as hand')->group('month')->select();
         // p($total);die;
         $this->list = $total;
@@ -127,7 +127,7 @@ class PaymentController extends CommonController {
                     $data = array(
                         'Currency_Type' => $currency_type,
                         'Amount' => $amount,
-                        'account' => session('uid') || 'test',
+                        'account' => session('uid'),
                         'inDate' => $mydate,
                         'successTime' => time(),
                         'Billno' => $billno,
@@ -171,7 +171,7 @@ class PaymentController extends CommonController {
         if(IS_POST){
 
         }else{
-            $where = array('account'=>1);
+            $where = array('account'=>session('uid'));
             $card = M('card')->where($where)->field("id,type,account,bank,bankAccount")->select();
             foreach ($card as $k => $v) {
                 $bankArr = explode('-', $v['bank']);
@@ -193,17 +193,18 @@ class PaymentController extends CommonController {
     Public function outRecords(){
 
         $withdrawal = M('withdrawal');
-        $account = 1;
+        $uid = session('uid');
+        $where = array('account'=>$uid);
         $count      = $withdrawal->where($where)->count();
-        $Page       = new \Think\Page($count,25);
+        $Page       = new \Think\Page($count,20);
         $show       = $Page->show();
-        $join = "mt_card ON mt_card.id=mt_withdrawal.cid where mt_withdrawal.account={$account}";
+        $join = "mt_card ON mt_card.id=mt_withdrawal.cid where mt_withdrawal.account='{$uid}'";
         $field = "mt_card.id,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checkTime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount";
-        $list = $withdrawal->order('applyTime')->join($join)->limit($Page->firstRow.','.$Page->listRows)->field($field)->select();
-        $banklist = C('bank');
+        $list = $withdrawal->order('applyTime desc')->join($join)->limit($Page->firstRow.','.$Page->listRows)->field($field)->select();
+        $banklist = C('bankCode');
         foreach ($list as $k => $v) {
             $banArr = explode('-', $v['bank']);
-            $list[$k]['bankname'] = $banklist[$banArr[0]].'-'.$banArr[1].'-'.$banArr[2];
+            $list[$k]['bankname'] = $banklist[$banArr[0]][1].'-'.$banArr[1].'-'.$banArr[2];
             $list[$k]['reminbi'] = changeRate($v['money'],true);
             $list[$k]['applytime'] = date('Y-m-d H:i:s',$v['applytime']);
         }
@@ -218,7 +219,7 @@ class PaymentController extends CommonController {
      */
     Public function outTotal(){
 
-        $where = array('account'=>1);
+        $where = array('account'=>session('uid'));
         $total = M('withdrawal')->where($where)->field('month,sum(money) as total,count(month) as hand')->group('month')->select();
         // p($total);die;
         $this->list = $total;
@@ -231,7 +232,7 @@ class PaymentController extends CommonController {
     Public function saveCardAndMoney(){
         if(IS_POST){
             // p($_POST);
-            $account = session('account') || 'test';
+            $account = session('uid');
             $_POST['account'] = $account;
             if($cid = M('card')->add($_POST)){
                 $data = array(
@@ -255,7 +256,7 @@ class PaymentController extends CommonController {
 
 
     Public function withdrawal(){
-        $account = session('account') || 'test';
+        $account = session('uid');
         $data = array(
             'cid'=>I('cardid'),
             'money'=>I('money'),

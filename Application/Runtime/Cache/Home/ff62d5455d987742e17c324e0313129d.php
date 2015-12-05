@@ -27,6 +27,7 @@
 		var saveCardAndMoneyUrl ="<?php echo U('Home/Payment/saveCardAndMoney');?>";
 		var withdrawalUrl ="<?php echo U('Home/Payment/withdrawal');?>";
 		var outRecordsUrl ="<?php echo U('Home/Payment/outRecords');?>";
+		var outPaymentUrl = "<?php echo U('Home/Payment/outPayment');?>";
 		$(function(){
 			Payment.init();
 			highlight_subnav("<?php echo U('Home/Payment/outPayment');?>");
@@ -174,7 +175,7 @@
 						    <dl id="banklists">
 						    	<?php if(is_array($list)): $k = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "暂时没有添加任何银行卡" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($k % 2 );++$k;?><dd cardid="<?php echo ($vo["id"]); ?>" <?php if($k == 1): ?>class="current"<?php endif; ?>>
 							    		<span class="<?php echo (strtolower($vo["type"])); ?>"></span>
-							    		<span class="bank-icon <?php echo ($vo["bankicon"]); ?> curbank"></span>
+							    		<span class="bank-icon <?php echo (getBankNick($vo["bankicon"])); ?> curbank"></span>
 							    		<span class="bankno"><?php echo ($vo["bankno"]); ?></span>
 							    		<span class="name"><?php echo ($vo["name"]); ?></span>
 							    		<i></i>

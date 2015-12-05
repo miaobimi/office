@@ -22,14 +22,14 @@ class AccountController extends CommonController {
 
     Public function ajaxForPage(){
         $card = M('card');
-        $where = array('account'=>session('uname'));
+        $where = array('account'=>session('uid'));
         $count      = $card->where($where)->count();
         $Page       = new \Think\Page($count,3);
         $show       = $Page->show();
         $list = $card->where($where)->limit($Page->firstRow.','.$Page->listRows)->select();
         foreach ($list as $k => $v) {
             $banArr = explode('-', $v['bank']);
-            $list[$k]['bankicon'] = $banArr[0];
+            $list[$k]['bankicon'] = getBankNick($banArr[0]);
         }
         $result = array(
             'page' => $show,
@@ -81,7 +81,7 @@ class AccountController extends CommonController {
                     $this->error('修改银行卡失败');
                 }
             }else{
-                $account = session('account') || 'test';
+                $account = session('uid');
                 $_POST['account'] = $account;
                 if(M('card')->add($_POST)){
                    $this->success('增加银行卡成功');
@@ -127,12 +127,12 @@ class AccountController extends CommonController {
             \Mt::getAccountInfo($leverage);
             $this->success();
         }else{
-            if($res['leverage'] == '100'){     
+            if($res['info']['leverage'] == '100'){     
                 $this->assign('newleverage','200'); 
             }else{
                 $this->assign('newleverage','100');
             }
-             $this->assign('nowleverage',$res['leverage']); 
+             $this->assign('nowleverage',$res['info']['leverage']); 
              $this->display();
         }
     }
@@ -149,7 +149,7 @@ class AccountController extends CommonController {
             \Mt::getAccountInfo($phone);
             $this->success();
         }else{
-            $this->assign('nowphone',$res['phone']);
+            $this->assign('nowphone',$res['info']['phone']);
             $this->display();
         }
     }
@@ -167,7 +167,7 @@ class AccountController extends CommonController {
             p($email);die;
             $this->success();
         }else{
-            $this->assign('nowemail',$res['email']);
+            $this->assign('nowemail',$res['info']['email']);
             $this->display();
         }
     }
@@ -178,8 +178,16 @@ class AccountController extends CommonController {
      */
     Public function editMainPass(){
 
-        if(IS_POST){
-
+        if(IS_AJAX){
+            import('Org.Util.Mt');
+            $password = I('getpwd','');
+            $params = array(
+                    'msg_type' => 60,
+                    'login' => 1998,
+                    'password' => $password,
+                );
+            $res = \Mt::changePass($params);
+            $this->ajaxReturn($res);
         }else{
              $this->display();
         }
@@ -191,8 +199,17 @@ class AccountController extends CommonController {
      */
     Public function editInvestorPass(){
 
-        if(IS_POST){
-
+        if(IS_AJAX){
+            import('Org.Util.Mt');
+            $password = I('getpwd','');
+            $params = array(
+                    'msg_type' => 60,
+                    'login' => 1998,
+                    'password' => $password,
+                    'change_investor' => 1
+                );
+            $res = \Mt::changePass($params);
+            $this->ajaxReturn($res);
         }else{
              $this->display();
         }

@@ -103,7 +103,8 @@ Payment = {
 
 			},function(res){
 				if(res.status){
-					layer.alert(res.info,{icon:1})
+					layer.alert(res.info,{icon:1});
+					window.location.href=outPaymentUrl;
 				}else{
 					layer.alert(res.info,{icon:2});
 				}

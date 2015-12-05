@@ -1,0 +1,1313 @@
+[ 2015-12-05T09:01:05+08:00 ] 27.153.13.232 /Manage/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000594s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000146s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005437s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005489s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000130s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000375s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000446s ]
+
+[ 2015-12-05T09:01:11+08:00 ] 27.153.13.232 /Manage/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000360s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000616s ]
+SQL: SHOW COLUMNS FROM `mt_user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mt_user` WHERE `username` = 'xxx' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-12-05T09:01:16+08:00 ] 27.153.13.232 /Manage/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000320s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000569s ]
+SQL: SHOW COLUMNS FROM `mt_user` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `mt_user` WHERE `username` = 'xxx' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `mt_user` SET `last_login_ip`='27.153.13.232',`last_login_time`='1449277276' WHERE `uid` = 10 [ RunTime:0.1055s ]
+
+[ 2015-12-05T09:01:16+08:00 ] 27.153.13.232 /Manage/Index/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000613s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000160s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006301s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006357s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000132s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000285s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000370s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000424s ]
+
+[ 2015-12-05T09:01:22+08:00 ] 27.153.13.232 /Manage/User/lists.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000595s ]
+SQL: SHOW COLUMNS FROM `mt_user` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_user` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `mt_user` LIMIT 0,25   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000136s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008135s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008199s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000123s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000389s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000448s ]
+
+[ 2015-12-05T09:01:23+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000577s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000151s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010103s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010170s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000130s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000466s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000521s ]
+
+[ 2015-12-05T09:31:05+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000679s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000153s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010824s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010891s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000122s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000391s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000442s ]
+
+[ 2015-12-05T09:34:06+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000591s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0005s ]
+
+[ 2015-12-05T10:12:40+08:00 ] 27.153.13.232 /Manage/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000329s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000669s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000121s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005127s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005181s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000117s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000365s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000411s ]
+
+[ 2015-12-05T10:12:45+08:00 ] 27.153.13.232 /Manage/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000714s ]
+SQL: SHOW COLUMNS FROM `mt_user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mt_user` WHERE `username` = 'xxx' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `mt_user` SET `last_login_ip`='27.153.13.232',`last_login_time`='1449281565' WHERE `uid` = 10 [ RunTime:0.0595s ]
+
+[ 2015-12-05T10:12:45+08:00 ] 27.153.13.232 /Manage/Index/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000628s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000143s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006093s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006180s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000140s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000350s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000399s ]
+
+[ 2015-12-05T10:12:47+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000645s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: 01103 /alidata/www/office/Application/Manage/Controller/BusinessController.class.php 第 40 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000205s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014229s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014307s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000146s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000196s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000429s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000488s ]
+
+[ 2015-12-05T10:13:14+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000612s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000165s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009945s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010062s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000177s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000253s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000407s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000462s ]
+
+[ 2015-12-05T10:20:48+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000320s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000579s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000207s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010402s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010488s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000138s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000186s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000427s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000484s ]
+
+[ 2015-12-05T10:20:57+08:00 ] 27.153.13.232 /Manage/Business/recordReason.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000616s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0009s ]
+SQL: UPDATE `mt_withdrawal` SET `reason`='xxxx',`checkTime`='1449282057' WHERE `id` = 1 [ RunTime:0.0577s ]
+
+[ 2015-12-05T10:21:11+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000334s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000679s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000175s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010351s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010418s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000135s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000183s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000408s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000486s ]
+
+[ 2015-12-05T10:33:57+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000363s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000636s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000160s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010238s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010315s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000119s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000166s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000440s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000492s ]
+
+[ 2015-12-05T10:35:05+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000629s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000176s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010481s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010564s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000283s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000603s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000686s ]
+
+[ 2015-12-05T10:36:13+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000423s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000139s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009983s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010050s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000157s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000209s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000384s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000462s ]
+
+[ 2015-12-05T10:36:39+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000334s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000622s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000171s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010247s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010313s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000129s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000402s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000455s ]
+
+[ 2015-12-05T10:44:46+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000620s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000169s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010686s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010757s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000159s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000207s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000398s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000448s ]
+
+[ 2015-12-05T10:45:38+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000576s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000171s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010202s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010272s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000155s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000206s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000384s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000436s ]
+
+[ 2015-12-05T10:45:40+08:00 ] 27.153.13.232 /Manage/Business/pay.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000582s ]
+
+[ 2015-12-05T10:45:57+08:00 ] 27.153.13.232 /Manage/Business/pay.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000640s ]
+NOTIC: [8] Undefined index: Bank_Code /alidata/www/office/Application/Manage/Controller/BusinessController.class.php 第 90 行.
+NOTIC: [8] Undefined index: Bank_Code /alidata/www/office/Application/Manage/Controller/BusinessController.class.php 第 95 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000200s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006062s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006189s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000162s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000232s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000435s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000518s ]
+
+[ 2015-12-05T10:46:11+08:00 ] 27.153.13.232 /Manage/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000733s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000141s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005465s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005518s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000125s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000183s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000409s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000466s ]
+
+[ 2015-12-05T10:46:18+08:00 ] 27.153.13.232 /Manage/Business/pay.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000667s ]
+
+[ 2015-12-05T10:46:53+08:00 ] 27.153.13.232 /Manage/Business/pay.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000590s ]
+NOTIC: [8] Undefined index: Bank_Code /alidata/www/office/Application/Manage/Controller/BusinessController.class.php 第 91 行.
+NOTIC: [8] Undefined index: Bank_Code /alidata/www/office/Application/Manage/Controller/BusinessController.class.php 第 96 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000125s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005205s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005280s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000125s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000415s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000464s ]
+
+[ 2015-12-05T10:47:00+08:00 ] 27.153.13.232 /Manage/Business/pay.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000338s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000594s ]
+NOTIC: [8] Undefined index: Bank_Code /alidata/www/office/Application/Manage/Controller/BusinessController.class.php 第 91 行.
+NOTIC: [8] Undefined index: Bank_Code /alidata/www/office/Application/Manage/Controller/BusinessController.class.php 第 96 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000116s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004875s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004933s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000147s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000194s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000385s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000434s ]
+
+[ 2015-12-05T10:47:09+08:00 ] 27.153.13.232 /Manage/Index/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000711s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000985s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000139s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005921s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005974s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000118s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000164s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000363s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000411s ]
+
+[ 2015-12-05T10:47:10+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000612s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000143s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010093s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010169s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000124s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000442s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000494s ]
+
+[ 2015-12-05T10:47:12+08:00 ] 27.153.13.232 /Manage/Business/pay.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000580s ]
+
+[ 2015-12-05T10:48:26+08:00 ] 27.153.13.232 /Manage/Business/pay.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000318s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000573s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000110s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004745s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004803s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000117s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000347s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000396s ]
+
+[ 2015-12-05T10:48:59+08:00 ] 27.153.13.232 /Manage/Business/pay.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000605s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000151s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004979s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005042s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000128s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000560s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000658s ]
+
+[ 2015-12-05T10:50:48+08:00 ] 120.24.60.62 /Manage/Business/ServerUrl.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000593s ]
+NOTIC: [8] Undefined index: mt_manage /alidata/www/office/Application/Manage/Controller/CommonController.class.php 第 10 行.
+
+[ 2015-12-05T10:50:48+08:00 ] 120.24.60.62 /Manage/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000394s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001737s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005281s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005337s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000118s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000164s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000370s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000417s ]
+
+[ 2015-12-05T10:50:48+08:00 ] 120.24.60.62 /Manage/Business/ServerUrl.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000596s ]
+NOTIC: [8] Undefined index: mt_manage /alidata/www/office/Application/Manage/Controller/CommonController.class.php 第 10 行.
+
+[ 2015-12-05T10:50:48+08:00 ] 120.24.60.62 /Manage/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000324s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000599s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000143s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005389s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005443s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000118s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000166s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000418s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000467s ]
+
+[ 2015-12-05T10:50:52+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html?MerOrderNo=20151205104859542542&MerCode=T0000601&Currency=CNY&Amount=638.00&OrderDate=20151205&Succ=Y&Msg=success&GoodsInfo=01103-201512&SysOrderNo=BO151205104859485955&RetencodeType=12&Signature=923da3f838e5dbdf444f3862aac65c3f
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000600s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000160s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010013s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010072s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000121s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000373s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000424s ]
+
+[ 2015-12-05T10:51:00+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html?MerOrderNo=20151205104859542542&MerCode=T0000601&Currency=CNY&Amount=638.00&OrderDate=20151205&Succ=Y&Msg=success&GoodsInfo=01103-201512&SysOrderNo=BO151205104859485955&RetencodeType=12&Signature=923da3f838e5dbdf444f3862aac65c3f
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000349s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000604s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012082s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012164s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000124s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000384s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000437s ]
+
+[ 2015-12-05T10:51:02+08:00 ] 27.153.13.232 /Manage/Business/pay.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000343s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000605s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005275s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005387s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000132s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000195s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000485s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000544s ]
+
+[ 2015-12-05T10:51:04+08:00 ] 120.24.60.62 /Manage/Business/ServerUrl.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000320s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000575s ]
+NOTIC: [8] Undefined index: mt_manage /alidata/www/office/Application/Manage/Controller/CommonController.class.php 第 10 行.
+
+[ 2015-12-05T10:51:04+08:00 ] 120.24.60.62 /Manage/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000607s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000163s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005195s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005249s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000118s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000373s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000424s ]
+
+[ 2015-12-05T10:51:09+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html?MerOrderNo=20151205105102547339&MerCode=T0000601&Currency=CNY&Amount=638.00&OrderDate=20151205&Succ=Y&Msg=success&GoodsInfo=01103-201512&SysOrderNo=BO151205105102512221&RetencodeType=12&Signature=b69671f85048b0f706aba0347325f358
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000625s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000160s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010168s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010234s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000124s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000381s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000437s ]
+
+[ 2015-12-05T10:51:26+08:00 ] 27.153.13.232 /Manage/Business/pay.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000592s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000047s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000101s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004724s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004788s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000121s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000381s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000428s ]
+
+[ 2015-12-05T10:51:28+08:00 ] 120.24.60.62 /Manage/Business/ServerUrl.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000451s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000895s ]
+NOTIC: [8] Undefined index: mt_manage /alidata/www/office/Application/Manage/Controller/CommonController.class.php 第 10 行.
+
+[ 2015-12-05T10:51:28+08:00 ] 120.24.60.62 /Manage/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000604s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000122s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005564s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005617s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000132s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000401s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000456s ]
+
+[ 2015-12-05T10:51:32+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html?MerOrderNo=20151205105126663058&MerCode=T0000601&Currency=CNY&Amount=638.00&OrderDate=20151205&Succ=Y&Msg=success&GoodsInfo=01103-201512&SysOrderNo=BO151205105126512612&RetencodeType=12&Signature=39da20bc4e2a06b234d78a03f6770460
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000608s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000105s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000194s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010619s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010688s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000138s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000186s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000400s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000452s ]
+
+[ 2015-12-05T10:52:18+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html?MerOrderNo=20151205105126663058&MerCode=T0000601&Currency=CNY&Amount=638.00&OrderDate=20151205&Succ=Y&Msg=success&GoodsInfo=01103-201512&SysOrderNo=BO151205105126512612&RetencodeType=12&Signature=39da20bc4e2a06b234d78a03f6770460
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000370s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000719s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000167s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.132669s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.132763s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000231s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000281s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000416s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000473s ]
+
+[ 2015-12-05T10:52:22+08:00 ] 27.153.13.232 /Manage/Business/pay.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000318s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000595s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000129s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004746s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004809s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000116s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000417s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000465s ]
+
+[ 2015-12-05T10:52:24+08:00 ] 120.24.60.62 /Manage/Business/ServerUrl.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000364s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000633s ]
+NOTIC: [8] Undefined index: mt_manage /alidata/www/office/Application/Manage/Controller/CommonController.class.php 第 10 行.
+
+[ 2015-12-05T10:52:24+08:00 ] 120.24.60.62 /Manage/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000397s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000690s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000139s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005704s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005757s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000127s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000379s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000431s ]
+
+[ 2015-12-05T10:52:29+08:00 ] 27.153.13.232 /Manage/Business/Merchanturl.html?MerOrderNo=20151205105222977301&MerCode=T0000601&Currency=CNY&Amount=638.00&OrderDate=20151205&Succ=Y&Msg=success&GoodsInfo=01103-201512&SysOrderNo=BO1512051052225222234&RetencodeType=12&Signature=c4bcfaaa994a4e7179b0aa0b95d28dea
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000396s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000710s ]
+
+[ 2015-12-05T10:56:14+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000624s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000216s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013195s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013294s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000141s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000404s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000470s ]
+
+[ 2015-12-05T10:56:25+08:00 ] 27.153.13.232 /Manage/Business/pay.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000360s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000615s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000047s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000100s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004797s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004854s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000139s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000186s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000336s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000382s ]
+
+[ 2015-12-05T10:56:27+08:00 ] 120.24.60.62 /Manage/Business/ServerUrl.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000319s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000578s ]
+NOTIC: [8] Undefined index: mt_manage /alidata/www/office/Application/Manage/Controller/CommonController.class.php 第 10 行.
+
+[ 2015-12-05T10:56:27+08:00 ] 120.24.60.62 /Manage/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000369s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000639s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005905s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005968s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000117s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000409s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000464s ]
+
+[ 2015-12-05T10:56:32+08:00 ] 27.153.13.232 /Manage/Business/Merchanturl.html?MerOrderNo=20151205105625239570&MerCode=T0000601&Currency=CNY&Amount=638.00&OrderDate=20151205&Succ=Y&Msg=success&GoodsInfo=1-201512&SysOrderNo=BO151205105625562578&RetencodeType=12&Signature=3fe160dc5b170707aaa326bcbb1e0d8b
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000385s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000666s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0009s ]
+SQL: UPDATE `mt_withdrawal` SET `status`='1',`checkTime`='1449284192' WHERE `id` = 1 [ RunTime:0.0729s ]
+
+[ 2015-12-05T10:56:32+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000593s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000151s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010134s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010204s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000130s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000396s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000446s ]
+
+[ 2015-12-05T10:56:36+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000645s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010364s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010441s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000166s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000381s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000434s ]
+
+[ 2015-12-05T10:58:03+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000618s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000210s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011088s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011167s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000165s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000215s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000433s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000504s ]
+
+[ 2015-12-05T10:58:41+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000744s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime LIMIT 0,25   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000168s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010486s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010558s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000149s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000196s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000374s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000425s ]
+
+[ 2015-12-05T10:59:24+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000357s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000623s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime desc LIMIT 0,25   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000203s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012393s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012476s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000150s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000238s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000401s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000470s ]
+
+[ 2015-12-05T10:59:49+08:00 ] 27.153.13.232 /Manage/Business/pay.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000608s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000104s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004836s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004899s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000125s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000171s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000396s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000444s ]
+
+[ 2015-12-05T10:59:51+08:00 ] 120.24.60.62 /Manage/Business/ServerUrl.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000319s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000602s ]
+NOTIC: [8] Undefined index: mt_manage /alidata/www/office/Application/Manage/Controller/CommonController.class.php 第 10 行.
+
+[ 2015-12-05T10:59:51+08:00 ] 120.24.60.62 /Manage/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000602s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000115s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005313s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005366s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000121s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000333s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000381s ]
+
+[ 2015-12-05T10:59:55+08:00 ] 27.153.13.232 /Manage/Business/Merchanturl.html?MerOrderNo=20151205105949744153&MerCode=T0000601&Currency=CNY&Amount=708.18&OrderDate=20151205&Succ=Y&Msg=success&GoodsInfo=1-201512&SysOrderNo=BO151205105949594967&RetencodeType=12&Signature=a134681ead671f6f21c998e5f9e8bc82
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000599s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0008s ]
+SQL: UPDATE `mt_withdrawal` SET `status`='1',`checkTime`='1449284395' WHERE `id` = 1 [ RunTime:0.0144s ]
+
+[ 2015-12-05T10:59:55+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000368s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000645s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime desc LIMIT 0,25   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000157s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010422s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010494s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000151s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000200s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000372s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000425s ]
+
+[ 2015-12-05T10:59:59+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000349s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000599s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime desc LIMIT 0,25   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000160s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010579s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010664s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000138s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000186s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000437s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000489s ]
+
+[ 2015-12-05T11:00:24+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000318s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000594s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime desc LIMIT 0,25   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000153s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010266s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010337s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000141s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000191s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000379s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000433s ]
+
+[ 2015-12-05T11:01:08+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000329s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000587s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime desc LIMIT 0,25   [ RunTime:0.0006s ]
+
+[ 2015-12-05T11:01:36+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000606s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_withdrawal.cid,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime desc LIMIT 0,25   [ RunTime:0.0006s ]
+
+[ 2015-12-05T11:02:07+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000325s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000584s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_withdrawal.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime desc LIMIT 0,25   [ RunTime:0.0005s ]
+
+[ 2015-12-05T11:02:16+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000329s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000584s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_withdrawal.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime desc LIMIT 0,25   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000147s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010307s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010374s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000126s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000375s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000427s ]
+
+[ 2015-12-05T11:02:18+08:00 ] 27.153.13.232 /Manage/Business/pay.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000596s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000075s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000185s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005590s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005667s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000122s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000196s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000518s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000576s ]
+
+[ 2015-12-05T11:02:20+08:00 ] 120.24.60.62 /Manage/Business/ServerUrl.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000698s ]
+NOTIC: [8] Undefined index: mt_manage /alidata/www/office/Application/Manage/Controller/CommonController.class.php 第 10 行.
+
+[ 2015-12-05T11:02:20+08:00 ] 120.24.60.62 /Manage/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000616s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000139s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005263s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005317s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000123s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000171s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000363s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000412s ]
+
+[ 2015-12-05T11:02:24+08:00 ] 27.153.13.232 /Manage/Business/Merchanturl.html?MerOrderNo=20151205110218473246&MerCode=T0000601&Currency=CNY&Amount=708.18&OrderDate=20151205&Succ=Y&Msg=success&GoodsInfo=2-201512&SysOrderNo=BO151205110218218153&RetencodeType=12&Signature=c5c4d7c709dc46b670c416b0c4c22364
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000620s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0009s ]
+SQL: UPDATE `mt_withdrawal` SET `status`='1',`checkTime`='1449284544' WHERE `id` = 2 [ RunTime:0.0156s ]
+
+[ 2015-12-05T11:02:25+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000405s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000708s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_withdrawal.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime desc LIMIT 0,25   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000157s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010584s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010659s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000129s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000204s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000386s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000440s ]
+
+[ 2015-12-05T11:08:51+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000590s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_withdrawal.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime desc LIMIT 0,25   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000225s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011406s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011483s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000153s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000215s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000433s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000490s ]
+
+[ 2015-12-05T11:35:45+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000367s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000649s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT mt_card.id,mt_withdrawal.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime desc LIMIT 0,25   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010468s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010529s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000163s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000215s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000346s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000397s ]
+
+[ 2015-12-05T11:35:48+08:00 ] 27.153.13.232 /Manage/Business/pay.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000318s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000577s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000115s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004839s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004898s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000132s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000383s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000436s ]
+
+[ 2015-12-05T11:35:50+08:00 ] 120.24.60.62 /Manage/Business/ServerUrl.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000321s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000602s ]
+NOTIC: [8] Undefined index: mt_manage /alidata/www/office/Application/Manage/Controller/CommonController.class.php 第 10 行.
+
+[ 2015-12-05T11:35:50+08:00 ] 120.24.60.62 /Manage/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000340s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000676s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000104s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000201s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005692s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000134s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000306s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000362s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000417s ]
+
+[ 2015-12-05T11:35:50+08:00 ] 120.24.60.62 /Manage/Business/ServerUrl.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000583s ]
+NOTIC: [8] Undefined index: mt_manage /alidata/www/office/Application/Manage/Controller/CommonController.class.php 第 10 行.
+
+[ 2015-12-05T11:35:50+08:00 ] 120.24.60.62 /Manage/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000638s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000148s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005683s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005737s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000117s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000424s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000490s ]
+
+[ 2015-12-05T11:35:55+08:00 ] 27.153.13.232 /Manage/Business/Merchanturl.html?MerOrderNo=20151205113548170668&MerCode=T0000601&Currency=CNY&Amount=1276.00&OrderDate=20151205&Succ=Y&Msg=success&GoodsInfo=2-201512&SysOrderNo=BO1512051135483548118&RetencodeType=12&Signature=3da68d836d58314931e86ff300a67dec
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000369s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000657s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0008s ]
+SQL: UPDATE `mt_withdrawal` SET `status`='1',`checkTime`='1449286554' WHERE `id` = 2 [ RunTime:0.0165s ]
+
+[ 2015-12-05T11:35:55+08:00 ] 27.153.13.232 /Manage/Business/checkWithdrawal.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000318s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000572s ]
+SQL: SHOW COLUMNS FROM `mt_withdrawal` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mt_withdrawal` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT mt_card.id,mt_withdrawal.id,mt_card.cardnegativeurl,mt_card.cardpositiveurl,mt_withdrawal.account,mt_withdrawal.money,mt_withdrawal.applyTime,mt_withdrawal.status,mt_withdrawal.checktime,mt_withdrawal.reason,mt_card.type,mt_card.bank,mt_card.bankaccount FROM `mt_withdrawal` INNER JOIN mt_card ON mt_card.id=mt_withdrawal.cid  ORDER BY applyTime desc LIMIT 0,25   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000206s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010881s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010958s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000135s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000195s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000388s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000442s ]
+

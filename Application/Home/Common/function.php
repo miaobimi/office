@@ -182,7 +182,17 @@
 	 */
 	function getBankName($no){
 		$bankcode = C('bankcode');
-		return $bankcode[$no];
+		return $bankcode[$no][1];
+	}
+
+	/**
+	 * 银行代码转 银行缩写
+	 * @param  [type] $no [description]
+	 * @return [type]     [description]
+	 */
+	function getBankNick($no){
+		$bankcode = C('bankcode');
+		return $bankcode[$no][0];
 	}
 
 	/**

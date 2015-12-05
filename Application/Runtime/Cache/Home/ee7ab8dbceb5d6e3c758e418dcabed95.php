@@ -18,6 +18,7 @@
 	<script> 
 		$(function(){
 			highlight_subnav("<?php echo U('Home/Payment/inRecords');?>");
+			goPage();
 		})
 	</script>
 </head>
@@ -159,7 +160,11 @@
 					  	</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 				  </tbody>
 				</table>
-				<?php echo ($page); ?>
+				<nav>
+				  <ul class="pagination">
+				    <?php echo ($page); ?>
+				  </ul>
+				</nav>
 			</div>
 		</div>		
 	</div>

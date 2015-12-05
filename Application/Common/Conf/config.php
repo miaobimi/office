@@ -45,22 +45,22 @@ return array(
     'MAIL_ISHTML' =>TRUE, // 是否HTML格式邮件
 
     'bankCode' => array(
-        "01100" => "中国工商银行",
-        "01101" => "中国农业银行",
-        "01102" => "招商银行",
-        "01103" => "兴业银行",
-        "01104" => "中信银行",
-        "01106" => "建设银行",
-        "01107" => "中国银行",
-        "01108" => "交通银行",
-        "01109" => "上海浦东发展银行",
-        "01110" => "民生银行",
-        "01111" => "华夏银行",
-        "01112" => "光大银行",
-        "01113" => "北京银行",
-        "01114" => "广东发展银行",
-        "01119" => "中国邮政储蓄",
-        "01121" => "平安银行"
+        "01100" => array('ICBC',"中国工商银行"),
+        "01101" => array('ABC',"中国农业银行"),
+        "01102" => array('CMB',"招商银行"),
+        "01103" => array('CIB',"兴业银行"),
+        "01104" => array('CITIC',"中信银行"),
+        "01106" => array('CCB',"建设银行"),
+        "01107" => array('BOC',"中国银行"),
+        "01108" => array('COMM',"交通银行"),
+        "01109" => array('SPDB',"上海浦东发展银行"),
+        "01110" => array('CMBC',"民生银行"),
+        "01111" => array('HXBANK',"华夏银行"),
+        "01112" => array('CEB',"光大银行"),
+        "01113" => array('BJBANK',"北京银行"),
+        "01114" => array('GDB',"广东发展银行"),
+        "01119" => array('PSBC',"中国邮政储蓄"),
+        "01121" => array('SPABANK',"平安银行")
     ),
 
     'bank' => array(
@@ -105,6 +105,8 @@ return array(
             // 'form_url' => 'https://payment.cai1pay.com/gateway.aspx'//正式环境
             
             'Merchanturl' => 'http://office.chntz.cn/Home/Payment/Merchanturl.html',//支付成功返回URL
+            'Merchanturl2' => 'http://office.chntz.cn/Manage/Business/Merchanturl.html',//支付成功返回URL
+            'ServerUrl2' => 'http://office.chntz.cn/Manage/Business/ServerUrl.html',//Server to Server返回页面
             'ServerUrl' => 'http://office.chntz.cn/Home/Payment/ServerUrl.html',//Server to Server返回页面
             'DoCredit' => 1//当DoCredit=1，表示用直连方式
             // 'BankCode' => 当用直连方式时，这个银行编码不能为空，详细的银行编码参考
